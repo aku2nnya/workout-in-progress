@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Tab } from '@headlessui/react';
 
+import Routines from './Routines';
 import Exercises from './Exercises';
 import { classNames } from './helpers';
 
@@ -10,7 +11,7 @@ const App = () => {
     return (
         <div className="w-full">
             <Tab.Group defaultIndex={0}>
-                <div className="bg-blue-900/20">
+                <header className="sticky top-0 h-fit bg-blue-900/20">
                     <Tab.List className="mx-auto flex max-w-md space-x-2 p-2">
                         {tabs.map((tab) => (
                             <Tab
@@ -29,19 +30,21 @@ const App = () => {
                             </Tab>
                         ))}
                     </Tab.List>
-                </div>
-                <Tab.Panels className="mt-2">
-                    {tabs.map((tab, idx) => (
-                        <Tab.Panel
-                            key={idx}
-                            className="mx-auto w-full max-w-md rounded-2xl bg-white p-2"
-                        >
-                            {tab === 'workout' && tab}
-                            {tab === 'routines' && tab}
-                            {tab === 'exercises' && <Exercises />}
-                        </Tab.Panel>
-                    ))}
-                </Tab.Panels>
+                </header>
+                <main className="scrollbar-hide h-[calc(100vh-56px)] overflow-y-auto">
+                    <Tab.Panels>
+                        {tabs.map((tab, idx) => (
+                            <Tab.Panel
+                                key={idx}
+                                className="mx-auto w-full max-w-md rounded-2xl bg-white p-2"
+                            >
+                                {tab === 'workout' && tab}
+                                {tab === 'routines' && <Routines />}
+                                {tab === 'exercises' && <Exercises />}
+                            </Tab.Panel>
+                        ))}
+                    </Tab.Panels>
+                </main>
             </Tab.Group>
         </div>
     );

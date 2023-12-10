@@ -1,53 +1,142 @@
 {
-    "exercises": {
-        "abs": [
-            {
-                "name": "crunch"
-            },
-            {
-                "name": "hollow bicycle crunch"
-            }
-        ],
-        "arms": [
-            {
-                "name": "dumbbell curl"
-            }
-        ],
-        "back": [
-            {
-                "name": "incline dumbbell row"
-            }
-        ],
-        "chest": [
-            {
-                "name": "incline dumbbell bench press"
-            },
-            {
-                "name": "push-up"
-            }
-        ],
-        "legs": [
-            {
-                "name": "bulgarian split squat"
-            },
-            {
-                "name": "dumbbell romanian deadlift"
-            }
-        ],
-        "shoulders": [
-            {
-                "name": "dumbbell shoulder press"
-            }
-        ],
-        "grip": [
-            {
-                "name": "grip press"
-            }
-        ],
-        "whole body": [
-            {
-                "name": "jump rope"
-            }
-        ]
-    }
+    "exercises": [
+        {
+            "id": "39cf56dc-13d8-4bba-b940-31cebb4b2974",
+            "category": "abs",
+            "exercise": [
+                {
+                    "id": "f5e2fb18-5ca9-405b-a0e6-b7fbf249a1ae",
+                    "name": "crunch"
+                },
+                {
+                    "id": "a187d235-ac75-4625-904a-b4b12b9e7d33",
+                    "name": "right oblique crunch"
+                },
+                {
+                    "id": "d76d5c1a-9adb-4f82-a512-91dd7e8f1878",
+                    "name": "left oblique crunch"
+                },
+                {
+                    "id": "e77882e8-737e-43c2-a04f-f290e681b844",
+                    "name": "toe touch"
+                },
+                {
+                    "id": "33722a53-b193-4fd7-b41d-83822af09164",
+                    "name": "reverse crunch"
+                },
+                {
+                    "id": "4a0a507e-b0a5-4dee-b984-03c0e2dd7f57",
+                    "name": "right side crunch"
+                },
+                {
+                    "id": "71652c31-0f1e-4027-adbc-e4451fd112bc",
+                    "name": "left side crunch"
+                },
+                {
+                    "id": "0a518324-143b-48b5-b209-05f1ae4fcbae",
+                    "name": "push through"
+                },
+                {
+                    "id": "70e86fa0-df87-4f0f-b461-e599183dea74",
+                    "name": "leg push"
+                },
+                {
+                    "id": "9eec1803-bccf-49c7-9b63-4d1c77ce08df",
+                    "name": "alternating curl"
+                },
+                {
+                    "id": "a8eff254-a816-4909-ac13-ee9552782cff",
+                    "name": "curl"
+                },
+                {
+                    "id": "164da7a3-33a9-4f19-a630-85cea92a2f5f",
+                    "name": "hollow bicycle crunch"
+                }
+            ]
+        },
+        {
+            "id": "b5aa38c6-79b2-4969-be23-aec029cbf6fd",
+            "category": "arms",
+            "exercise": [
+                {
+                    "id": "b5f17d8a-aaea-4bcc-87fd-50576b7f4d80",
+                    "name": "dumbbell curl"
+                }
+            ]
+        },
+        {
+            "id": "11276c3a-119c-4dcf-ba34-2bb95e3690ba",
+            "category": "back",
+            "exercise": [
+                {
+                    "id": "7ba5ff02-8f9d-4f00-9909-740c5a84e2be",
+                    "name": "incline dumbbell row"
+                }
+            ]
+        },
+        {
+            "id": "f0e5ff35-d723-42e0-aa42-98dc72631014",
+            "category": "chest",
+            "exercise": [
+                {
+                    "id": "7a814f39-69a5-464b-a379-1c95f0fb6344",
+                    "name": "incline dumbbell bench press"
+                },
+                {
+                    "id": "ddc9e8f2-64b4-49a6-90b1-dfaa5cb14047",
+                    "name": "push-up"
+                }
+            ]
+        },
+        {
+            "id": "ecde9bd1-5a14-413c-82ee-aef55226cd2e",
+            "category": "legs",
+            "exercise": [
+                {
+                    "id": "6e26bcde-fcd5-4fcf-98c2-59df9d8bc411",
+                    "name": "bulgarian split squat"
+                },
+                {
+                    "id": "d3668cec-bfeb-4837-98ac-87e4121cc1ed",
+                    "name": "dumbbell romanian deadlift"
+                }
+            ]
+        },
+        {
+            "id": "828b3034-e17c-4bd2-ba15-c33145944f0b",
+            "category": "shoulders",
+            "exercise": [
+                {
+                    "id": "dd253c7a-c05b-41ec-87c4-6d8750a1640a",
+                    "name": "dumbbell shoulder press"
+                }
+            ]
+        },
+        {
+            "id": "35f12564-ad05-40e1-b533-4468b06d8e30",
+            "category": "grip",
+            "exercise": [
+                {
+                    "id": "e668b608-d5a3-4f21-92cb-9ef984885d56",
+                    "name": "grip press"
+                }
+            ]
+        },
+        {
+            "id": "bcb1367c-601c-4a48-8c0d-ba04426ca279",
+            "category": "whole body",
+            "exercise": [
+                {
+                    "id": "a2708e2e-6c44-4a83-9df3-4679250f8fd5",
+                    "name": "jump rope"
+                }
+            ]
+        }
+    ],
+    "routines": [
+        {
+            "id": "15a87ab0-5d57-411c-9a1d-ad8520419e94",
+            "name": "morning warm-up"
+        }
+    ]
 }
