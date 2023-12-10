@@ -1,0 +1,53 @@
+{
+    "exercises": {
+        "abs": [
+            {
+                "name": "crunch"
+            },
+            {
+                "name": "hollow bicycle crunch"
+            }
+        ],
+        "arms": [
+            {
+                "name": "dumbbell curl"
+            }
+        ],
+        "back": [
+            {
+                "name": "incline dumbbell row"
+            }
+        ],
+        "chest": [
+            {
+                "name": "incline dumbbell bench press"
+            },
+            {
+                "name": "push-up"
+            }
+        ],
+        "legs": [
+            {
+                "name": "bulgarian split squat"
+            },
+            {
+                "name": "dumbbell romanian deadlift"
+            }
+        ],
+        "shoulders": [
+            {
+                "name": "dumbbell shoulder press"
+            }
+        ],
+        "grip": [
+            {
+                "name": "grip press"
+            }
+        ],
+        "whole body": [
+            {
+                "name": "jump rope"
+            }
+        ]
+    }
+}
