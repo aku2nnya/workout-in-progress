@@ -135,8 +135,171 @@
     ],
     "routines": [
         {
+            "id": "1aa6744a-23b9-4a95-b9ee-37cd0281fd1e",
+            "name": "8 minute abs",
+            "exercises": [
+                {
+                    "id": "cb11a696-c7b3-41ae-92b9-cf502310236c",
+                    "name": "crunch",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "2c5f3356-9266-4da8-89b1-62dc6843e535",
+                    "name": "right oblique crunch",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "01e8f4cf-a3a9-4695-8956-7dd644a4c21a",
+                    "name": "left oblique crunch",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "bacf0310-210f-488c-ba51-eef67e084784",
+                    "name": "toe touch",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "a583b052-626f-4d78-a96d-e67a819fa22f",
+                    "name": "reverse crunch",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "d43fb64a-8749-4e3c-8c3f-a99929ce53f8",
+                    "name": "right side crunch",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "d464a266-18ed-4a56-aacc-7f8dc2aa8580",
+                    "name": "left side crunch",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "d70c8771-f09b-4c02-81ba-4ab97ff07d7a",
+                    "name": "push through",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "49f30a06-c226-4f21-8dde-1b723f5fcc4e",
+                    "name": "leg push",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "9bad7fb8-99e2-4cb3-ab47-c95f51c27683",
+                    "name": "alternating curl",
+                    "timer": 45,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                },
+                {
+                    "id": "549134e5-23fb-494d-9661-5e893f859e62",
+                    "name": "curl",
+                    "timer": 30,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                }
+            ]
+        },
+        {
             "id": "15a87ab0-5d57-411c-9a1d-ad8520419e94",
-            "name": "morning warm-up"
+            "name": "warm-up: weight training day",
+            "exercises": [
+                {
+                    "id": "36e30d6e-0990-4458-ab7c-8f72e75316d7",
+                    "name": "push-up",
+                    "timer": null,
+                    "sets": [
+                        {
+                            "weight": 0,
+                            "reps": 23
+                        },
+                        {
+                            "weight": 0,
+                            "reps": 17
+                        }
+                    ],
+                    "superset": 1,
+                    "rest": 60,
+                    "supersetRest": 180
+                },
+                {
+                    "id": "ce3845b9-8ac9-49a0-96a7-203906fab3cb",
+                    "name": "hollow bicycle crunch",
+                    "timer": null,
+                    "sets": [
+                        {
+                            "weight": 0,
+                            "reps": 70
+                        },
+                        {
+                            "weight": 0,
+                            "reps": 50
+                        }
+                    ],
+                    "superset": 1,
+                    "rest": 60,
+                    "supersetRest": 180
+                }
+            ]
+        },
+        {
+            "id": "84727fec-54fd-43fa-805d-684fdd855720",
+            "name": "warm-up: cardio day",
+            "exercises": [
+                {
+                    "id": "391b0105-eba6-4b9a-aff0-687605bf728b",
+                    "name": "jump rope",
+                    "timer": null,
+                    "sets": [
+                        {
+                            "weight": 0,
+                            "reps": 550
+                        }
+                    ],
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null
+                }
+            ]
         }
     ]
 }
