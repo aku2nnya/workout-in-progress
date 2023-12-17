@@ -5,10 +5,13 @@ import {
     ArrowsUpDownIcon,
     ChevronUpIcon,
     ClockIcon,
+    MoonIcon,
 } from '@heroicons/react/20/solid';
 
 import data from './data.json';
 import { classNames } from './helpers';
+import DumbbellIcon from './icons/Dumbbell';
+import HourglassIcon from './icons/Hourglass';
 
 const Routines = () => {
     const routinesData = data.routines;
@@ -85,24 +88,42 @@ const Routines = () => {
                                                     {exercise.timer ? (
                                                         <span className="flex gap-1">
                                                             <ClockIcon className="h-5 w-5" />
-                                                            {exercise.timer}{' '}
-                                                            seconds
+                                                            {`${exercise.timer}s`}
                                                         </span>
                                                     ) : null}
                                                     {exercise.superset ? (
-                                                        <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                                                            Superset{' '}
-                                                            {exercise.superset}
+                                                        <span
+                                                            className={classNames(
+                                                                'inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-red-600/10',
+                                                                exercise.superset ===
+                                                                    1
+                                                                    ? 'bg-red-50 text-red-700'
+                                                                    : exercise.superset ===
+                                                                        2
+                                                                      ? 'bg-blue-50 text-blue-700'
+                                                                      : exercise.superset ===
+                                                                          3
+                                                                        ? 'bg-green-50 text-green-700'
+                                                                        : exercise.superset ===
+                                                                            4
+                                                                          ? 'bg-orange-50 text-orange-700'
+                                                                          : exercise.superset ===
+                                                                              5
+                                                                            ? 'bg-gray-50 text-gray-600'
+                                                                            : '',
+                                                            )}
+                                                        >
+                                                            {`Superset ${exercise.superset}`}
                                                         </span>
                                                     ) : null}
                                                 </div>
                                                 {exercise.sets ? (
                                                     <table className="w-full overflow-hidden rounded-lg text-center text-sm text-gray-400">
-                                                        <thead className="bg-gray-700 text-gray-400">
+                                                        <thead className="bg-gray-700 capitalize text-gray-400">
                                                             <tr>
-                                                                <th>Set</th>
-                                                                <th>Weight</th>
-                                                                <th>Reps</th>
+                                                                <th>set</th>
+                                                                <th>weight</th>
+                                                                <th>reps</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -119,9 +140,10 @@ const Routines = () => {
                                                                                 1}
                                                                         </td>
                                                                         <td>
-                                                                            {
-                                                                                set.weight
-                                                                            }
+                                                                            <span className="flex justify-center gap-1">
+                                                                                <DumbbellIcon className="h-5 w-5 p-0.5" />
+                                                                                {`${set.weight} lbs`}
+                                                                            </span>
                                                                         </td>
                                                                         <td>
                                                                             {
@@ -139,14 +161,29 @@ const Routines = () => {
                                                     routineData.exercises[
                                                         idx + 1
                                                     ]?.superset ? (
-                                                    <div className="flex justify-center">
+                                                    <div className="flex justify-center gap-1">
                                                         <ArrowsUpDownIcon className="h-5 w-5 p-0.5" />
+                                                        <HourglassIcon className="h-5 w-5 p-0.5" />
+                                                        {`${exercise.supersetRest}s`}
                                                     </div>
                                                 ) : idx + 1 <
                                                   routineData.exercises
                                                       .length ? (
-                                                    <div className="flex justify-center">
+                                                    <div
+                                                        className={classNames(
+                                                            'flex justify-center gap-1',
+                                                            exercise.rest
+                                                                ? ' py-2'
+                                                                : '',
+                                                        )}
+                                                    >
                                                         <ArrowSmallDownIcon className="h-5 w-5" />
+                                                        {exercise.rest ? (
+                                                            <span className="flex justify-center gap-1">
+                                                                <HourglassIcon className="h-5 w-5 p-0.5" />
+                                                                {`${exercise.rest}s`}
+                                                            </span>
+                                                        ) : null}
                                                     </div>
                                                 ) : null}
                                             </Disclosure.Panel>
