@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import { Tab } from '@headlessui/react';
 
+import Workout from './Workout';
 import Routines from './Routines';
 import Exercises from './Exercises';
 import { classNames } from './helpers';
@@ -31,14 +31,14 @@ const App = () => {
                         ))}
                     </Tab.List>
                 </header>
-                <main className="scrollbar-hide h-[calc(100vh-56px)] overflow-y-auto">
+                <main className="h-[calc(100vh-56px)] overflow-y-auto scrollbar-hide">
                     <Tab.Panels>
                         {tabs.map((tab, idx) => (
                             <Tab.Panel
                                 key={idx}
                                 className="mx-auto w-full max-w-md rounded-2xl bg-white p-2"
                             >
-                                {tab === 'workout' && tab}
+                                {tab === 'workout' && <Workout />}
                                 {tab === 'routines' && <Routines />}
                                 {tab === 'exercises' && <Exercises />}
                             </Tab.Panel>

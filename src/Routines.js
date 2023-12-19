@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Disclosure } from '@headlessui/react';
 import {
-    ArrowSmallDownIcon,
+    ArrowDownIcon,
     ArrowsUpDownIcon,
     ChevronUpIcon,
     ClockIcon,
-    MoonIcon,
 } from '@heroicons/react/20/solid';
 
 import data from './data.json';
@@ -177,7 +176,7 @@ const Routines = () => {
                                                                 : '',
                                                         )}
                                                     >
-                                                        <ArrowSmallDownIcon className="h-5 w-5" />
+                                                        <ArrowDownIcon className="h-5 w-5" />
                                                         {exercise.rest ? (
                                                             <span className="flex justify-center gap-1">
                                                                 <HourglassIcon className="h-5 w-5 p-0.5" />

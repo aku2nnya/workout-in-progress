@@ -61,6 +61,10 @@
                 {
                     "id": "b5f17d8a-aaea-4bcc-87fd-50576b7f4d80",
                     "name": "dumbbell curl"
+                },
+                {
+                    "id": "e668b608-d5a3-4f21-92cb-9ef984885d56",
+                    "name": "grip press"
                 }
             ]
         },
@@ -109,16 +113,6 @@
                 {
                     "id": "dd253c7a-c05b-41ec-87c4-6d8750a1640a",
                     "name": "dumbbell shoulder press"
-                }
-            ]
-        },
-        {
-            "id": "35f12564-ad05-40e1-b533-4468b06d8e30",
-            "category": "grip",
-            "exercise": [
-                {
-                    "id": "e668b608-d5a3-4f21-92cb-9ef984885d56",
-                    "name": "grip press"
                 }
             ]
         },
