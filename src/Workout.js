@@ -5,16 +5,20 @@ import {
     ArrowsUpDownIcon,
     ChevronUpIcon,
     ClockIcon,
+    TrashIcon,
 } from '@heroicons/react/20/solid';
 
 import AddRoutine from './AddRoutine';
-import { classNames } from './helpers';
+import DeleteRoutine from './DeleteRoutine';
+import { classNames, useLocalStorage } from './helpers';
 import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
 
 const Workout = () => {
-    const [workout, setWorkout] = useState([]);
+    const [workout, setWorkout] = useLocalStorage('workout', []);
     const [isAddRoutineOpen, setIsAddRoutineOpen] = useState(false);
+    const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
+    const [deleteRoutineName, setDeleteRoutineName] = useState(null);
     const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
 
     const togglePanels = (newPanel) => {
@@ -70,7 +74,21 @@ const Workout = () => {
                                         });
                                     }}
                                 >
-                                    <span>{routineData.name}</span>
+                                    <span className="flex gap-1">
+                                        {routineData.name}
+                                        <TrashIcon
+                                            className="h-5 w-5 p-0.5 text-purple-500"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setDeleteRoutineName(
+                                                    routineData.name,
+                                                    setIsDeleteRoutineOpen(
+                                                        true,
+                                                    ),
+                                                );
+                                            }}
+                                        />
+                                    </span>
                                     <ChevronUpIcon
                                         className={classNames(
                                             'h-5 w-5 text-purple-500',
@@ -78,6 +96,13 @@ const Workout = () => {
                                         )}
                                     />
                                 </Disclosure.Button>
+                                <DeleteRoutine
+                                    isOpen={isDeleteRoutineOpen}
+                                    setIsOpen={setIsDeleteRoutineOpen}
+                                    workout={workout}
+                                    setWorkout={setWorkout}
+                                    routineName={deleteRoutineName}
+                                />
                                 {routineData.exercises.map((exercise, idx) => (
                                     <Disclosure.Panel
                                         key={idx}

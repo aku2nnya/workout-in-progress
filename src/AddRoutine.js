@@ -53,9 +53,11 @@ const AddRoutine = ({ isOpen, setIsOpen, workout, setWorkout }) => {
                                                 key={idx}
                                                 className="my-2 flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                                 onClick={() => {
-                                                    workout.push(routineData);
                                                     setWorkout(
-                                                        workout,
+                                                        [
+                                                            ...workout,
+                                                            routineData,
+                                                        ],
                                                         setIsOpen(false),
                                                     );
                                                 }}
