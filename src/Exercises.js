@@ -6,7 +6,7 @@ import data from './data.json';
 import { classNames } from './helpers';
 
 const Exercises = () => {
-    const exercisesData = data.exercises;
+    const exercises = data.exercises;
     const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
 
     const togglePanels = (newPanel) => {
@@ -27,7 +27,7 @@ const Exercises = () => {
 
     return (
         <>
-            {exercisesData
+            {exercises
                 .sort((a, b) => {
                     if (a.category < b.category) {
                         return -1;
@@ -37,7 +37,7 @@ const Exercises = () => {
                     }
                     return 0;
                 })
-                .map((exerciseData, idx) => (
+                .map((exerciseInfo, idx) => (
                     <Disclosure key={idx}>
                         {(panel) => {
                             const { open, close } = panel;
@@ -57,7 +57,7 @@ const Exercises = () => {
                                             });
                                         }}
                                     >
-                                        <span>{exerciseData.category}</span>
+                                        <span>{exerciseInfo.category}</span>
                                         <ChevronUpIcon
                                             className={classNames(
                                                 'h-5 w-5 text-purple-500',
@@ -67,7 +67,7 @@ const Exercises = () => {
                                             )}
                                         />
                                     </Disclosure.Button>
-                                    {exerciseData.exercise
+                                    {exerciseInfo.exercise
                                         .sort((a, b) => {
                                             if (a.name < b.name) {
                                                 return -1;

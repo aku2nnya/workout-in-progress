@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
 const DeleteRoutine = ({
@@ -8,10 +8,13 @@ const DeleteRoutine = ({
     setWorkout,
     routineName,
 }) => {
+    let deleteButtonRef = useRef(null);
+
     return (
         <Transition appear show={isOpen} as={Fragment}>
             <Dialog
                 as="div"
+                initialFocus={deleteButtonRef}
                 className="relative z-10"
                 onClose={() => setIsOpen(false)}
             >
@@ -38,21 +41,16 @@ const DeleteRoutine = ({
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-5 overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-5 overflow-hidden rounded-2xl bg-white p-4 text-left align-middle shadow-xl transition-all">
                                 <Dialog.Description className="text-center">
                                     Are you sure you would like to delete the
                                     routine?
                                 </Dialog.Description>
 
-                                <div className="flex justify-between">
+                                <div className="flex justify-end">
                                     <button
-                                        className="my-2 flex justify-center rounded-lg bg-purple-100 px-5 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        Cancel
-                                    </button>
-                                    <button
-                                        className="my-2 flex justify-center rounded-lg bg-purple-100 px-5 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                        ref={deleteButtonRef}
+                                        className="flex justify-center rounded-lg bg-purple-100 px-5 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                         onClick={() => {
                                             setWorkout(
                                                 workout.filter(

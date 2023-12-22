@@ -4,7 +4,19 @@ import { Dialog, Transition } from '@headlessui/react';
 import data from './data.json';
 
 const AddRoutine = ({ isOpen, setIsOpen, workout, setWorkout }) => {
-    const routinesData = data.routines;
+    const routines = data.routines;
+    const workoutNames = workout.map((workout) => workout.name);
+    const remainingRoutines = routines
+        .filter((routine) => !workoutNames.includes(routine.name))
+        .sort((a, b) => {
+            if (a.name < b.name) {
+                return -1;
+            }
+            if (a.name > b.name) {
+                return 1;
+            }
+            return 0;
+        });
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
@@ -36,36 +48,29 @@ const AddRoutine = ({ isOpen, setIsOpen, workout, setWorkout }) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                {routinesData
-                                    .sort((a, b) => {
-                                        if (a.name < b.name) {
-                                            return -1;
-                                        }
-                                        if (a.name > b.name) {
-                                            return 1;
-                                        }
-                                        return 0;
-                                    })
-                                    .map((routineData, idx) => {
+                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-2 overflow-hidden rounded-2xl bg-white p-4 text-left align-middle shadow-xl transition-all">
+                                {remainingRoutines.length ? (
+                                    remainingRoutines.map((routine, idx) => {
                                         return (
                                             <button
                                                 key={idx}
-                                                className="my-2 flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                                className="flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                                 onClick={() => {
                                                     setWorkout(
-                                                        [
-                                                            ...workout,
-                                                            routineData,
-                                                        ],
+                                                        [...workout, routine],
                                                         setIsOpen(false),
                                                     );
                                                 }}
                                             >
-                                                <span>{routineData.name}</span>
+                                                <span>{routine.name}</span>
                                             </button>
                                         );
-                                    })}
+                                    })
+                                ) : (
+                                    <span className="flex justify-center">
+                                        Your working out WAY too much!
+                                    </span>
+                                )}
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>

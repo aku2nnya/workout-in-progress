@@ -41,7 +41,7 @@ const Workout = () => {
         <>
             <button
                 type="button"
-                className="my-2 flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                className="mb-4 mt-2 flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                 onClick={() => {
                     setIsAddRoutineOpen(true);
                 }}
@@ -54,7 +54,7 @@ const Workout = () => {
                 workout={workout}
                 setWorkout={setWorkout}
             />
-            {workout.map((routineData, idx) => (
+            {workout.map((routine, idx) => (
                 <Disclosure key={idx} defaultOpen>
                     {(panel) => {
                         const { open, close } = panel;
@@ -75,13 +75,13 @@ const Workout = () => {
                                     }}
                                 >
                                     <span className="flex gap-1">
-                                        {routineData.name}
+                                        {routine.name}
                                         <TrashIcon
                                             className="h-5 w-5 p-0.5 text-purple-500"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setDeleteRoutineName(
-                                                    routineData.name,
+                                                    routine.name,
                                                     setIsDeleteRoutineOpen(
                                                         true,
                                                     ),
@@ -103,110 +103,116 @@ const Workout = () => {
                                     setWorkout={setWorkout}
                                     routineName={deleteRoutineName}
                                 />
-                                {routineData.exercises.map((exercise, idx) => (
-                                    <Disclosure.Panel
-                                        key={idx}
-                                        className="flex flex-col gap-2 px-2 text-sm text-gray-500"
-                                    >
-                                        <div className="flex justify-between">
-                                            <span className="capitalize">
-                                                {exercise.name}
-                                            </span>
-                                            {exercise.timer ? (
-                                                <span className="flex gap-1">
-                                                    <ClockIcon className="h-5 w-5" />
-                                                    {`${exercise.timer}s`}
+                                <div className={open ? 'py-2' : ''}>
+                                    {routine.exercises.map((exercise, idx) => (
+                                        <Disclosure.Panel
+                                            key={idx}
+                                            className="flex flex-col gap-2 px-2 text-sm text-gray-500"
+                                        >
+                                            <div className="flex justify-between">
+                                                <span className="capitalize">
+                                                    {exercise.name}
                                                 </span>
-                                            ) : null}
-                                            {exercise.superset ? (
-                                                <span
-                                                    className={classNames(
-                                                        'inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-red-600/10',
-                                                        exercise.superset === 1
-                                                            ? 'bg-red-50 text-red-700'
-                                                            : exercise.superset ===
-                                                                2
-                                                              ? 'bg-blue-50 text-blue-700'
-                                                              : exercise.superset ===
-                                                                  3
-                                                                ? 'bg-green-50 text-green-700'
+                                                {exercise.timer ? (
+                                                    <span className="flex gap-1">
+                                                        <ClockIcon className="h-5 w-5" />
+                                                        {`${exercise.timer}s`}
+                                                    </span>
+                                                ) : null}
+                                                {exercise.superset ? (
+                                                    <span
+                                                        className={classNames(
+                                                            'inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-red-600/10',
+                                                            exercise.superset ===
+                                                                1
+                                                                ? 'bg-red-50 text-red-700'
                                                                 : exercise.superset ===
-                                                                    4
-                                                                  ? 'bg-orange-50 text-orange-700'
+                                                                    2
+                                                                  ? 'bg-blue-50 text-blue-700'
                                                                   : exercise.superset ===
-                                                                      5
-                                                                    ? 'bg-gray-50 text-gray-600'
-                                                                    : '',
-                                                    )}
-                                                >
-                                                    {`Superset ${exercise.superset}`}
-                                                </span>
-                                            ) : null}
-                                        </div>
-                                        {exercise.sets ? (
-                                            <table className="w-full overflow-hidden rounded-lg text-center text-sm text-gray-400">
-                                                <thead className="bg-gray-700 capitalize text-gray-400">
-                                                    <tr>
-                                                        <th>set</th>
-                                                        <th>weight</th>
-                                                        <th>reps</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {exercise.sets.map(
-                                                        (set, idx) => (
-                                                            <tr
-                                                                key={idx}
-                                                                className="border-b border-gray-700 bg-gray-800"
-                                                            >
-                                                                <td>
-                                                                    {idx + 1}
-                                                                </td>
-                                                                <td>
-                                                                    <span className="flex justify-center gap-1">
-                                                                        <DumbbellIcon className="h-5 w-5 p-0.5" />
-                                                                        {`${set.weight} lbs`}
-                                                                    </span>
-                                                                </td>
-                                                                <td>
-                                                                    {set.reps}
-                                                                </td>
-                                                            </tr>
-                                                        ),
-                                                    )}
-                                                </tbody>
-                                            </table>
-                                        ) : null}
-                                        {exercise.superset &&
-                                        exercise.superset ===
-                                            routineData.exercises[idx + 1]
-                                                ?.superset ? (
-                                            <div className="flex justify-center gap-1">
-                                                <ArrowsUpDownIcon className="h-5 w-5 p-0.5" />
-                                                <HourglassIcon className="h-5 w-5 p-0.5" />
-                                                {`${exercise.supersetRest}s`}
-                                            </div>
-                                        ) : idx + 1 <
-                                          routineData.exercises.length ? (
-                                            <div
-                                                className={classNames(
-                                                    'flex justify-center gap-1',
-                                                    exercise.rest
-                                                        ? ' py-2'
-                                                        : '',
-                                                )}
-                                            >
-                                                <ArrowDownIcon className="h-5 w-5" />
-                                                {exercise.rest ? (
-                                                    <span className="flex justify-center gap-1">
-                                                        <HourglassIcon className="h-5 w-5 p-0.5" />
-                                                        {`${exercise.rest}s`}
+                                                                      3
+                                                                    ? 'bg-green-50 text-green-700'
+                                                                    : exercise.superset ===
+                                                                        4
+                                                                      ? 'bg-orange-50 text-orange-700'
+                                                                      : exercise.superset ===
+                                                                          5
+                                                                        ? 'bg-gray-50 text-gray-600'
+                                                                        : '',
+                                                        )}
+                                                    >
+                                                        {`Superset ${exercise.superset}`}
                                                     </span>
                                                 ) : null}
                                             </div>
-                                        ) : null}
-                                    </Disclosure.Panel>
-                                ))}
+                                            {exercise.sets ? (
+                                                <table className="w-full overflow-hidden rounded-lg text-center text-sm text-gray-400">
+                                                    <thead className="bg-gray-700 capitalize text-gray-400">
+                                                        <tr>
+                                                            <th>set</th>
+                                                            <th>weight</th>
+                                                            <th>reps</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {exercise.sets.map(
+                                                            (set, idx) => (
+                                                                <tr
+                                                                    key={idx}
+                                                                    className="border-b border-gray-700 bg-gray-800"
+                                                                >
+                                                                    <td>
+                                                                        {idx +
+                                                                            1}
+                                                                    </td>
+                                                                    <td>
+                                                                        <span className="flex justify-center gap-1">
+                                                                            <DumbbellIcon className="h-5 w-5 p-0.5" />
+                                                                            {`${set.weight} lbs`}
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        {
+                                                                            set.reps
+                                                                        }
+                                                                    </td>
+                                                                </tr>
+                                                            ),
+                                                        )}
+                                                    </tbody>
+                                                </table>
+                                            ) : null}
+                                            {exercise.superset &&
+                                            exercise.superset ===
+                                                routine.exercises[idx + 1]
+                                                    ?.superset ? (
+                                                <div className="flex justify-center gap-1">
+                                                    <ArrowsUpDownIcon className="h-5 w-5 p-0.5" />
+                                                    <HourglassIcon className="h-5 w-5 p-0.5" />
+                                                    {`${exercise.supersetRest}s`}
+                                                </div>
+                                            ) : idx + 1 <
+                                              routine.exercises.length ? (
+                                                <div
+                                                    className={classNames(
+                                                        'flex justify-center gap-1',
+                                                        exercise.rest
+                                                            ? ' py-2'
+                                                            : '',
+                                                    )}
+                                                >
+                                                    <ArrowDownIcon className="h-5 w-5" />
+                                                    {exercise.rest ? (
+                                                        <span className="flex justify-center gap-1">
+                                                            <HourglassIcon className="h-5 w-5 p-0.5" />
+                                                            {`${exercise.rest}s`}
+                                                        </span>
+                                                    ) : null}
+                                                </div>
+                                            ) : null}
+                                        </Disclosure.Panel>
+                                    ))}
+                                </div>
                             </>
                         );
                     }}
