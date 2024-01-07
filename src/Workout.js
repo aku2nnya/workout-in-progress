@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Disclosure } from '@headlessui/react';
 import {
     ArrowDownIcon,
@@ -20,6 +20,7 @@ const Workout = () => {
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
     const [deleteRoutineName, setDeleteRoutineName] = useState(null);
     const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+    const exercisesRef = useRef(null);
 
     const togglePanels = (newPanel) => {
         if (activeDisclosurePanel) {
@@ -35,6 +36,23 @@ const Workout = () => {
             ...newPanel,
             open: !newPanel.open,
         });
+    };
+
+    const scrollToExercise = (exerciseId) => {
+        const map = getMap();
+        const node = map.get(exerciseId);
+        console.log({ map, node });
+        node.scrollIntoView({
+            behavior: 'smooth',
+        });
+    };
+
+    const getMap = () => {
+        if (!exercisesRef.current) {
+            // Initialize the Map on first usage.
+            exercisesRef.current = new Map();
+        }
+        return exercisesRef.current;
     };
 
     return (
@@ -107,7 +125,28 @@ const Workout = () => {
                                     {routine.exercises.map((exercise, idx) => (
                                         <Disclosure.Panel
                                             key={idx}
-                                            className="flex flex-col gap-2 px-2 text-sm text-gray-500"
+                                            className={classNames(
+                                                'flex scroll-mt-2 flex-col gap-2 px-2 text-sm text-gray-500',
+                                                exercise.superset ? '' : 'py-2',
+                                            )}
+                                            ref={(node) => {
+                                                const map = getMap();
+                                                if (node) {
+                                                    map.set(
+                                                        `${routine.name}-${idx}`,
+                                                        node,
+                                                    );
+                                                } else {
+                                                    map.delete(
+                                                        `${routine.name}-${idx}`,
+                                                    );
+                                                }
+                                            }}
+                                            onClick={() =>
+                                                scrollToExercise(
+                                                    `${routine.name}-${idx}`,
+                                                )
+                                            }
                                         >
                                             <div className="flex justify-between">
                                                 <span className="capitalize">
