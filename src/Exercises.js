@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 
-import data from './data.json';
+import data from './data';
 import { classNames } from './helpers';
 
 const Exercises = () => {
@@ -45,7 +45,7 @@ const Exercises = () => {
                             return (
                                 <>
                                     <Disclosure.Button
-                                        className="my-2 flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                        className="my-2 flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                         onClick={() => {
                                             if (!open) {
                                                 close();
@@ -80,7 +80,7 @@ const Exercises = () => {
                                         .map((exercise, idx) => (
                                             <Disclosure.Panel
                                                 key={idx}
-                                                className="px-4 py-2 text-sm capitalize text-gray-500"
+                                                className="px-4 py-2 text-lg capitalize text-gray-500"
                                             >
                                                 {exercise.name}
                                             </Disclosure.Panel>

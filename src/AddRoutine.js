@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-import data from './data.json';
+import data from './data';
 
 const AddRoutine = ({ isOpen, setIsOpen, workout, setWorkout }) => {
     const routines = data.routines;
@@ -54,7 +54,7 @@ const AddRoutine = ({ isOpen, setIsOpen, workout, setWorkout }) => {
                                         return (
                                             <button
                                                 key={idx}
-                                                className="flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                                className="flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                                 onClick={() => {
                                                     setWorkout(
                                                         [...workout, routine],

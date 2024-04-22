@@ -50,7 +50,7 @@ const DeleteRoutine = ({
                                 <div className="flex justify-end">
                                     <button
                                         ref={deleteButtonRef}
-                                        className="flex justify-center rounded-lg bg-purple-100 px-5 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                        className="flex justify-center rounded-lg bg-purple-100 px-5 py-2 text-left text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                         onClick={() => {
                                             setWorkout(
                                                 workout.filter(

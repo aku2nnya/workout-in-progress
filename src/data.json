@@ -1,116 +1,149 @@
 {
     "exercises": [
         {
+            "id": "2885ea46-6f6a-462b-a67f-7a0635ca1c5e",
             "category": "abs",
             "exercise": [
                 {
+                    "id": "5082c4cc-5e45-46b8-aa4f-4532236ec6a4",
                     "name": "crunch"
                 },
                 {
+                    "id": "089d40d3-dc9b-4cd2-a26a-72b7ba72d16c",
                     "name": "right oblique crunch"
                 },
                 {
+                    "id": "774871d8-6aba-4c9c-bc98-524a6b8cad60",
                     "name": "left oblique crunch"
                 },
                 {
+                    "id": "05d8747a-ec80-4152-bb0a-f3aff5e8e9f8",
                     "name": "toe touch"
                 },
                 {
+                    "id": "250a4adb-76fc-4867-b8ab-ca2c8cfdd90d",
                     "name": "reverse crunch"
                 },
                 {
+                    "id": "29e4d5b8-7607-44c1-8348-430e15ee51ad",
                     "name": "right side crunch"
                 },
                 {
+                    "id": "620973b8-ba4c-4315-a9c1-d269c0171f58",
                     "name": "left side crunch"
                 },
                 {
+                    "id": "c6e0d6f6-1394-4a02-a64d-c2867d36e4fc",
                     "name": "push through"
                 },
                 {
+                    "id": "ad56a9a5-412c-4c43-9460-b5750afe00cb",
                     "name": "leg push"
                 },
                 {
+                    "id": "d47b442b-26da-466f-be32-93b29478d838",
                     "name": "alternating curl"
                 },
                 {
+                    "id": "ecf12079-6dc9-4660-aa71-32c6d3bb278d",
                     "name": "curl"
                 },
                 {
+                    "id": "4c4f1e91-3fa8-4b70-b15c-23f1b1c0902c",
                     "name": "hollow bicycle crunch"
                 }
             ]
         },
         {
+            "id": "0e09e29e-f325-4f68-8140-f7bcb52a6e6b",
             "category": "arms",
             "exercise": [
                 {
+                    "id": "0d456b35-90e0-419a-8aad-698a575988da",
                     "name": "dumbbell curl"
                 },
                 {
+                    "id": "a07e1886-3acb-49ad-816e-c540cac81cc4",
                     "name": "grip press"
                 }
             ]
         },
         {
+            "id": "3e78e32c-2f58-43b9-bf7d-4f8772a4b074",
             "category": "back",
             "exercise": [
                 {
+                    "id": "23a20eb0-2342-41a0-9c91-cd546c467281",
                     "name": "incline dumbbell row"
                 }
             ]
         },
         {
+            "id": "f783b66e-4832-4c50-b5bd-26717ff6ffbb",
             "category": "chest",
             "exercise": [
                 {
+                    "id": "1f752eb5-1c33-4e35-bd3b-5c4ffc3ba8e7",
                     "name": "incline dumbbell bench press"
                 },
                 {
+                    "id": "0177d9b2-7a34-4866-846e-5476dee829ab",
                     "name": "push-up"
                 }
             ]
         },
         {
+            "id": "4ec785c3-c817-4309-a2e2-2d4398615149",
             "category": "legs",
             "exercise": [
                 {
+                    "id": "ed583bf9-237a-49cb-82fd-5448da1c8038",
                     "name": "bulgarian split squat"
                 },
                 {
+                    "id": "8a465c35-b3a7-463a-9ace-b4d0b8c52ccc",
                     "name": "dumbbell romanian deadlift"
                 }
             ]
         },
         {
+            "id": "7f2e10d6-bd00-4d66-9e11-add506c00083",
             "category": "shoulders",
             "exercise": [
                 {
+                    "id": "8d6d215f-909b-4cbf-96ff-009a31ed3c6e",
                     "name": "dumbbell shoulder press"
                 }
             ]
         },
         {
+            "id": "76ac8e55-90a2-435b-aa5d-b3d22571a418",
             "category": "whole body",
             "exercise": [
                 {
+                    "id": "f39c6631-62c6-4229-85f0-e8f8fd1085d6",
                     "name": "jump rope"
                 }
             ]
         },
         {
+            "id": "dc405e76-5b25-4f9a-876c-cac494b78c59",
             "category": "neck",
             "exercise": [
                 {
+                    "id": "a9e42939-9971-45a7-9370-8bb2f83d488c",
                     "name": "neck hold"
                 },
                 {
+                    "id": "7decbd75-c10a-4f56-b6d4-9ff1bc95a721",
                     "name": "left neck hold"
                 },
                 {
+                    "id": "87f90b37-f206-4145-9859-74eb6752391c",
                     "name": "right neck hold"
                 },
                 {
+                    "id": "6a2cc252-a107-43f3-9ecf-ad9b9ccbf9b0",
                     "name": "neck raise"
                 }
             ]
@@ -118,9 +151,11 @@
     ],
     "routines": [
         {
+            "id": "5b8e87ba-c781-4a36-a658-3601f9ebea6b",
             "name": "8 minute abs",
             "exercises": [
                 {
+                    "id": "26e9630e-5afb-46d6-a173-6fea2083b68b",
                     "name": "crunch",
                     "timer": 45,
                     "sets": null,
@@ -129,6 +164,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "463fc61a-7776-4f97-89c6-dbf23b9c270b",
                     "name": "right oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -137,6 +173,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "6a90e9ea-79d3-45b8-a2c8-79d337228f26",
                     "name": "left oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -145,6 +182,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "cab60eaf-01a0-4e55-a652-b47903b6cb39",
                     "name": "toe touch",
                     "timer": 45,
                     "sets": null,
@@ -153,6 +191,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "798b0879-2ed1-4bfe-9a23-6f6def50d19f",
                     "name": "reverse crunch",
                     "timer": 45,
                     "sets": null,
@@ -161,6 +200,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "1f5f1bf9-837a-4ca5-9217-fc26eff0eefd",
                     "name": "right side crunch",
                     "timer": 45,
                     "sets": null,
@@ -169,6 +209,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "21dd7559-3a93-404b-b647-14e58704deb9",
                     "name": "left side crunch",
                     "timer": 45,
                     "sets": null,
@@ -177,6 +218,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "faec0ef3-fa11-472d-bbec-fc7976bff309",
                     "name": "push through",
                     "timer": 45,
                     "sets": null,
@@ -185,6 +227,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "0ea45e88-c69e-4412-a306-b22ccbe21ef0",
                     "name": "leg push",
                     "timer": 45,
                     "sets": null,
@@ -193,6 +236,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "9b027daf-9611-4255-853d-2dc06b6f4fc3",
                     "name": "alternating curl",
                     "timer": 45,
                     "sets": null,
@@ -201,6 +245,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "e19757b7-ad3b-44b4-af6a-71acda0556af",
                     "name": "curl",
                     "timer": 30,
                     "sets": null,
@@ -211,17 +256,21 @@
             ]
         },
         {
+            "id": "2d9bfe13-34ed-4481-9351-8380ef0cfebd",
             "name": "warm-up: weight training day",
             "exercises": [
                 {
+                    "id": "432f5dba-568d-4233-9849-673854577225",
                     "name": "push-up",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "57b94afd-efc7-4dbc-aa62-9c5fd0b81836",
                             "weight": 0,
                             "reps": 23
                         },
                         {
+                            "id": "fb2c2c72-3bea-4389-8944-8cdd4d8b8fe0",
                             "weight": 0,
                             "reps": 17
                         }
@@ -231,14 +280,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "3ad24bbf-fed2-4e9b-9251-51be22c656b6",
                     "name": "hollow bicycle crunch",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "e89eb55f-70b7-4a7c-b4a8-bd8265c06034",
                             "weight": 0,
                             "reps": 70
                         },
                         {
+                            "id": "2730fbcf-810c-4038-8199-2b6c458b3937",
                             "weight": 0,
                             "reps": 50
                         }
@@ -250,13 +302,16 @@
             ]
         },
         {
+            "id": "914b96df-d7d4-4e22-b5c7-2b06e0fce6a1",
             "name": "warm-up: cardio day",
             "exercises": [
                 {
+                    "id": "d8b77c71-4fd3-4dd6-b5ff-e50474da113d",
                     "name": "jump rope",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "5ab70b2d-1441-4a11-9120-61eed002b7fc",
                             "weight": 0,
                             "reps": 550
                         }
@@ -268,9 +323,11 @@
             ]
         },
         {
+            "id": "f26a2a9e-340f-4417-a53d-2511a9fc32b8",
             "name": "vacation",
             "exercises": [
                 {
+                    "id": "1ab615da-b5ac-4784-b820-8bc23e58c63a",
                     "name": "crunch",
                     "timer": 45,
                     "sets": null,
@@ -279,6 +336,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "009ea3ea-c569-4c28-86fd-50119b36c26f",
                     "name": "right oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -287,6 +345,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "99591d52-2d47-4e01-ad8d-f02910675cbe",
                     "name": "left oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -295,6 +354,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3494016c-44ad-4a53-8355-8b01d1f66f93",
                     "name": "toe touch",
                     "timer": 45,
                     "sets": null,
@@ -303,6 +363,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "9b44bdcf-b2ff-479a-ae5c-6c6a3e44f5c2",
                     "name": "reverse crunch",
                     "timer": 45,
                     "sets": null,
@@ -311,6 +372,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "52cb76db-628b-453a-9137-f13a9d89ec28",
                     "name": "right side crunch",
                     "timer": 45,
                     "sets": null,
@@ -319,6 +381,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "22fb480c-8715-4b29-a44b-39c31cdb69d6",
                     "name": "left side crunch",
                     "timer": 45,
                     "sets": null,
@@ -327,6 +390,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "0d9d7be3-e657-44c9-bdaf-217139f95623",
                     "name": "push through",
                     "timer": 45,
                     "sets": null,
@@ -335,6 +399,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "0f9b0fcb-62c0-49c6-adb1-8c9147634fd6",
                     "name": "leg push",
                     "timer": 45,
                     "sets": null,
@@ -343,6 +408,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "f0ca4a93-6f30-4ab6-957d-d45239614071",
                     "name": "alternating curl",
                     "timer": 45,
                     "sets": null,
@@ -351,6 +417,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "d64786fb-a345-409d-a2fe-685bf2279b89",
                     "name": "curl",
                     "timer": 30,
                     "sets": null,
@@ -359,6 +426,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "1b8c0e9e-da1d-46a5-8363-4333290a89ac",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -367,6 +435,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "e24fbf8f-af10-4317-8e1c-3465599fdad7",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -375,6 +444,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "84d735c6-87de-4786-bd56-8d076cd4edce",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -383,6 +453,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "73720a66-fda1-4099-b6f6-227f4ce3667d",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -391,6 +462,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "8be75bd0-3c5f-498a-a265-719d4e856c1c",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -399,6 +471,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3541e4c0-5c00-4bef-a065-92d5995ed6ca",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -407,6 +480,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "93820813-2197-4ac8-bdb0-88cf8d1a5ca0",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -415,6 +489,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "12a060af-8681-4ed8-966f-528820c5228d",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -423,6 +498,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "45f5d4ad-02f1-4301-a539-642b447bb4c8",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -431,18 +507,22 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "d255ee80-05d5-4bf1-962a-9057849c8b5a",
                     "name": "neck raise",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "aa2c337d-b9a6-40f9-a8d3-54e1f2666da3",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "3047b1db-bf0e-4f7f-b5f3-4b35f2a7d172",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "1c17d006-0111-4dc2-9b89-0eb613824daa",
                             "weight": 0,
                             "reps": 15
                         }
@@ -452,14 +532,17 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "aadb1882-ff0e-46e7-858b-b9bcadacf1e9",
                     "name": "push-up",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "bef3aa05-d4be-49f4-9cb8-cae4b68e33bf",
                             "weight": 0,
                             "reps": 23
                         },
                         {
+                            "id": "2ad58fb3-86ca-4176-9761-f353a770e596",
                             "weight": 0,
                             "reps": 17
                         }
@@ -469,14 +552,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "04e6b6c1-4c17-4a62-97b3-f3b7e799cf57",
                     "name": "bulgarian split squat",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "c7a52d65-8d3f-4da8-bc77-e3dfe075626c",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "82cc2c06-ae6a-4c60-998e-2fb5aad8f658",
                             "weight": 0,
                             "reps": 12
                         }
@@ -488,9 +574,11 @@
             ]
         },
         {
+            "id": "dbdf7602-5efe-460c-89aa-e7cdc8ea325d",
             "name": "staggered hypertrophy",
             "exercises": [
                 {
+                    "id": "69fc38a2-de0d-41cc-9920-bb9fa903516e",
                     "name": "crunch",
                     "timer": 45,
                     "sets": null,
@@ -499,6 +587,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "d6bc9911-ceab-4f26-9153-046a06e7a4ba",
                     "name": "right oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -507,6 +596,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "4cd0c336-bfd3-45ca-84de-abec92347927",
                     "name": "left oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -515,6 +605,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "83fe3a4a-728f-4c79-978f-a37eba5c0182",
                     "name": "toe touch",
                     "timer": 45,
                     "sets": null,
@@ -523,6 +614,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "ab50e90f-9b4f-412f-9f39-8a5cb720a7fe",
                     "name": "reverse crunch",
                     "timer": 45,
                     "sets": null,
@@ -531,6 +623,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "238de55a-716f-4253-8906-ff2ee066389a",
                     "name": "right side crunch",
                     "timer": 45,
                     "sets": null,
@@ -539,6 +632,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "cfc5b7b5-db6e-41a7-b945-d9be5b00d887",
                     "name": "left side crunch",
                     "timer": 45,
                     "sets": null,
@@ -547,6 +641,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "bf5f9f15-1aa6-4201-a64e-04fb50d7e24d",
                     "name": "push through",
                     "timer": 45,
                     "sets": null,
@@ -555,6 +650,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "eb5072eb-efe3-4627-b22d-66a6e4768ed0",
                     "name": "leg push",
                     "timer": 45,
                     "sets": null,
@@ -563,6 +659,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "7b6cc3de-3918-4f84-9ca8-418d4c22cead",
                     "name": "alternating curl",
                     "timer": 45,
                     "sets": null,
@@ -571,6 +668,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "7abe0fc9-24b6-40fa-a023-857319575895",
                     "name": "curl",
                     "timer": 30,
                     "sets": null,
@@ -579,6 +677,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "42a1929c-cf9e-47ea-a6fe-0ca1d8caa42d",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -587,6 +686,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "0c55fef2-e13f-4ddf-82d0-8d338bb87038",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -595,6 +695,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "a54e07c1-5426-4a9f-b77b-9e8cfef60eaf",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -603,6 +704,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "a2b1b372-4b4f-45e3-8edd-a35eab77cbb3",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -611,6 +713,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "7378a31c-e619-4760-b93d-4ecb7f58ba29",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -619,6 +722,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "85e372e6-9050-4129-8a80-0fc0a006d341",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -627,6 +731,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "b40e68c4-3c09-4113-8fb6-f3e5cc199a9b",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -635,6 +740,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3ea9ad92-26a3-4104-a667-9edb4c8f8b4f",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -643,6 +749,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "75c12795-db81-4f76-9cb6-47aaee04a619",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -651,18 +758,22 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "d9ac5156-5422-4db0-a5de-c3d41f560042",
                     "name": "neck raise",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "1b3b361b-a309-4f26-bfad-3b584d78a26a",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "2114015a-72cf-44ef-85f2-5b7beb5c0036",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "2f2bc19d-b0f4-4f15-bd9b-1f5a9e313b96",
                             "weight": 0,
                             "reps": 15
                         }
@@ -672,18 +783,22 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "9f908820-67bb-40c6-b034-fc4ce9eeac80",
                     "name": "incline dumbbell bench press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "73981387-dbbb-4faa-ac3b-6485930e5332",
                             "weight": 100,
                             "reps": 11
                         },
                         {
+                            "id": "d1e943fe-64d4-4637-9e38-d6d63a58b13d",
                             "weight": 100,
                             "reps": 9
                         },
                         {
+                            "id": "f4a6c257-2cee-4ac5-8a0a-820c9b6408f5",
                             "weight": 100,
                             "reps": 8
                         }
@@ -693,18 +808,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "973c04e1-3edc-4040-a1f3-46822ebbf3e0",
                     "name": "incline dumbbell row",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "6c6cc0e7-acad-4a65-ad5e-ca1e25160023",
                             "weight": 100,
                             "reps": 20
                         },
                         {
+                            "id": "effe1d3c-764e-4bfa-92bb-09fd4dc2c751",
                             "weight": 100,
                             "reps": 16
                         },
                         {
+                            "id": "a5b36e5d-644c-40c7-8e49-871fbbadcab6",
                             "weight": 100,
                             "reps": 15
                         }
@@ -714,18 +833,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "b08d2576-d3a7-45e9-848f-11726a618704",
                     "name": "dumbbell curl",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "c7de535f-7775-413c-8e09-aafbb3e20b3f",
                             "weight": 70,
                             "reps": 9
                         },
                         {
+                            "id": "1f14bbbc-6f21-48d8-9e1f-21c7ba101d92",
                             "weight": 70,
                             "reps": 7
                         },
                         {
+                            "id": "8884353a-427a-4a7c-af83-69fe5f88728b",
                             "weight": 70,
                             "reps": 6
                         }
@@ -735,18 +858,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "3d11a649-d30a-4392-8daa-375b4f460836",
                     "name": "dumbbell romanian deadlift",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "7427e7b5-584b-4363-87b2-c82a1a9b64eb",
                             "weight": 70,
                             "reps": 17
                         },
                         {
+                            "id": "00d09744-28ee-47f0-9c4e-77b8a6ba4000",
                             "weight": 70,
                             "reps": 14
                         },
                         {
+                            "id": "4d9acfe4-4003-4901-86dc-d3eb7764d6a8",
                             "weight": 70,
                             "reps": 12
                         }
@@ -756,18 +883,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "bbfdc179-fca8-4c89-8334-4d483782da17",
                     "name": "dumbbell shoulder press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "a5a8598c-3bf0-4493-b35d-1aa7ed30dc1a",
                             "weight": 35,
                             "reps": 15
                         },
                         {
+                            "id": "16af4fac-0fff-4e1d-aff4-417e68de4804",
                             "weight": 35,
                             "reps": 13
                         },
                         {
+                            "id": "a4ae638a-d8cf-45d0-b4da-11fc6461a305",
                             "weight": 35,
                             "reps": 13
                         }
@@ -777,18 +908,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "c1e8861c-c93d-467f-a863-8e34a2275191",
                     "name": "bulgarian split squat",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "99f86a89-fec4-482a-bd8c-042c9c5fec31",
                             "weight": 35,
                             "reps": 13
                         },
                         {
+                            "id": "408c9267-cbb4-464e-acb4-320897dfcb12",
                             "weight": 35,
                             "reps": 13
                         },
                         {
+                            "id": "8f77b8b7-fe35-4df1-873b-71067136fb66",
                             "weight": 35,
                             "reps": 13
                         }
@@ -798,14 +933,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "7ce9e9cb-d45b-4251-9f49-815d50af452d",
                     "name": "grip press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "6087225c-a402-4bd5-855c-e1bc082a5fd1",
                             "weight": 132,
                             "reps": 70
                         },
                         {
+                            "id": "ed71fae4-d016-4a3c-bfe6-6e76e4265fa9",
                             "weight": 132,
                             "reps": 30
                         }
@@ -817,9 +955,11 @@
             ]
         },
         {
+            "id": "203bb10e-07b4-433a-9f66-ed3f897746c0",
             "name": "staggered power",
             "exercises": [
                 {
+                    "id": "a359cff8-1267-4e7e-a84d-b6efb80b68ca",
                     "name": "crunch",
                     "timer": 45,
                     "sets": null,
@@ -828,6 +968,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "2b97d886-fbcd-42e5-83b8-aafaaebd53cd",
                     "name": "right oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -836,6 +977,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "8b38e35b-065e-4dc7-a4d6-1f8108ce35cf",
                     "name": "left oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -844,6 +986,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "f91bda48-c125-43fe-bbfc-dd5cba4ce920",
                     "name": "toe touch",
                     "timer": 45,
                     "sets": null,
@@ -852,6 +995,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "4178f3c5-46be-42b6-b7ff-2d3bbdf08f9d",
                     "name": "reverse crunch",
                     "timer": 45,
                     "sets": null,
@@ -860,6 +1004,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3a72dd78-896a-45b0-a382-dcb0bc842315",
                     "name": "right side crunch",
                     "timer": 45,
                     "sets": null,
@@ -868,6 +1013,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "ff0281cc-6fa1-4e58-b4c1-4f666d7d599b",
                     "name": "left side crunch",
                     "timer": 45,
                     "sets": null,
@@ -876,6 +1022,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3d456e19-7d21-432e-8a8b-f8d2a0a26f1b",
                     "name": "push through",
                     "timer": 45,
                     "sets": null,
@@ -884,6 +1031,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "9f0486e3-aecd-493a-b9a0-789964928ad3",
                     "name": "leg push",
                     "timer": 45,
                     "sets": null,
@@ -892,6 +1040,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "c23d5a59-2ba4-4ab2-9717-a266222a470c",
                     "name": "alternating curl",
                     "timer": 45,
                     "sets": null,
@@ -900,6 +1049,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3d064b79-754c-499c-b574-3a018e959d16",
                     "name": "curl",
                     "timer": 30,
                     "sets": null,
@@ -908,6 +1058,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "40f11bd9-531a-407b-8b53-c21be6bb658a",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -916,6 +1067,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "74280dbf-3dda-4d09-bac4-dd4f407486e6",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -924,6 +1076,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "4b6d0731-34f2-4b61-9aae-4864baec1a4e",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -932,6 +1085,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3f7abf9b-99ec-41c8-b1b7-61c435e471cc",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -940,6 +1094,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "1a4625b8-b067-45b3-b66e-5390ddfd0019",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -948,6 +1103,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "87070545-ffc3-4f11-8f68-65dd4eaed1c5",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -956,6 +1112,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "d269d2f1-225c-458a-8a17-e90328b3c566",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -964,6 +1121,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "5dd54ad8-0c68-47b8-be19-405a219cfef4",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -972,6 +1130,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "fa5d45df-70b0-4ae6-b855-0749a0891181",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -980,18 +1139,22 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "aab9b2a1-f60d-4e44-a355-477bc5dffaa9",
                     "name": "neck raise",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "ae3653a3-41ce-4b08-9d13-bbb3d39f8795",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "d1bb7443-4a7d-4b31-8fdc-4c108bfdb1ea",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "9313cabe-6598-463f-b719-d3ff9621fcad",
                             "weight": 0,
                             "reps": 15
                         }
@@ -1001,14 +1164,17 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "449595c4-4441-4fc8-b869-a6344c549998",
                     "name": "incline dumbbell bench press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "ce390e13-3cdd-4013-bb6a-7bca553d3a00",
                             "weight": 90,
                             "reps": 13
                         },
                         {
+                            "id": "14fd16c1-6a0d-4569-8d46-790be164cb5e",
                             "weight": 90,
                             "reps": 11
                         }
@@ -1018,14 +1184,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "c03313ca-a4ee-4fcf-a553-d2e3df02fa2f",
                     "name": "incline dumbbell row",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "87f4b5f7-cd07-4c4e-b01a-3d2dc8299369",
                             "weight": 90,
                             "reps": 24
                         },
                         {
+                            "id": "8f16a995-3202-4aa4-946f-8f8b5a04dea7",
                             "weight": 90,
                             "reps": 19
                         }
@@ -1035,14 +1204,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "77379462-fac5-4bed-8b07-617c2ad6cb61",
                     "name": "dumbbell curl",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "e68f3d54-1a4f-44f2-bc89-cc8441059d70",
                             "weight": 60,
                             "reps": 12
                         },
                         {
+                            "id": "87572061-a93f-4979-a23d-e253b12ee63d",
                             "weight": 60,
                             "reps": 10
                         }
@@ -1052,14 +1224,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "2fd62f3b-1b8f-4eea-b479-ef070d8ae9e0",
                     "name": "dumbbell romanian deadlift",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "ff7ac8b7-d089-4930-bb40-9374c7bacb5e",
                             "weight": 60,
                             "reps": 21
                         },
                         {
+                            "id": "e0d5f4e5-c55e-45a6-9844-0160fe2069c3",
                             "weight": 60,
                             "reps": 17
                         }
@@ -1069,14 +1244,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "168d2d17-79a1-4c2e-beb1-a2677fda5b09",
                     "name": "dumbbell shoulder press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "26d36739-0c23-4e24-b95d-fe02fbdd33a1",
                             "weight": 30,
                             "reps": 15
                         },
                         {
+                            "id": "87f0c7e0-1625-4de0-a935-184d1adb5538",
                             "weight": 30,
                             "reps": 14
                         }
@@ -1086,14 +1264,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "b44eb6de-68a2-4b42-9d16-6dea3fba4e92",
                     "name": "bulgarian split squat",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "ddf06baa-adcd-448b-8a3c-f349f82076d8",
                             "weight": 30,
                             "reps": 15
                         },
                         {
+                            "id": "d3fa362b-a51c-46a4-876f-97dba35bb03f",
                             "weight": 30,
                             "reps": 13
                         }
@@ -1103,14 +1284,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "e7a55123-c0a6-4d65-8d67-64377e4dcc33",
                     "name": "grip press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "47c74ef9-0b57-4048-a80b-b02c4733d921",
                             "weight": 132,
                             "reps": 70
                         },
                         {
+                            "id": "ebe42d53-e41e-491f-b50f-a11b2e98ba1a",
                             "weight": 132,
                             "reps": 30
                         }
@@ -1122,9 +1306,11 @@
             ]
         },
         {
+            "id": "775b36ef-b56e-408b-9d4e-6edd1b6bb3a4",
             "name": "staggered strength",
             "exercises": [
                 {
+                    "id": "435fd712-0de4-4630-b8fe-237cf0fcdd40",
                     "name": "crunch",
                     "timer": 45,
                     "sets": null,
@@ -1133,6 +1319,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3fe4cfa4-6647-4c93-b048-c667116e6786",
                     "name": "right oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -1141,6 +1328,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "f3fc07a3-1815-476c-9d71-04745eff9f5a",
                     "name": "left oblique crunch",
                     "timer": 45,
                     "sets": null,
@@ -1149,6 +1337,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "9afbab9f-4787-402d-8f29-9a1907be927a",
                     "name": "toe touch",
                     "timer": 45,
                     "sets": null,
@@ -1157,6 +1346,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "fe36c4f3-6f5d-4771-bfd4-8e1086c14fa6",
                     "name": "reverse crunch",
                     "timer": 45,
                     "sets": null,
@@ -1165,6 +1355,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "3835fcab-8740-4f67-9bb0-0dcb1df1cb5a",
                     "name": "right side crunch",
                     "timer": 45,
                     "sets": null,
@@ -1173,6 +1364,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "fe7079d0-3100-4a5e-b5e4-b413cb743f0d",
                     "name": "left side crunch",
                     "timer": 45,
                     "sets": null,
@@ -1181,6 +1373,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "23092f84-43f7-47f5-b285-5daa84386de4",
                     "name": "push through",
                     "timer": 45,
                     "sets": null,
@@ -1189,6 +1382,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "13570588-df6b-4a8d-8123-f0e1320fea3e",
                     "name": "leg push",
                     "timer": 45,
                     "sets": null,
@@ -1197,6 +1391,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "95a956ed-f096-4af8-9da8-4fdd62d73a8d",
                     "name": "alternating curl",
                     "timer": 45,
                     "sets": null,
@@ -1205,6 +1400,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "632e3b9f-c902-4850-ab57-d4cc1a6b8103",
                     "name": "curl",
                     "timer": 30,
                     "sets": null,
@@ -1213,6 +1409,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "1d3d9a7a-a445-4589-bb51-e676b004a97e",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1221,6 +1418,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "1191c6d4-5fe2-4884-88b0-2dc04b6a7f05",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1229,6 +1427,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "d419b48c-8637-4fab-9e29-0480d188a00e",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1237,6 +1436,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "893e103a-ba1c-4c14-9581-a856491529b8",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1245,6 +1445,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "8bf4e76d-204f-4b8c-87e1-e3378ded18b6",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1253,6 +1454,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "0a20ceb9-c412-4373-8173-95313e4b73c9",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1261,6 +1463,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "d7992839-87a2-4dbe-a0cd-ac1ec1554303",
                     "name": "neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1269,6 +1472,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "05b3df46-7795-46fc-b3c7-5cf66aedb17f",
                     "name": "left neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1277,6 +1481,7 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "0f944202-50ad-41a9-b845-332789f0ce7b",
                     "name": "right neck hold",
                     "timer": 15,
                     "sets": null,
@@ -1285,18 +1490,22 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "83ad6c05-f993-4fd0-985b-67cf8d066e4c",
                     "name": "neck raise",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "d2e1628c-e8e0-409e-b526-e3cb55d01797",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "ce96bd9a-e0ee-4b7e-9c16-1575e8ff750e",
                             "weight": 0,
                             "reps": 15
                         },
                         {
+                            "id": "8bc90bed-3a10-46fb-81f2-e41590a14758",
                             "weight": 0,
                             "reps": 15
                         }
@@ -1306,18 +1515,22 @@
                     "supersetRest": null
                 },
                 {
+                    "id": "250887cb-b7a7-4da4-9ec0-683e6ac5c51a",
                     "name": "incline dumbbell bench press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "a8408b26-ee18-45df-91f7-9119e2feedff",
                             "weight": 105,
                             "reps": 9
                         },
                         {
+                            "id": "ff9e24ef-e5fe-4f3d-b8c7-e90c50b6f3e6",
                             "weight": 105,
                             "reps": 8
                         },
                         {
+                            "id": "08bc6585-4894-442f-a15d-fb45dbad7bb2",
                             "weight": 105,
                             "reps": 6
                         }
@@ -1327,18 +1540,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "ab7d1ebd-6840-4bb3-a4e6-c88238dd4ac4",
                     "name": "incline dumbbell row",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "a0868be4-95e4-44df-ab19-151d398a4520",
                             "weight": 105,
                             "reps": 20
                         },
                         {
+                            "id": "2512690b-4198-4173-9307-189fa9692e41",
                             "weight": 105,
                             "reps": 16
                         },
                         {
+                            "id": "253881e0-658e-4e47-8524-6501d6153dc3",
                             "weight": 105,
                             "reps": 14
                         }
@@ -1348,18 +1565,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "aa3a797c-eead-422e-9467-8d726032547d",
                     "name": "dumbbell curl",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "8c446ddb-3cff-4810-a826-67f22cc7b2f8",
                             "weight": 80,
                             "reps": 5
                         },
                         {
+                            "id": "5455d724-d460-4f30-a1ad-22bcb0f9b3e7",
                             "weight": 80,
                             "reps": 4
                         },
                         {
+                            "id": "acc6d315-7192-4b7c-b26c-67c6469e4e25",
                             "weight": 80,
                             "reps": 4
                         }
@@ -1369,18 +1590,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "46c4f737-bf7a-4403-8fdd-85047a5b0907",
                     "name": "dumbbell romanian deadlift",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "600175fb-f572-4d90-878e-626d73cc5416",
                             "weight": 80,
                             "reps": 17
                         },
                         {
+                            "id": "056f4bf6-1044-4d9a-b54a-265f51bd9b51",
                             "weight": 80,
                             "reps": 13
                         },
                         {
+                            "id": "6b4ce724-77ab-48c9-9020-1f8d46f1eb03",
                             "weight": 80,
                             "reps": 12
                         }
@@ -1390,18 +1615,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "fb6c68aa-40c7-46b2-b3e6-6f496e63e964",
                     "name": "dumbbell shoulder press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "c6c06d22-6ea0-4d92-bfaa-3aeb9d7a78d8",
                             "weight": 40,
                             "reps": 13
                         },
                         {
+                            "id": "675ff4cc-5b6e-4975-ae83-c6af1da160b4",
                             "weight": 40,
                             "reps": 13
                         },
                         {
+                            "id": "e0284111-eda9-46e2-a0a3-5c089b0c8aab",
                             "weight": 40,
                             "reps": 12
                         }
@@ -1411,18 +1640,22 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "29f9d187-2e59-4e33-a2b5-6857865aaeb2",
                     "name": "bulgarian split squat",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "7ae1da0f-632d-4936-b7e3-1d98b1771393",
                             "weight": 40,
                             "reps": 12
                         },
                         {
+                            "id": "e446be86-e9c5-4edb-9cf8-860543bf6873",
                             "weight": 40,
                             "reps": 12
                         },
                         {
+                            "id": "93f741d9-e661-4ee4-a27e-d743066d67dc",
                             "weight": 40,
                             "reps": 12
                         }
@@ -1432,14 +1665,17 @@
                     "supersetRest": 60
                 },
                 {
+                    "id": "cd254e68-643a-4d48-866b-6fc01c955e1b",
                     "name": "grip press",
                     "timer": null,
                     "sets": [
                         {
+                            "id": "a8c5d027-3d49-4cdd-9fdf-658b04891bd5",
                             "weight": 132,
                             "reps": 70
                         },
                         {
+                            "id": "eb90f2f6-ca95-4b6d-883a-5cfae845437f",
                             "weight": 132,
                             "reps": 30
                         }

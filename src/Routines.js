@@ -7,7 +7,7 @@ import {
     ClockIcon,
 } from '@heroicons/react/20/solid';
 
-import data from './data.json';
+import data from './data';
 import { classNames } from './helpers';
 import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
@@ -52,7 +52,7 @@ const Routines = () => {
                             return (
                                 <>
                                     <Disclosure.Button
-                                        className="my-2 flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                        className="my-2 flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                         onClick={() => {
                                             if (!open) {
                                                 close();
@@ -79,7 +79,7 @@ const Routines = () => {
                                             (exercise, idx) => (
                                                 <Disclosure.Panel
                                                     key={idx}
-                                                    className="flex flex-col gap-2 px-2 text-sm text-gray-500"
+                                                    className="flex flex-col gap-2 px-2 text-lg text-gray-500"
                                                 >
                                                     <div className="flex justify-between">
                                                         <span className="capitalize">
@@ -94,7 +94,7 @@ const Routines = () => {
                                                         {exercise.superset ? (
                                                             <span
                                                                 className={classNames(
-                                                                    'inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-red-600/10',
+                                                                    'inline-flex items-center rounded-md px-2 py-1 text-base font-medium ring-1 ring-inset ring-red-600/10',
                                                                     exercise.superset ===
                                                                         1
                                                                         ? 'bg-red-50 text-red-700'
@@ -118,7 +118,7 @@ const Routines = () => {
                                                         ) : null}
                                                     </div>
                                                     {exercise.sets ? (
-                                                        <table className="w-full overflow-hidden rounded-lg text-center text-sm text-gray-400">
+                                                        <table className="w-full overflow-hidden rounded-lg text-center text-lg text-gray-400">
                                                             <thead className="bg-gray-700 capitalize text-gray-400">
                                                                 <tr>
                                                                     <th>set</th>
