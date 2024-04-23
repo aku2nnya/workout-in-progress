@@ -12,7 +12,7 @@ import {
 
 import AddRoutine from './AddRoutine';
 import DeleteRoutine from './DeleteRoutine';
-import { classNames, useLocalStorage } from './helpers';
+import { classNames, useLocalStorage, findNestedObj } from './helpers';
 import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
 
@@ -22,8 +22,8 @@ const Workout = () => {
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
     const [deleteRoutineName, setDeleteRoutineName] = useState(null);
     const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
-    const [currentExercise, setCurrentExercise] = useState(null);
-    const [editSet, setEditSet] = useState(null);
+    const [currentExerciseId, setCurrentExerciseId] = useState(null);
+    const [editSetId, setEditSetId] = useState(null);
     const exercisesRef = useRef(null);
 
     const togglePanels = (newPanel) => {
@@ -45,10 +45,11 @@ const Workout = () => {
     const scrollToExercise = (exerciseId) => {
         const map = getMap();
         const node = map.get(exerciseId);
+
         node.scrollIntoView({
             behavior: 'smooth',
         });
-        setCurrentExercise(exerciseId);
+        setCurrentExerciseId(exerciseId);
     };
 
     const getMap = () => {
@@ -57,6 +58,16 @@ const Workout = () => {
             exercisesRef.current = new Map();
         }
         return exercisesRef.current;
+    };
+
+    const selectFirstEditSet = (exerciseId) => {
+        const exercise = findNestedObj(workout, 'id', exerciseId);
+        if (
+            exercise.sets &&
+            exercise.sets.find((set) => set.id !== editSetId)
+        ) {
+            setEditSetId(exercise.sets[0].id);
+        }
     };
 
     const updateWorkoutSet = (workoutData, setInfo, parameter, addSubtract) => {
@@ -139,7 +150,7 @@ const Workout = () => {
                                     <span className="flex items-center gap-1">
                                         {routine.name}
                                         <TrashIcon
-                                            className="h-5 w-5 p-0.5 text-purple-500"
+                                            className="h-5 w-5 text-purple-500"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setDeleteRoutineName(
@@ -165,40 +176,37 @@ const Workout = () => {
                                     setWorkout={setWorkout}
                                     routineName={deleteRoutineName}
                                 />
-                                <div className="flex flex-col justify-center">
+                                <div className="flex flex-col justify-center gap-2">
                                     {routine.exercises.map((exercise, idx) => (
                                         <Disclosure.Panel
                                             key={idx}
-                                            className="flex scroll-mt-2 flex-col justify-center gap-2 p-2 text-lg text-gray-500"
+                                            className="flex scroll-mt-2 flex-col justify-center gap-2 text-lg text-gray-500"
                                             ref={(node) => {
                                                 const map = getMap();
                                                 if (node) {
-                                                    map.set(
-                                                        `${routine.name}-${exercise.id}`,
-                                                        node,
-                                                    );
+                                                    map.set(exercise.id, node);
                                                 } else {
-                                                    map.delete(
-                                                        `${routine.name}-${exercise.id}`,
-                                                    );
+                                                    map.delete(exercise.id);
                                                 }
                                             }}
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                scrollToExercise(
-                                                    `${routine.name}-${exercise.id}`,
-                                                );
+                                                scrollToExercise(exercise.id);
+                                                selectFirstEditSet(exercise.id);
                                             }}
                                         >
                                             {idx === 0 && open ? (
                                                 <div className="flex justify-center">
                                                     <button
                                                         type="button"
-                                                        className="flex w-40 justify-center rounded-lg bg-purple-100 px-4 py-2 text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                                        className="my-2 flex w-40 justify-center rounded-lg bg-purple-100 px-4 py-2 text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                                         onClick={(e) => {
                                                             e.preventDefault();
                                                             scrollToExercise(
-                                                                `${routine.name}-${exercise.id}`,
+                                                                exercise.id,
+                                                            );
+                                                            selectFirstEditSet(
+                                                                exercise.id,
                                                             );
                                                         }}
                                                     >
@@ -208,10 +216,12 @@ const Workout = () => {
                                             ) : null}
                                             <div
                                                 className={classNames(
-                                                    'flex items-center justify-between rounded-md px-2 py-1',
-                                                    currentExercise ===
-                                                        `${routine.name}-${exercise.id}` &&
+                                                    'py- flex items-center justify-center gap-2 rounded-md px-2',
+                                                    currentExerciseId ===
+                                                        exercise.id &&
                                                         'bg-red-100',
+                                                    exercise.sets &&
+                                                        'justify-between',
                                                 )}
                                             >
                                                 <span className="capitalize">
@@ -268,16 +278,16 @@ const Workout = () => {
                                                                         e,
                                                                     ) => {
                                                                         e.preventDefault();
-                                                                        setEditSet(
-                                                                            `${exercise.name}-${set.id}`,
+                                                                        setEditSetId(
+                                                                            set.id,
                                                                         );
                                                                         scrollToExercise(
-                                                                            `${routine.name}-${exercise.id}`,
+                                                                            exercise.id,
                                                                         );
                                                                     }}
                                                                 >
-                                                                    {editSet ===
-                                                                    `${exercise.name}-${set.id}` ? (
+                                                                    {editSetId ===
+                                                                    set.id ? (
                                                                         <>
                                                                             <td>
                                                                                 <span className="flex items-center justify-center gap-1">
@@ -290,7 +300,7 @@ const Workout = () => {
                                                                             <td>
                                                                                 <span className="flex items-center justify-center gap-1">
                                                                                     <MinusCircleIcon
-                                                                                        className="h-5 w-5 p-0.5"
+                                                                                        className="h-5 w-5"
                                                                                         onClick={(
                                                                                             e,
                                                                                         ) => {
@@ -303,10 +313,10 @@ const Workout = () => {
                                                                                             );
                                                                                         }}
                                                                                     />
-                                                                                    <DumbbellIcon className="h-5 w-5 p-0.5" />
+                                                                                    <DumbbellIcon className="h-5 w-5" />
                                                                                     {`${set.weight} lbs`}
                                                                                     <PlusCircleIcon
-                                                                                        className="h-5 w-5 p-0.5"
+                                                                                        className="h-5 w-5"
                                                                                         onClick={(
                                                                                             e,
                                                                                         ) => {
@@ -324,7 +334,7 @@ const Workout = () => {
                                                                             <td>
                                                                                 <span className="flex items-center justify-center gap-1">
                                                                                     <MinusCircleIcon
-                                                                                        className="h-5 w-5 p-0.5"
+                                                                                        className="h-5 w-5"
                                                                                         onClick={(
                                                                                             e,
                                                                                         ) => {
@@ -341,7 +351,7 @@ const Workout = () => {
                                                                                         set.reps
                                                                                     }
                                                                                     <PlusCircleIcon
-                                                                                        className="h-5 w-5 p-0.5"
+                                                                                        className="h-5 w-5"
                                                                                         onClick={(
                                                                                             e,
                                                                                         ) => {
@@ -369,19 +379,19 @@ const Workout = () => {
                                                                             </td>
                                                                             <td>
                                                                                 <span className="flex items-center justify-center gap-1">
-                                                                                    <div className="h-5 w-5 p-0.5" />
-                                                                                    <DumbbellIcon className="h-5 w-5 p-0.5" />
+                                                                                    <div className="h-5 w-5" />
+                                                                                    <DumbbellIcon className="h-5 w-5" />
                                                                                     {`${set.weight} lbs`}
-                                                                                    <div className="h-5 w-5 p-0.5" />
+                                                                                    <div className="h-5 w-5" />
                                                                                 </span>
                                                                             </td>
                                                                             <td>
                                                                                 <span className="flex items-center justify-center gap-1">
-                                                                                    <div className="h-5 w-5 p-0.5" />
+                                                                                    <div className="h-5 w-5" />
                                                                                     {
                                                                                         set.reps
                                                                                     }
-                                                                                    <div className="h-5 w-5 p-0.5" />
+                                                                                    <div className="h-5 w-5" />
                                                                                 </span>
                                                                             </td>
                                                                         </>
@@ -397,8 +407,8 @@ const Workout = () => {
                                                 routine.exercises[idx + 1]
                                                     ?.superset ? (
                                                 <div className="flex items-center justify-center gap-1">
-                                                    <ArrowsUpDownIcon className="h-5 w-5 p-0.5" />
-                                                    <HourglassIcon className="h-5 w-5 p-0.5" />
+                                                    <ArrowsUpDownIcon className="h-5 w-5" />
+                                                    <HourglassIcon className="h-5 w-5" />
                                                     {`${exercise.supersetRest}s`}
                                                 </div>
                                             ) : idx + 1 <
@@ -413,8 +423,8 @@ const Workout = () => {
                                                 >
                                                     <ArrowDownIcon className="h-5 w-5" />
                                                     {exercise.rest ? (
-                                                        <span className="flex justify-center gap-1">
-                                                            <HourglassIcon className="h-5 w-5 p-0.5" />
+                                                        <span className="flex items-center justify-center gap-1">
+                                                            <HourglassIcon className="h-5 w-5" />
                                                             {`${exercise.rest}s`}
                                                         </span>
                                                     ) : null}
