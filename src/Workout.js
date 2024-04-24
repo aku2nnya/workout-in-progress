@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import Countdown, { zeroPad } from 'react-countdown';
 import { Disclosure } from '@headlessui/react';
 import {
     ArrowDownIcon,
@@ -227,10 +228,40 @@ const Workout = () => {
                                                 <span className="capitalize">
                                                     {exercise.name}
                                                 </span>
-                                                {exercise.timer ? (
+                                                {exercise.timer &&
+                                                currentExerciseId ===
+                                                    exercise.id ? (
+                                                    <Countdown
+                                                        date={
+                                                            Date.now() +
+                                                            exercise.timer *
+                                                                1000
+                                                        }
+                                                        renderer={({
+                                                            seconds,
+                                                            api,
+                                                        }) => (
+                                                            <span
+                                                                className="flex items-center gap-1"
+                                                                onClick={(
+                                                                    e,
+                                                                ) => {
+                                                                    e.preventDefault();
+                                                                    api.pause();
+                                                                }}
+                                                            >
+                                                                <ClockIcon className="h-5 w-5" />
+                                                                {zeroPad(
+                                                                    seconds,
+                                                                )}
+                                                                s
+                                                            </span>
+                                                        )}
+                                                    />
+                                                ) : exercise.timer ? (
                                                     <span className="flex items-center gap-1">
                                                         <ClockIcon className="h-5 w-5" />
-                                                        {`${exercise.timer}s`}
+                                                        {exercise.timer}s
                                                     </span>
                                                 ) : null}
                                                 {exercise.superset ? (
