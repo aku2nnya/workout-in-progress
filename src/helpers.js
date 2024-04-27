@@ -32,13 +32,24 @@ export const useLocalStorage = (key, initialValue) => {
     return [storedValue, setValue];
 };
 
-export const findNestedObj = (entireObj, keyToFind, valToFind) => {
-    let foundObj;
+export const findNestedObjArr = (entireObj, keyToFind, valToFind) => {
+    let foundObj = [];
     JSON.stringify(entireObj, (_, nestedValue) => {
         if (nestedValue && nestedValue[keyToFind] === valToFind) {
-            foundObj = nestedValue;
+            foundObj.push(nestedValue);
         }
         return nestedValue;
     });
     return foundObj;
+};
+
+export const secondsToTime = (seconds) => {
+    const m = Math.floor((seconds % 3600) / 60)
+        .toString()
+        .padStart(2, '0');
+    const s = Math.floor(seconds % 60)
+        .toString()
+        .padStart(2, '0');
+
+    return `${m}:${s}`;
 };

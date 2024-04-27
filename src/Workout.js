@@ -13,7 +13,12 @@ import {
 
 import AddRoutine from './AddRoutine';
 import DeleteRoutine from './DeleteRoutine';
-import { classNames, useLocalStorage, findNestedObj } from './helpers';
+import {
+    classNames,
+    useLocalStorage,
+    findNestedObjArr,
+    secondsToTime,
+} from './helpers';
 import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
 
@@ -22,26 +27,26 @@ const Workout = () => {
     const [isAddRoutineOpen, setIsAddRoutineOpen] = useState(false);
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
     const [deleteRoutineName, setDeleteRoutineName] = useState(null);
-    const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+    // const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
     const [currentExerciseId, setCurrentExerciseId] = useState(null);
     const [editSetId, setEditSetId] = useState(null);
     const exercisesRef = useRef(null);
 
-    const togglePanels = (newPanel) => {
-        // if (activeDisclosurePanel) {
-        //     if (
-        //         activeDisclosurePanel.key !== newPanel.key &&
-        //         activeDisclosurePanel.open
-        //     ) {
-        //         activeDisclosurePanel.close();
-        //     }
-        // }
+    // const togglePanels = (newPanel) => {
+    //     if (activeDisclosurePanel) {
+    //         if (
+    //             activeDisclosurePanel.key !== newPanel.key &&
+    //             activeDisclosurePanel.open
+    //         ) {
+    //             activeDisclosurePanel.close();
+    //         }
+    //     }
 
-        setActiveDisclosurePanel({
-            ...newPanel,
-            open: !newPanel.open,
-        });
-    };
+    //     setActiveDisclosurePanel({
+    //         ...newPanel,
+    //         open: !newPanel.open,
+    //     });
+    // };
 
     const scrollToExercise = (exerciseId) => {
         const map = getMap();
@@ -62,13 +67,26 @@ const Workout = () => {
         return exercisesRef.current;
     };
 
-    const selectFirstEditSet = (exerciseId) => {
-        const exercise = findNestedObj(workout, 'id', exerciseId);
+    const selectFirstEditSet = (routine, exerciseId) => {
+        const exercise = findNestedObjArr(routine, 'id', exerciseId)[0];
+        console.log({ exercise });
         if (
             exercise.sets &&
             exercise.sets.find((set) => set.id !== editSetId)
         ) {
             setEditSetId(exercise.sets[0].id);
+        }
+    };
+
+    const selectNextEditset = (routine, exercise, setIdx) => {
+        if (exercise.superset) {
+            // `${exercise.id}-${exercise.supersetRest}`;
+            const supersetExercises = findNestedObjArr(
+                routine,
+                'superset',
+                exercise.superset,
+            );
+            console.log({ exercise, supersetExercises, setIdx });
         }
     };
 
@@ -143,10 +161,10 @@ const Workout = () => {
                                             close();
                                         }
 
-                                        togglePanels({
-                                            ...panel,
-                                            key: idx,
-                                        });
+                                        // togglePanels({
+                                        //     ...panel,
+                                        //     key: idx,
+                                        // });
                                     }}
                                 >
                                     <span className="flex items-center gap-1">
@@ -195,6 +213,7 @@ const Workout = () => {
                                                                 exercise.id,
                                                             );
                                                             selectFirstEditSet(
+                                                                routine,
                                                                 exercise.id,
                                                             );
                                                         }}
@@ -205,12 +224,14 @@ const Workout = () => {
                                             ) : null}
                                             <div
                                                 className={classNames(
-                                                    'flex items-center justify-center gap-2 rounded-md px-2',
+                                                    'flex items-center justify-center px-2',
                                                     currentExerciseId ===
                                                         exercise.id &&
                                                         'text-4xl font-extrabold',
                                                     exercise.sets &&
                                                         'justify-between',
+                                                    !exercise.sets &&
+                                                        'flex-col',
                                                 )}
                                                 ref={(node) => {
                                                     const map = getMap();
@@ -229,6 +250,7 @@ const Workout = () => {
                                                         exercise.id,
                                                     );
                                                     selectFirstEditSet(
+                                                        routine,
                                                         exercise.id,
                                                     );
                                                 }}
@@ -246,30 +268,27 @@ const Workout = () => {
                                                                 1000
                                                         }
                                                         renderer={({
+                                                            minutes,
                                                             seconds,
-                                                            api,
                                                         }) => (
-                                                            <span
-                                                                className="flex items-center gap-1"
-                                                                onClick={(
-                                                                    e,
-                                                                ) => {
-                                                                    e.preventDefault();
-                                                                    api.pause();
-                                                                }}
-                                                            >
+                                                            <span className="flex items-center gap-1">
                                                                 <ClockIcon className="h-8 w-8" />
+                                                                {zeroPad(
+                                                                    minutes,
+                                                                )}
+                                                                :
                                                                 {zeroPad(
                                                                     seconds,
                                                                 )}
-                                                                s
                                                             </span>
                                                         )}
                                                     />
                                                 ) : exercise.timer ? (
                                                     <span className="flex items-center gap-1">
                                                         <ClockIcon className="h-5 w-5" />
-                                                        {exercise.timer}s
+                                                        {secondsToTime(
+                                                            exercise.timer,
+                                                        )}
                                                     </span>
                                                 ) : null}
                                                 {exercise.superset ? (
@@ -417,6 +436,11 @@ const Workout = () => {
                                                                                         e,
                                                                                     ) => {
                                                                                         e.preventDefault();
+                                                                                        selectNextEditset(
+                                                                                            routine,
+                                                                                            exercise,
+                                                                                            idx,
+                                                                                        );
                                                                                         // scrollToExercise(
                                                                                         //     exercise.id,
                                                                                         // );
@@ -469,30 +493,134 @@ const Workout = () => {
                                             exercise.superset ===
                                                 routine.exercises[idx + 1]
                                                     ?.superset ? (
-                                                <div className="flex items-center justify-center gap-1">
-                                                    <ArrowsUpDownIcon className="h-5 w-5" />
-                                                    <HourglassIcon className="h-5 w-5" />
-                                                    {`${exercise.supersetRest}s`}
+                                                <div
+                                                    ref={(node) => {
+                                                        const map = getMap();
+                                                        if (node) {
+                                                            map.set(
+                                                                `${exercise.id}-${exercise.supersetRest}`,
+                                                                node,
+                                                            );
+                                                        } else {
+                                                            map.delete(
+                                                                `${exercise.id}-${exercise.supersetRest}`,
+                                                            );
+                                                        }
+                                                    }}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        scrollToExercise(
+                                                            `${exercise.id}-${exercise.supersetRest}`,
+                                                        );
+                                                        setEditSetId(null);
+                                                    }}
+                                                >
+                                                    {currentExerciseId ===
+                                                    `${exercise.id}-${exercise.supersetRest}` ? (
+                                                        <Countdown
+                                                            autoStart
+                                                            date={
+                                                                Date.now() +
+                                                                exercise.supersetRest *
+                                                                    1000
+                                                            }
+                                                            renderer={({
+                                                                minutes,
+                                                                seconds,
+                                                            }) => (
+                                                                <span className="flex items-center justify-center gap-1 text-4xl font-extrabold">
+                                                                    <ArrowsUpDownIcon className="h-8 w-8" />
+                                                                    <HourglassIcon className="h-8 w-8" />
+                                                                    {zeroPad(
+                                                                        minutes,
+                                                                    )}
+                                                                    :
+                                                                    {zeroPad(
+                                                                        seconds,
+                                                                    )}
+                                                                </span>
+                                                            )}
+                                                        />
+                                                    ) : (
+                                                        <span className="flex items-center justify-center gap-1">
+                                                            <ArrowsUpDownIcon className="h-5 w-5" />
+                                                            <HourglassIcon className="h-5 w-5" />
+                                                            {secondsToTime(
+                                                                exercise.supersetRest,
+                                                            )}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            ) : idx + 1 <
+                                                  routine.exercises.length &&
+                                              exercise.rest ? (
+                                                <div
+                                                    className="flex items-center justify-center gap-1 py-2"
+                                                    ref={(node) => {
+                                                        const map = getMap();
+                                                        if (node) {
+                                                            map.set(
+                                                                `${exercise.id}-${exercise.rest}`,
+                                                                node,
+                                                            );
+                                                        } else {
+                                                            map.delete(
+                                                                `${exercise.id}-${exercise.rest}`,
+                                                            );
+                                                        }
+                                                    }}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        scrollToExercise(
+                                                            `${exercise.id}-${exercise.rest}`,
+                                                        );
+                                                        setEditSetId(null);
+                                                    }}
+                                                >
+                                                    {currentExerciseId ===
+                                                    `${exercise.id}-${exercise.rest}` ? (
+                                                        <Countdown
+                                                            autoStart
+                                                            date={
+                                                                Date.now() +
+                                                                exercise.rest *
+                                                                    1000
+                                                            }
+                                                            renderer={({
+                                                                minutes,
+                                                                seconds,
+                                                            }) => (
+                                                                <span className="flex items-center justify-center gap-1 text-4xl font-extrabold">
+                                                                    <ArrowDownIcon className="h-8 w-8" />
+                                                                    <HourglassIcon className="h-8 w-8" />
+                                                                    {zeroPad(
+                                                                        minutes,
+                                                                    )}
+                                                                    :
+                                                                    {zeroPad(
+                                                                        seconds,
+                                                                    )}
+                                                                </span>
+                                                            )}
+                                                        />
+                                                    ) : (
+                                                        <span className="flex items-center justify-center gap-1">
+                                                            <ArrowDownIcon className="h-5 w-5" />
+                                                            <HourglassIcon className="h-5 w-5" />
+                                                            {secondsToTime(
+                                                                exercise.rest,
+                                                            )}
+                                                        </span>
+                                                    )}
                                                 </div>
                                             ) : idx + 1 <
                                               routine.exercises.length ? (
-                                                <div
-                                                    className={classNames(
-                                                        'flex items-center justify-center gap-1',
-                                                        exercise.rest
-                                                            ? ' py-2'
-                                                            : '',
-                                                    )}
-                                                >
+                                                <div className="flex items-center justify-center">
                                                     <ArrowDownIcon className="h-5 w-5" />
-                                                    {exercise.rest ? (
-                                                        <span className="flex items-center justify-center gap-1">
-                                                            <HourglassIcon className="h-5 w-5" />
-                                                            {`${exercise.rest}s`}
-                                                        </span>
-                                                    ) : null}
                                                 </div>
-                                            ) : null}
+                                            ) : (
+                                                <span className="my-0.25"></span>
+                                            )}
                                         </Disclosure.Panel>
                                     ))}
                                 </div>
