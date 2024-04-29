@@ -11,9 +11,11 @@ export const useLocalStorage = (key, initialValue) => {
         }
         try {
             const item = localStorage.getItem(key);
+
             return item ? JSON.parse(item) : initialValue;
         } catch (error) {
             console.log(error);
+
             return initialValue;
         }
     });
@@ -29,6 +31,7 @@ export const useLocalStorage = (key, initialValue) => {
             console.log(error);
         }
     };
+
     return [storedValue, setValue];
 };
 
@@ -38,8 +41,10 @@ export const findNestedObjArr = (entireObj, keyToFind, valToFind) => {
         if (nestedValue && nestedValue[keyToFind] === valToFind) {
             foundObj.push(nestedValue);
         }
+
         return nestedValue;
     });
+
     return foundObj;
 };
 
