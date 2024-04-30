@@ -9,20 +9,24 @@ const App = () => {
     const tabs = ['workout', 'routines', 'exercises'];
 
     return (
-        <div className="w-full">
+        <div className="w-full bg-black text-4xl">
             <Tab.Group defaultIndex={0}>
-                <header className="sticky top-0 h-fit bg-blue-900/20">
-                    <Tab.List className="mx-auto flex max-w-4xl space-x-2 p-2">
+                <header className="sticky top-0 h-fit bg-gray-50">
+                    <Tab.List className="mx-auto flex space-x-2">
+                        {/* <Tab.List className="mx-auto flex max-w-4xl space-x-2"> */}
                         {tabs.map((tab) => (
                             <Tab
                                 key={tab}
                                 className={({ selected }) =>
                                     classNames(
-                                        'w-full rounded-lg py-2.5 text-lg font-medium capitalize leading-5',
-                                        'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
+                                        'w-full py-8 font-medium capitalize leading-5 focus:outline-none',
+                                        // 'w-full rounded-t-md py-2.5 text-lg font-medium capitalize leading-5 focus:outline-none focus:ring-2 focus:ring-red-600',
                                         selected
-                                            ? 'bg-white text-blue-700 shadow'
-                                            : 'text-blue-100 hover:bg-white/[0.12] hover:text-white',
+                                            ? 'bg-black text-gray-50'
+                                            : 'text-black hover:text-gray-500',
+                                        tab === 'workout' && 'rounded-tr',
+                                        tab === 'routines' && 'rounded-t',
+                                        tab === 'exercises' && 'rounded-tl',
                                     )
                                 }
                             >
@@ -31,12 +35,13 @@ const App = () => {
                         ))}
                     </Tab.List>
                 </header>
-                <main className="h-[calc(100vh-56px)] overflow-y-auto scrollbar-hide">
+                <main className="h-[calc(100vh-84px)] overflow-y-auto scrollbar-hide">
                     <Tab.Panels>
                         {tabs.map((tab, idx) => (
                             <Tab.Panel
                                 key={idx}
-                                className="mx-auto w-full max-w-4xl rounded-2xl bg-white p-2"
+                                className="mx-auto w-full p-8"
+                                // className="mx-auto w-full max-w-4xl p-2"
                             >
                                 {tab === 'workout' && <Workout />}
                                 {tab === 'routines' && <Routines />}

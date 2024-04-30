@@ -158,7 +158,7 @@
                 {
                     "id": "05085b1a-9f41-4db6-aa96-6a5b4188d50b",
                     "name": "get ready",
-                    "jpSpeech": "get ready",
+                    "jpSpeech": "開始まで、あと10秒",
                     "timer": 10,
                     "sets": null,
                     "superset": null,
@@ -168,7 +168,7 @@
                 {
                     "id": "26e9630e-5afb-46d6-a173-6fea2083b68b",
                     "name": "crunch",
-                    "jpSpeech": "crunch",
+                    "jpSpeech": "クランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -178,7 +178,7 @@
                 {
                     "id": "463fc61a-7776-4f97-89c6-dbf23b9c270b",
                     "name": "right oblique crunch",
-                    "jpSpeech": "right oblique crunch",
+                    "jpSpeech": "ライトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -188,7 +188,7 @@
                 {
                     "id": "6a90e9ea-79d3-45b8-a2c8-79d337228f26",
                     "name": "left oblique crunch",
-                    "jpSpeech": "left oblique crunch",
+                    "jpSpeech": "レフトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -198,7 +198,7 @@
                 {
                     "id": "cab60eaf-01a0-4e55-a652-b47903b6cb39",
                     "name": "toe touch",
-                    "jpSpeech": "toe touch",
+                    "jpSpeech": "トータッチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -208,7 +208,7 @@
                 {
                     "id": "798b0879-2ed1-4bfe-9a23-6f6def50d19f",
                     "name": "reverse crunch",
-                    "jpSpeech": "reverse crunch",
+                    "jpSpeech": "リバースクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -218,7 +218,7 @@
                 {
                     "id": "1f5f1bf9-837a-4ca5-9217-fc26eff0eefd",
                     "name": "right side crunch",
-                    "jpSpeech": "right side crunch",
+                    "jpSpeech": "ライトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -228,7 +228,7 @@
                 {
                     "id": "21dd7559-3a93-404b-b647-14e58704deb9",
                     "name": "left side crunch",
-                    "jpSpeech": "left side crunch",
+                    "jpSpeech": "レフトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -238,7 +238,7 @@
                 {
                     "id": "faec0ef3-fa11-472d-bbec-fc7976bff309",
                     "name": "push through",
-                    "jpSpeech": "push through",
+                    "jpSpeech": "プッシュスルー",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -248,7 +248,7 @@
                 {
                     "id": "0ea45e88-c69e-4412-a306-b22ccbe21ef0",
                     "name": "leg push",
-                    "jpSpeech": "leg push",
+                    "jpSpeech": "レッグプッシュ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -258,7 +258,7 @@
                 {
                     "id": "9b027daf-9611-4255-853d-2dc06b6f4fc3",
                     "name": "alternating curl",
-                    "jpSpeech": "alternating curl",
+                    "jpSpeech": "オルタネイトカール",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -268,7 +268,7 @@
                 {
                     "id": "e19757b7-ad3b-44b4-af6a-71acda0556af",
                     "name": "curl",
-                    "jpSpeech": "curl",
+                    "jpSpeech": "カール",
                     "timer": 30,
                     "sets": null,
                     "superset": null,
@@ -285,7 +285,7 @@
                 {
                     "id": "432f5dba-568d-4233-9849-673854577225",
                     "name": "push-up",
-                    "jpSpeech": "push-up",
+                    "jpSpeech": "プッシュアップ",
                     "timer": null,
                     "sets": [
                         {
@@ -306,7 +306,7 @@
                 {
                     "id": "3ad24bbf-fed2-4e9b-9251-51be22c656b6",
                     "name": "hollow bicycle crunch",
-                    "jpSpeech": "hollow bicycle crunch",
+                    "jpSpeech": "ホロウバイスクルクランチ",
                     "timer": null,
                     "sets": [
                         {
@@ -334,7 +334,7 @@
                 {
                     "id": "d8b77c71-4fd3-4dd6-b5ff-e50474da113d",
                     "name": "jump rope",
-                    "jpSpeech": "jump rope",
+                    "jpSpeech": "縄跳び",
                     "timer": null,
                     "sets": [
                         {
@@ -357,7 +357,7 @@
                 {
                     "id": "f404917c-f6b5-47af-8672-525ba46af3c4",
                     "name": "get ready",
-                    "jpSpeech": "get ready",
+                    "jpSpeech": "開始まで、あと10秒",
                     "timer": 10,
                     "sets": null,
                     "superset": null,
@@ -367,7 +367,7 @@
                 {
                     "id": "1ab615da-b5ac-4784-b820-8bc23e58c63a",
                     "name": "crunch",
-                    "jpSpeech": "crunch",
+                    "jpSpeech": "クランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -377,7 +377,7 @@
                 {
                     "id": "009ea3ea-c569-4c28-86fd-50119b36c26f",
                     "name": "right oblique crunch",
-                    "jpSpeech": "right oblique crunch",
+                    "jpSpeech": "ライトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -387,7 +387,7 @@
                 {
                     "id": "99591d52-2d47-4e01-ad8d-f02910675cbe",
                     "name": "left oblique crunch",
-                    "jpSpeech": "left oblique crunch",
+                    "jpSpeech": "レフトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -397,7 +397,7 @@
                 {
                     "id": "3494016c-44ad-4a53-8355-8b01d1f66f93",
                     "name": "toe touch",
-                    "jpSpeech": "toe touch",
+                    "jpSpeech": "トータッチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -407,7 +407,7 @@
                 {
                     "id": "9b44bdcf-b2ff-479a-ae5c-6c6a3e44f5c2",
                     "name": "reverse crunch",
-                    "jpSpeech": "reverse crunch",
+                    "jpSpeech": "リバースクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -417,7 +417,7 @@
                 {
                     "id": "52cb76db-628b-453a-9137-f13a9d89ec28",
                     "name": "right side crunch",
-                    "jpSpeech": "right side crunch",
+                    "jpSpeech": "ライトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -427,7 +427,7 @@
                 {
                     "id": "22fb480c-8715-4b29-a44b-39c31cdb69d6",
                     "name": "left side crunch",
-                    "jpSpeech": "left side crunch",
+                    "jpSpeech": "レフトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -437,7 +437,7 @@
                 {
                     "id": "0d9d7be3-e657-44c9-bdaf-217139f95623",
                     "name": "push through",
-                    "jpSpeech": "push through",
+                    "jpSpeech": "プッシュスルー",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -447,7 +447,7 @@
                 {
                     "id": "0f9b0fcb-62c0-49c6-adb1-8c9147634fd6",
                     "name": "leg push",
-                    "jpSpeech": "leg push",
+                    "jpSpeech": "レッグプッシュ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -457,7 +457,7 @@
                 {
                     "id": "f0ca4a93-6f30-4ab6-957d-d45239614071",
                     "name": "alternating curl",
-                    "jpSpeech": "alternating curl",
+                    "jpSpeech": "オルタネイトカール",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -467,7 +467,7 @@
                 {
                     "id": "d64786fb-a345-409d-a2fe-685bf2279b89",
                     "name": "curl",
-                    "jpSpeech": "curl",
+                    "jpSpeech": "カール",
                     "timer": 30,
                     "sets": null,
                     "superset": null,
@@ -477,7 +477,7 @@
                 {
                     "id": "1b8c0e9e-da1d-46a5-8363-4333290a89ac",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -487,7 +487,7 @@
                 {
                     "id": "e24fbf8f-af10-4317-8e1c-3465599fdad7",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -497,7 +497,7 @@
                 {
                     "id": "84d735c6-87de-4786-bd56-8d076cd4edce",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -507,7 +507,7 @@
                 {
                     "id": "73720a66-fda1-4099-b6f6-227f4ce3667d",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -517,7 +517,7 @@
                 {
                     "id": "8be75bd0-3c5f-498a-a265-719d4e856c1c",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -527,7 +527,7 @@
                 {
                     "id": "3541e4c0-5c00-4bef-a065-92d5995ed6ca",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -537,7 +537,7 @@
                 {
                     "id": "93820813-2197-4ac8-bdb0-88cf8d1a5ca0",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -547,7 +547,7 @@
                 {
                     "id": "12a060af-8681-4ed8-966f-528820c5228d",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -557,7 +557,7 @@
                 {
                     "id": "45f5d4ad-02f1-4301-a539-642b447bb4c8",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -567,7 +567,7 @@
                 {
                     "id": "d255ee80-05d5-4bf1-962a-9057849c8b5a",
                     "name": "neck raise",
-                    "jpSpeech": "neck raise",
+                    "jpSpeech": "ネックレイズ",
                     "timer": null,
                     "sets": [
                         {
@@ -593,7 +593,7 @@
                 {
                     "id": "aadb1882-ff0e-46e7-858b-b9bcadacf1e9",
                     "name": "push-up",
-                    "jpSpeech": "push-up",
+                    "jpSpeech": "プッシュアップ",
                     "timer": null,
                     "sets": [
                         {
@@ -614,7 +614,7 @@
                 {
                     "id": "04e6b6c1-4c17-4a62-97b3-f3b7e799cf57",
                     "name": "bulgarian split squat",
-                    "jpSpeech": "bulgarian split squat",
+                    "jpSpeech": "ブルガリアンスプリットスクワット",
                     "timer": null,
                     "sets": [
                         {
@@ -642,7 +642,7 @@
                 {
                     "id": "d0cf51e0-c9cd-4575-8022-9276a35eb9fb",
                     "name": "get ready",
-                    "jpSpeech": "get ready",
+                    "jpSpeech": "開始まで、あと10秒",
                     "timer": 10,
                     "sets": null,
                     "superset": null,
@@ -652,7 +652,7 @@
                 {
                     "id": "69fc38a2-de0d-41cc-9920-bb9fa903516e",
                     "name": "crunch",
-                    "jpSpeech": "crunch",
+                    "jpSpeech": "クランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -662,7 +662,7 @@
                 {
                     "id": "d6bc9911-ceab-4f26-9153-046a06e7a4ba",
                     "name": "right oblique crunch",
-                    "jpSpeech": "right oblique crunch",
+                    "jpSpeech": "ライトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -672,7 +672,7 @@
                 {
                     "id": "4cd0c336-bfd3-45ca-84de-abec92347927",
                     "name": "left oblique crunch",
-                    "jpSpeech": "left oblique crunch",
+                    "jpSpeech": "レフトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -682,7 +682,7 @@
                 {
                     "id": "83fe3a4a-728f-4c79-978f-a37eba5c0182",
                     "name": "toe touch",
-                    "jpSpeech": "toe touch",
+                    "jpSpeech": "トータッチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -692,7 +692,7 @@
                 {
                     "id": "ab50e90f-9b4f-412f-9f39-8a5cb720a7fe",
                     "name": "reverse crunch",
-                    "jpSpeech": "reverse crunch",
+                    "jpSpeech": "リバースクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -702,7 +702,7 @@
                 {
                     "id": "238de55a-716f-4253-8906-ff2ee066389a",
                     "name": "right side crunch",
-                    "jpSpeech": "right side crunch",
+                    "jpSpeech": "ライトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -712,7 +712,7 @@
                 {
                     "id": "cfc5b7b5-db6e-41a7-b945-d9be5b00d887",
                     "name": "left side crunch",
-                    "jpSpeech": "left side crunch",
+                    "jpSpeech": "レフトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -722,7 +722,7 @@
                 {
                     "id": "bf5f9f15-1aa6-4201-a64e-04fb50d7e24d",
                     "name": "push through",
-                    "jpSpeech": "push through",
+                    "jpSpeech": "プッシュスルー",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -732,7 +732,7 @@
                 {
                     "id": "eb5072eb-efe3-4627-b22d-66a6e4768ed0",
                     "name": "leg push",
-                    "jpSpeech": "leg push",
+                    "jpSpeech": "レッグプッシュ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -742,7 +742,7 @@
                 {
                     "id": "7b6cc3de-3918-4f84-9ca8-418d4c22cead",
                     "name": "alternating curl",
-                    "jpSpeech": "alternating curl",
+                    "jpSpeech": "オルタネイトカール",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -752,7 +752,7 @@
                 {
                     "id": "7abe0fc9-24b6-40fa-a023-857319575895",
                     "name": "curl",
-                    "jpSpeech": "curl",
+                    "jpSpeech": "カール",
                     "timer": 30,
                     "sets": null,
                     "superset": null,
@@ -762,7 +762,7 @@
                 {
                     "id": "42a1929c-cf9e-47ea-a6fe-0ca1d8caa42d",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -772,7 +772,7 @@
                 {
                     "id": "0c55fef2-e13f-4ddf-82d0-8d338bb87038",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -782,7 +782,7 @@
                 {
                     "id": "a54e07c1-5426-4a9f-b77b-9e8cfef60eaf",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -792,7 +792,7 @@
                 {
                     "id": "a2b1b372-4b4f-45e3-8edd-a35eab77cbb3",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -802,7 +802,7 @@
                 {
                     "id": "7378a31c-e619-4760-b93d-4ecb7f58ba29",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -812,7 +812,7 @@
                 {
                     "id": "85e372e6-9050-4129-8a80-0fc0a006d341",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -822,7 +822,7 @@
                 {
                     "id": "b40e68c4-3c09-4113-8fb6-f3e5cc199a9b",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -832,7 +832,7 @@
                 {
                     "id": "3ea9ad92-26a3-4104-a667-9edb4c8f8b4f",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -842,7 +842,7 @@
                 {
                     "id": "75c12795-db81-4f76-9cb6-47aaee04a619",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -852,7 +852,7 @@
                 {
                     "id": "d9ac5156-5422-4db0-a5de-c3d41f560042",
                     "name": "neck raise",
-                    "jpSpeech": "neck raise",
+                    "jpSpeech": "ネックレイズ",
                     "timer": null,
                     "sets": [
                         {
@@ -878,7 +878,7 @@
                 {
                     "id": "9f908820-67bb-40c6-b034-fc4ce9eeac80",
                     "name": "incline dumbbell bench press",
-                    "jpSpeech": "incline dumbbell bench press",
+                    "jpSpeech": "インクラインダンベルベンチプレス",
                     "timer": null,
                     "sets": [
                         {
@@ -904,7 +904,7 @@
                 {
                     "id": "973c04e1-3edc-4040-a1f3-46822ebbf3e0",
                     "name": "incline dumbbell row",
-                    "jpSpeech": "incline dumbbell row",
+                    "jpSpeech": "インクラインダンベルロウ",
                     "timer": null,
                     "sets": [
                         {
@@ -930,7 +930,7 @@
                 {
                     "id": "b08d2576-d3a7-45e9-848f-11726a618704",
                     "name": "dumbbell curl",
-                    "jpSpeech": "dumbbell curl",
+                    "jpSpeech": "ダンベルカール",
                     "timer": null,
                     "sets": [
                         {
@@ -956,7 +956,7 @@
                 {
                     "id": "3d11a649-d30a-4392-8daa-375b4f460836",
                     "name": "dumbbell romanian deadlift",
-                    "jpSpeech": "dumbbell romanian deadlift",
+                    "jpSpeech": "ダンベルルーマニアンデッドリフト",
                     "timer": null,
                     "sets": [
                         {
@@ -982,7 +982,7 @@
                 {
                     "id": "bbfdc179-fca8-4c89-8334-4d483782da17",
                     "name": "dumbbell shoulder press",
-                    "jpSpeech": "dumbbell shoulder press",
+                    "jpSpeech": "ダンベルショルダープレス",
                     "timer": null,
                     "sets": [
                         {
@@ -1008,7 +1008,7 @@
                 {
                     "id": "c1e8861c-c93d-467f-a863-8e34a2275191",
                     "name": "bulgarian split squat",
-                    "jpSpeech": "bulgarian split squat",
+                    "jpSpeech": "ブルガリアンスプリットスクワット",
                     "timer": null,
                     "sets": [
                         {
@@ -1034,7 +1034,7 @@
                 {
                     "id": "7ce9e9cb-d45b-4251-9f49-815d50af452d",
                     "name": "grip press",
-                    "jpSpeech": "grip press",
+                    "jpSpeech": "グリッププレス",
                     "timer": null,
                     "sets": [
                         {
@@ -1062,7 +1062,7 @@
                 {
                     "id": "892b9c37-4356-4fac-9f8c-b29c5006cc70",
                     "name": "get ready",
-                    "jpSpeech": "get ready",
+                    "jpSpeech": "開始まで、あと10秒",
                     "timer": 10,
                     "sets": null,
                     "superset": null,
@@ -1072,7 +1072,7 @@
                 {
                     "id": "a359cff8-1267-4e7e-a84d-b6efb80b68ca",
                     "name": "crunch",
-                    "jpSpeech": "crunch",
+                    "jpSpeech": "クランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1082,7 +1082,7 @@
                 {
                     "id": "2b97d886-fbcd-42e5-83b8-aafaaebd53cd",
                     "name": "right oblique crunch",
-                    "jpSpeech": "right oblique crunch",
+                    "jpSpeech": "ライトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1092,7 +1092,7 @@
                 {
                     "id": "8b38e35b-065e-4dc7-a4d6-1f8108ce35cf",
                     "name": "left oblique crunch",
-                    "jpSpeech": "left oblique crunch",
+                    "jpSpeech": "レフトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1102,7 +1102,7 @@
                 {
                     "id": "f91bda48-c125-43fe-bbfc-dd5cba4ce920",
                     "name": "toe touch",
-                    "jpSpeech": "toe touch",
+                    "jpSpeech": "トータッチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1112,7 +1112,7 @@
                 {
                     "id": "4178f3c5-46be-42b6-b7ff-2d3bbdf08f9d",
                     "name": "reverse crunch",
-                    "jpSpeech": "reverse crunch",
+                    "jpSpeech": "リバースクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1122,7 +1122,7 @@
                 {
                     "id": "3a72dd78-896a-45b0-a382-dcb0bc842315",
                     "name": "right side crunch",
-                    "jpSpeech": "right side crunch",
+                    "jpSpeech": "ライトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1132,7 +1132,7 @@
                 {
                     "id": "ff0281cc-6fa1-4e58-b4c1-4f666d7d599b",
                     "name": "left side crunch",
-                    "jpSpeech": "left side crunch",
+                    "jpSpeech": "レフトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1142,7 +1142,7 @@
                 {
                     "id": "3d456e19-7d21-432e-8a8b-f8d2a0a26f1b",
                     "name": "push through",
-                    "jpSpeech": "push through",
+                    "jpSpeech": "プッシュスルー",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1152,7 +1152,7 @@
                 {
                     "id": "9f0486e3-aecd-493a-b9a0-789964928ad3",
                     "name": "leg push",
-                    "jpSpeech": "leg push",
+                    "jpSpeech": "レッグプッシュ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1162,7 +1162,7 @@
                 {
                     "id": "c23d5a59-2ba4-4ab2-9717-a266222a470c",
                     "name": "alternating curl",
-                    "jpSpeech": "alternating curl",
+                    "jpSpeech": "オルタネイトカール",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1172,7 +1172,7 @@
                 {
                     "id": "3d064b79-754c-499c-b574-3a018e959d16",
                     "name": "curl",
-                    "jpSpeech": "curl",
+                    "jpSpeech": "カール",
                     "timer": 30,
                     "sets": null,
                     "superset": null,
@@ -1182,7 +1182,7 @@
                 {
                     "id": "40f11bd9-531a-407b-8b53-c21be6bb658a",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1192,7 +1192,7 @@
                 {
                     "id": "74280dbf-3dda-4d09-bac4-dd4f407486e6",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1202,7 +1202,7 @@
                 {
                     "id": "4b6d0731-34f2-4b61-9aae-4864baec1a4e",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1212,7 +1212,7 @@
                 {
                     "id": "3f7abf9b-99ec-41c8-b1b7-61c435e471cc",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1222,7 +1222,7 @@
                 {
                     "id": "1a4625b8-b067-45b3-b66e-5390ddfd0019",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1232,7 +1232,7 @@
                 {
                     "id": "87070545-ffc3-4f11-8f68-65dd4eaed1c5",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1242,7 +1242,7 @@
                 {
                     "id": "d269d2f1-225c-458a-8a17-e90328b3c566",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1252,7 +1252,7 @@
                 {
                     "id": "5dd54ad8-0c68-47b8-be19-405a219cfef4",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1262,7 +1262,7 @@
                 {
                     "id": "fa5d45df-70b0-4ae6-b855-0749a0891181",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1272,7 +1272,7 @@
                 {
                     "id": "aab9b2a1-f60d-4e44-a355-477bc5dffaa9",
                     "name": "neck raise",
-                    "jpSpeech": "neck raise",
+                    "jpSpeech": "ネックレイズ",
                     "timer": null,
                     "sets": [
                         {
@@ -1298,7 +1298,7 @@
                 {
                     "id": "449595c4-4441-4fc8-b869-a6344c549998",
                     "name": "incline dumbbell bench press",
-                    "jpSpeech": "incline dumbbell bench press",
+                    "jpSpeech": "インクラインダンベルベンチプレス",
                     "timer": null,
                     "sets": [
                         {
@@ -1319,7 +1319,7 @@
                 {
                     "id": "c03313ca-a4ee-4fcf-a553-d2e3df02fa2f",
                     "name": "incline dumbbell row",
-                    "jpSpeech": "incline dumbbell row",
+                    "jpSpeech": "インクラインダンベルロウ",
                     "timer": null,
                     "sets": [
                         {
@@ -1340,7 +1340,7 @@
                 {
                     "id": "77379462-fac5-4bed-8b07-617c2ad6cb61",
                     "name": "dumbbell curl",
-                    "jpSpeech": "dumbbell curl",
+                    "jpSpeech": "ダンベルカール",
                     "timer": null,
                     "sets": [
                         {
@@ -1361,7 +1361,7 @@
                 {
                     "id": "2fd62f3b-1b8f-4eea-b479-ef070d8ae9e0",
                     "name": "dumbbell romanian deadlift",
-                    "jpSpeech": "dumbbell romanian deadlift",
+                    "jpSpeech": "ダンベルルーマニアンデッドリフト",
                     "timer": null,
                     "sets": [
                         {
@@ -1382,7 +1382,7 @@
                 {
                     "id": "168d2d17-79a1-4c2e-beb1-a2677fda5b09",
                     "name": "dumbbell shoulder press",
-                    "jpSpeech": "dumbbell shoulder press",
+                    "jpSpeech": "ダンベルショルダープレス",
                     "timer": null,
                     "sets": [
                         {
@@ -1403,7 +1403,7 @@
                 {
                     "id": "b44eb6de-68a2-4b42-9d16-6dea3fba4e92",
                     "name": "bulgarian split squat",
-                    "jpSpeech": "bulgarian split squat",
+                    "jpSpeech": "ブルガリアンスプリットスクワット",
                     "timer": null,
                     "sets": [
                         {
@@ -1424,7 +1424,7 @@
                 {
                     "id": "e7a55123-c0a6-4d65-8d67-64377e4dcc33",
                     "name": "grip press",
-                    "jpSpeech": "grip press",
+                    "jpSpeech": "グリッププレス",
                     "timer": null,
                     "sets": [
                         {
@@ -1452,7 +1452,7 @@
                 {
                     "id": "bc90d922-6b7e-4afd-8d82-bdc23508efdf",
                     "name": "get ready",
-                    "jpSpeech": "get ready",
+                    "jpSpeech": "開始まで、あと10秒",
                     "timer": 10,
                     "sets": null,
                     "superset": null,
@@ -1462,7 +1462,7 @@
                 {
                     "id": "435fd712-0de4-4630-b8fe-237cf0fcdd40",
                     "name": "crunch",
-                    "jpSpeech": "crunch",
+                    "jpSpeech": "クランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1472,7 +1472,7 @@
                 {
                     "id": "3fe4cfa4-6647-4c93-b048-c667116e6786",
                     "name": "right oblique crunch",
-                    "jpSpeech": "right oblique crunch",
+                    "jpSpeech": "ライトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1482,7 +1482,7 @@
                 {
                     "id": "f3fc07a3-1815-476c-9d71-04745eff9f5a",
                     "name": "left oblique crunch",
-                    "jpSpeech": "left oblique crunch",
+                    "jpSpeech": "レフトオブリーククランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1492,7 +1492,7 @@
                 {
                     "id": "9afbab9f-4787-402d-8f29-9a1907be927a",
                     "name": "toe touch",
-                    "jpSpeech": "toe touch",
+                    "jpSpeech": "トータッチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1502,7 +1502,7 @@
                 {
                     "id": "fe36c4f3-6f5d-4771-bfd4-8e1086c14fa6",
                     "name": "reverse crunch",
-                    "jpSpeech": "reverse crunch",
+                    "jpSpeech": "リバースクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1512,7 +1512,7 @@
                 {
                     "id": "3835fcab-8740-4f67-9bb0-0dcb1df1cb5a",
                     "name": "right side crunch",
-                    "jpSpeech": "right side crunch",
+                    "jpSpeech": "ライトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1522,7 +1522,7 @@
                 {
                     "id": "fe7079d0-3100-4a5e-b5e4-b413cb743f0d",
                     "name": "left side crunch",
-                    "jpSpeech": "left side crunch",
+                    "jpSpeech": "レフトサイドクランチ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1532,7 +1532,7 @@
                 {
                     "id": "23092f84-43f7-47f5-b285-5daa84386de4",
                     "name": "push through",
-                    "jpSpeech": "push through",
+                    "jpSpeech": "プッシュスルー",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1542,7 +1542,7 @@
                 {
                     "id": "13570588-df6b-4a8d-8123-f0e1320fea3e",
                     "name": "leg push",
-                    "jpSpeech": "leg push",
+                    "jpSpeech": "レッグプッシュ",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1552,7 +1552,7 @@
                 {
                     "id": "95a956ed-f096-4af8-9da8-4fdd62d73a8d",
                     "name": "alternating curl",
-                    "jpSpeech": "alternating curl",
+                    "jpSpeech": "オルタネイトカール",
                     "timer": 45,
                     "sets": null,
                     "superset": null,
@@ -1562,7 +1562,7 @@
                 {
                     "id": "632e3b9f-c902-4850-ab57-d4cc1a6b8103",
                     "name": "curl",
-                    "jpSpeech": "curl",
+                    "jpSpeech": "カール",
                     "timer": 30,
                     "sets": null,
                     "superset": null,
@@ -1572,7 +1572,7 @@
                 {
                     "id": "1d3d9a7a-a445-4589-bb51-e676b004a97e",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1582,7 +1582,7 @@
                 {
                     "id": "1191c6d4-5fe2-4884-88b0-2dc04b6a7f05",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1592,7 +1592,7 @@
                 {
                     "id": "d419b48c-8637-4fab-9e29-0480d188a00e",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1602,7 +1602,7 @@
                 {
                     "id": "893e103a-ba1c-4c14-9581-a856491529b8",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1612,7 +1612,7 @@
                 {
                     "id": "8bf4e76d-204f-4b8c-87e1-e3378ded18b6",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1622,7 +1622,7 @@
                 {
                     "id": "0a20ceb9-c412-4373-8173-95313e4b73c9",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1632,7 +1632,7 @@
                 {
                     "id": "d7992839-87a2-4dbe-a0cd-ac1ec1554303",
                     "name": "neck hold",
-                    "jpSpeech": "neck hold",
+                    "jpSpeech": "ネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1642,7 +1642,7 @@
                 {
                     "id": "05b3df46-7795-46fc-b3c7-5cf66aedb17f",
                     "name": "left neck hold",
-                    "jpSpeech": "left neck hold",
+                    "jpSpeech": "レフトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1652,7 +1652,7 @@
                 {
                     "id": "0f944202-50ad-41a9-b845-332789f0ce7b",
                     "name": "right neck hold",
-                    "jpSpeech": "right neck hold",
+                    "jpSpeech": "ライトネックホールド",
                     "timer": 15,
                     "sets": null,
                     "superset": null,
@@ -1662,7 +1662,7 @@
                 {
                     "id": "83ad6c05-f993-4fd0-985b-67cf8d066e4c",
                     "name": "neck raise",
-                    "jpSpeech": "neck raise",
+                    "jpSpeech": "ネックレイズ",
                     "timer": null,
                     "sets": [
                         {
@@ -1688,7 +1688,7 @@
                 {
                     "id": "250887cb-b7a7-4da4-9ec0-683e6ac5c51a",
                     "name": "incline dumbbell bench press",
-                    "jpSpeech": "incline dumbbell bench press",
+                    "jpSpeech": "インクラインダンベルベンチプレス",
                     "timer": null,
                     "sets": [
                         {
@@ -1714,7 +1714,7 @@
                 {
                     "id": "ab7d1ebd-6840-4bb3-a4e6-c88238dd4ac4",
                     "name": "incline dumbbell row",
-                    "jpSpeech": "incline dumbbell row",
+                    "jpSpeech": "インクラインダンベルロウ",
                     "timer": null,
                     "sets": [
                         {
@@ -1740,7 +1740,7 @@
                 {
                     "id": "aa3a797c-eead-422e-9467-8d726032547d",
                     "name": "dumbbell curl",
-                    "jpSpeech": "dumbbell curl",
+                    "jpSpeech": "ダンベルカール",
                     "timer": null,
                     "sets": [
                         {
@@ -1766,7 +1766,7 @@
                 {
                     "id": "46c4f737-bf7a-4403-8fdd-85047a5b0907",
                     "name": "dumbbell romanian deadlift",
-                    "jpSpeech": "dumbbell romanian deadlift",
+                    "jpSpeech": "ダンベルルーマニアンデッドリフト",
                     "timer": null,
                     "sets": [
                         {
@@ -1792,7 +1792,7 @@
                 {
                     "id": "fb6c68aa-40c7-46b2-b3e6-6f496e63e964",
                     "name": "dumbbell shoulder press",
-                    "jpSpeech": "dumbbell shoulder press",
+                    "jpSpeech": "ダンベルショルダープレス",
                     "timer": null,
                     "sets": [
                         {
@@ -1818,7 +1818,7 @@
                 {
                     "id": "29f9d187-2e59-4e33-a2b5-6857865aaeb2",
                     "name": "bulgarian split squat",
-                    "jpSpeech": "bulgarian split squat",
+                    "jpSpeech": "ブルガリアンスプリットスクワット",
                     "timer": null,
                     "sets": [
                         {
@@ -1844,7 +1844,7 @@
                 {
                     "id": "cd254e68-643a-4d48-866b-6fc01c955e1b",
                     "name": "grip press",
-                    "jpSpeech": "grip press",
+                    "jpSpeech": "グリッププレス",
                     "timer": null,
                     "sets": [
                         {

@@ -24,7 +24,13 @@ import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
 
 const Workout = () => {
-    const [workout, setWorkout] = useLocalStorage('workout', []);
+    const dayOfWeek = new Date()
+        .toLocaleString('en', {
+            weekday: 'long',
+            timeZone: 'America/Los_Angeles',
+        })
+        .toLowerCase();
+    const [workout, setWorkout] = useLocalStorage(`${dayOfWeek}Workout`, []);
     const [isAddRoutineOpen, setIsAddRoutineOpen] = useState(false);
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
     const [deleteRoutineName, setDeleteRoutineName] = useState(null);
@@ -198,7 +204,7 @@ const Workout = () => {
         <>
             <button
                 type="button"
-                className="mb-4 mt-2 flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                className="mb-8 flex w-full justify-center rounded bg-purple-100 px-4 py-2 text-left font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                 onClick={(e) => {
                     e.stopPropagation();
                     setIsAddRoutineOpen(true);
@@ -220,7 +226,7 @@ const Workout = () => {
                         return (
                             <>
                                 <Disclosure.Button
-                                    className="sticky top-4 my-2 flex w-full items-center justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                    className="sticky top-0 flex w-full items-center justify-between rounded bg-purple-100 px-4 py-2 text-left font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!open) {
@@ -276,13 +282,13 @@ const Workout = () => {
                                             return (
                                                 <Disclosure.Panel
                                                     key={idx}
-                                                    className="flex flex-col justify-center gap-2 text-lg text-gray-500"
+                                                    className="flex flex-col justify-center gap-4 text-gray-500"
                                                 >
                                                     {idx === 0 && open ? (
                                                         <div className="flex justify-center">
                                                             <button
                                                                 type="button"
-                                                                className="my-2 flex w-40 justify-center rounded-lg bg-purple-100 px-4 py-2 text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                                                className="mt-8 flex w-40 justify-center rounded bg-purple-100 px-4 py-2 font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                                                                 onClick={(
                                                                     e,
                                                                 ) => {
@@ -315,11 +321,11 @@ const Workout = () => {
                                                             'flex items-center justify-center px-2',
                                                             currentExerciseId ===
                                                                 exercise.id &&
-                                                                'text-4xl font-extrabold',
+                                                                'text-8xl font-extrabold text-white',
                                                             exercise.sets &&
                                                                 'justify-between',
                                                             !exercise.sets &&
-                                                                'flex-col',
+                                                                'flex-col text-center',
                                                         )}
                                                         ref={(node) => {
                                                             const map =
@@ -387,7 +393,7 @@ const Workout = () => {
                                                                             }
                                                                         }}
                                                                     >
-                                                                        <ClockIcon className="h-8 w-8" />
+                                                                        <ClockIcon className="h-24 w-24" />
                                                                         {zeroPad(
                                                                             minutes,
                                                                         )}
@@ -458,7 +464,7 @@ const Workout = () => {
                                                         {exercise.superset ? (
                                                             <span
                                                                 className={classNames(
-                                                                    'inline-flex items-center rounded-md px-2 py-1 text-base font-medium ring-1 ring-inset ring-red-600/10',
+                                                                    'inline-flex items-center whitespace-nowrap rounded px-2 py-1 text-xl font-medium ring-1 ring-inset ring-red-600/10',
                                                                     exercise.superset ===
                                                                         1
                                                                         ? 'bg-red-50 text-red-700'
@@ -482,7 +488,7 @@ const Workout = () => {
                                                         ) : null}
                                                     </div>
                                                     {exercise.sets ? (
-                                                        <table className="w-full overflow-hidden rounded-lg text-center text-lg text-gray-400">
+                                                        <table className="w-full overflow-hidden rounded text-center text-gray-400">
                                                             <thead className="h-8 bg-gray-700 capitalize text-gray-400">
                                                                 <tr>
                                                                     <th>set</th>
@@ -524,7 +530,7 @@ const Workout = () => {
                                                                             set.id ? (
                                                                                 <>
                                                                                     <td>
-                                                                                        <span className="flex items-center justify-center gap-1 text-4xl font-extrabold">
+                                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold text-white">
                                                                                             <div className="h-5 w-2" />
                                                                                             {idx +
                                                                                                 1}
@@ -532,7 +538,7 @@ const Workout = () => {
                                                                                         </span>
                                                                                     </td>
                                                                                     <td>
-                                                                                        <span className="flex items-center justify-center gap-4 text-4xl font-extrabold">
+                                                                                        <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-white">
                                                                                             <MinusCircleIcon
                                                                                                 className="h-10 w-10 text-red-300"
                                                                                                 onClick={(
@@ -569,7 +575,7 @@ const Workout = () => {
                                                                                         </span>
                                                                                     </td>
                                                                                     <td>
-                                                                                        <span className="flex items-center justify-center gap-4 text-4xl font-extrabold">
+                                                                                        <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-white">
                                                                                             <MinusCircleIcon
                                                                                                 className="h-10 w-10 text-red-300 hover:text-red-400"
                                                                                                 onClick={(
@@ -603,10 +609,10 @@ const Workout = () => {
                                                                                             />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td className="flex justify-center">
+                                                                                    <td className="flex h-[99px] items-center justify-center">
                                                                                         <button
                                                                                             type="button"
-                                                                                            className="my-2 flex w-32 justify-center rounded-lg bg-green-300 p-1 text-lg font-medium capitalize text-gray-800 hover:bg-green-400"
+                                                                                            className="flex- my-2 flex w-32 justify-center rounded bg-green-300 p-1 font-medium capitalize text-black hover:bg-green-400"
                                                                                             onClick={(
                                                                                                 e,
                                                                                             ) => {
@@ -754,9 +760,9 @@ const Workout = () => {
                                                                         minutes,
                                                                         seconds,
                                                                     }) => (
-                                                                        <span className="flex items-center justify-center gap-1 text-4xl font-extrabold capitalize">
+                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold capitalize">
                                                                             rest
-                                                                            <HourglassIcon className="h-8 w-8" />
+                                                                            <HourglassIcon className="h-24 w-24" />
                                                                             {zeroPad(
                                                                                 minutes,
                                                                             )}
@@ -764,7 +770,7 @@ const Workout = () => {
                                                                             {zeroPad(
                                                                                 seconds,
                                                                             )}
-                                                                            <ArrowsUpDownIcon className="h-8 w-8" />
+                                                                            <ArrowsUpDownIcon className="h-24 w-24" />
                                                                         </span>
                                                                     )}
                                                                     onTick={(
@@ -847,9 +853,9 @@ const Workout = () => {
                                                                         minutes,
                                                                         seconds,
                                                                     }) => (
-                                                                        <span className="flex items-center justify-center gap-1 text-4xl font-extrabold capitalize">
+                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold capitalize">
                                                                             rest
-                                                                            <HourglassIcon className="h-8 w-8" />
+                                                                            <HourglassIcon className="h-24 w-24" />
                                                                             {zeroPad(
                                                                                 minutes,
                                                                             )}
@@ -857,7 +863,7 @@ const Workout = () => {
                                                                             {zeroPad(
                                                                                 seconds,
                                                                             )}
-                                                                            <ArrowDownIcon className="h-8 w-8" />
+                                                                            <ArrowDownIcon className="h-24 w-24" />
                                                                         </span>
                                                                     )}
                                                                     onTick={(
@@ -934,10 +940,10 @@ const Workout = () => {
                                                     {isLastExercise ? (
                                                         <div
                                                             className={classNames(
-                                                                'mb-4 mt-2 flex w-full justify-center px-4 py-2 uppercase',
+                                                                'mb-4 flex w-full justify-center px-4 py-2 uppercase',
                                                                 currentExerciseId ===
                                                                     `${routine.id}-end`
-                                                                    ? 'text-4xl font-extrabold'
+                                                                    ? 'text-8xl font-extrabold'
                                                                     : '',
                                                             )}
                                                             ref={(node) => {
@@ -955,10 +961,7 @@ const Workout = () => {
                                                                 }
                                                             }}
                                                         >
-                                                            {currentExerciseId ===
-                                                            `${routine.id}-end`
-                                                                ? 'お疲れさまでした'
-                                                                : 'end'}
+                                                            end
                                                         </div>
                                                     ) : null}
                                                 </Disclosure.Panel>
