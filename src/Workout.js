@@ -38,6 +38,7 @@ const Workout = () => {
     const [currentExerciseId, setCurrentExerciseId] = useState(null);
     const [currentEditSetId, setCurrentEditSetId] = useState(null);
     const [previousExercise, setPreviousExercise] = useState(null);
+    const [isSetRest, setIsSetRest] = useState(false);
     const exercisesRef = useRef(null);
     const speech = new Speech();
 
@@ -202,22 +203,6 @@ const Workout = () => {
 
     return (
         <>
-            <button
-                type="button"
-                className="mb-8 flex w-full justify-center rounded bg-purple-100 px-4 py-2 text-left font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
-                onClick={(e) => {
-                    e.stopPropagation();
-                    setIsAddRoutineOpen(true);
-                }}
-            >
-                add routine
-            </button>
-            <AddRoutine
-                isOpen={isAddRoutineOpen}
-                setIsOpen={setIsAddRoutineOpen}
-                workout={workout}
-                setWorkout={setWorkout}
-            />
             {workout.map((routine, idx) => (
                 <Disclosure key={idx} defaultOpen>
                     {(panel) => {
@@ -226,7 +211,7 @@ const Workout = () => {
                         return (
                             <>
                                 <Disclosure.Button
-                                    className="sticky top-0 flex w-full items-center justify-between rounded bg-purple-100 px-4 py-2 text-left font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                    className="sticky top-0 mb-8 flex w-full items-center justify-between overflow-hidden rounded-md border-4 border-gray-50 bg-black p-4 text-left font-medium capitalize text-gray-50"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!open) {
@@ -239,10 +224,10 @@ const Workout = () => {
                                         // });
                                     }}
                                 >
-                                    <span className="flex items-center gap-1">
+                                    <span className="flex items-center gap-3">
                                         {routine.name}
                                         <TrashIcon
-                                            className="h-5 w-5 text-purple-500"
+                                            className="h-10 w-10 text-gray-50 hover:text-gray-500"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setDeleteRoutineName(
@@ -256,7 +241,7 @@ const Workout = () => {
                                     </span>
                                     <ChevronUpIcon
                                         className={classNames(
-                                            'h-5 w-5 text-purple-500',
+                                            'h-10 w-10 text-gray-50',
                                             open ? 'rotate-180 transform' : '',
                                         )}
                                     />
@@ -285,10 +270,10 @@ const Workout = () => {
                                                     className="flex flex-col justify-center gap-4 text-gray-500"
                                                 >
                                                     {idx === 0 && open ? (
-                                                        <div className="flex justify-center">
+                                                        <div className="flex justify-center pb-4">
                                                             <button
                                                                 type="button"
-                                                                className="mt-8 flex w-40 justify-center rounded bg-purple-100 px-4 py-2 font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                                                className="flex w-40 justify-center rounded-md bg-green-300 p-4 font-medium capitalize text-black hover:bg-green-400"
                                                                 onClick={(
                                                                     e,
                                                                 ) => {
@@ -321,7 +306,7 @@ const Workout = () => {
                                                             'flex items-center justify-center px-2',
                                                             currentExerciseId ===
                                                                 exercise.id &&
-                                                                'text-8xl font-extrabold text-white',
+                                                                'text-8xl font-extrabold text-gray-50',
                                                             exercise.sets &&
                                                                 'justify-between',
                                                             !exercise.sets &&
@@ -455,7 +440,7 @@ const Workout = () => {
                                                             />
                                                         ) : exercise.timer ? (
                                                             <span className="flex items-center gap-1">
-                                                                <ClockIcon className="h-5 w-5" />
+                                                                <ClockIcon className="h-10 w-10" />
                                                                 {secondsToTime(
                                                                     exercise.timer,
                                                                 )}
@@ -464,7 +449,7 @@ const Workout = () => {
                                                         {exercise.superset ? (
                                                             <span
                                                                 className={classNames(
-                                                                    'inline-flex items-center whitespace-nowrap rounded px-2 py-1 text-xl font-medium ring-1 ring-inset ring-red-600/10',
+                                                                    'inline-flex items-center whitespace-nowrap rounded-md px-2 py-1 text-xl font-medium ring-1 ring-inset ring-red-600/10',
                                                                     exercise.superset ===
                                                                         1
                                                                         ? 'bg-red-50 text-red-700'
@@ -488,17 +473,19 @@ const Workout = () => {
                                                         ) : null}
                                                     </div>
                                                     {exercise.sets ? (
-                                                        <table className="w-full overflow-hidden rounded text-center text-gray-400">
+                                                        <table className="w-full overflow-hidden rounded-md text-center text-gray-400">
                                                             <thead className="h-8 bg-gray-700 capitalize text-gray-400">
                                                                 <tr>
-                                                                    <th>set</th>
-                                                                    <th>
+                                                                    <th className="py-2">
+                                                                        set
+                                                                    </th>
+                                                                    <th className="py-2">
                                                                         weight
                                                                     </th>
-                                                                    <th>
+                                                                    <th className="py-2">
                                                                         reps
                                                                     </th>
-                                                                    <th></th>
+                                                                    <th className="py-2"></th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -529,16 +516,16 @@ const Workout = () => {
                                                                             {currentEditSetId ===
                                                                             set.id ? (
                                                                                 <>
-                                                                                    <td>
-                                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold text-white">
-                                                                                            <div className="h-5 w-2" />
+                                                                                    <td className="py-2">
+                                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold text-gray-50">
+                                                                                            <div className="h-10 w-2" />
                                                                                             {idx +
                                                                                                 1}
-                                                                                            <div className="h-5 w-2" />
+                                                                                            <div className="h-10 w-2" />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td>
-                                                                                        <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-white">
+                                                                                    <td className="py-2">
+                                                                                        <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-gray-50">
                                                                                             <MinusCircleIcon
                                                                                                 className="h-10 w-10 text-red-300"
                                                                                                 onClick={(
@@ -553,7 +540,7 @@ const Workout = () => {
                                                                                                     );
                                                                                                 }}
                                                                                             />
-                                                                                            <span className="flex items-center gap-1">
+                                                                                            <span className="flex items-center">
                                                                                                 {
                                                                                                     set.weight
                                                                                                 }
@@ -574,8 +561,8 @@ const Workout = () => {
                                                                                             />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td>
-                                                                                        <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-white">
+                                                                                    <td className="py-2">
+                                                                                        <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-gray-50">
                                                                                             <MinusCircleIcon
                                                                                                 className="h-10 w-10 text-red-300 hover:text-red-400"
                                                                                                 onClick={(
@@ -609,38 +596,49 @@ const Workout = () => {
                                                                                             />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td className="flex h-[99px] items-center justify-center">
-                                                                                        <button
-                                                                                            type="button"
-                                                                                            className="flex- my-2 flex w-32 justify-center rounded bg-green-300 p-1 font-medium capitalize text-black hover:bg-green-400"
-                                                                                            onClick={(
-                                                                                                e,
-                                                                                            ) => {
-                                                                                                e.stopPropagation();
-                                                                                                if (
-                                                                                                    exercise.superset
-                                                                                                ) {
-                                                                                                    setPreviousExercise(
-                                                                                                        {
-                                                                                                            exercise,
-                                                                                                            setIdx: idx,
-                                                                                                        },
+                                                                                    <td className="flex h-[112.5px] items-center justify-center">
+                                                                                        {isSetRest ? (
+                                                                                            <Countdown
+                                                                                                autoStart
+                                                                                                date={
+                                                                                                    Date.now() +
+                                                                                                    // exercise.setRest *
+                                                                                                    //     1000
+                                                                                                    10 *
+                                                                                                        1000
+                                                                                                }
+                                                                                                renderer={({
+                                                                                                    minutes,
+                                                                                                    seconds,
+                                                                                                }) => (
+                                                                                                    <span className="flex items-center justify-center gap-1 capitalize text-gray-50">
+                                                                                                        <HourglassIcon className="h-7 w-7" />
+                                                                                                        {zeroPad(
+                                                                                                            minutes,
+                                                                                                        )}
+
+                                                                                                        :
+                                                                                                        {zeroPad(
+                                                                                                            seconds,
+                                                                                                        )}
+                                                                                                    </span>
+                                                                                                )}
+                                                                                                onTick={(
+                                                                                                    timeObj,
+                                                                                                ) => {
+                                                                                                    if (
+                                                                                                        timeObj.seconds <=
+                                                                                                        5
+                                                                                                    ) {
+                                                                                                        textToSpeech(
+                                                                                                            timeObj.seconds,
+                                                                                                        );
+                                                                                                    }
+                                                                                                }}
+                                                                                                onComplete={() => {
+                                                                                                    setIsSetRest(
+                                                                                                        false,
                                                                                                     );
-                                                                                                    selectSupersetRest(
-                                                                                                        routine,
-                                                                                                        exercise,
-                                                                                                        idx,
-                                                                                                        isLastExercise,
-                                                                                                    );
-                                                                                                    setCurrentEditSetId(
-                                                                                                        null,
-                                                                                                    );
-                                                                                                } else if (
-                                                                                                    sets[
-                                                                                                        idx +
-                                                                                                            1
-                                                                                                    ]
-                                                                                                ) {
                                                                                                     setCurrentEditSetId(
                                                                                                         sets[
                                                                                                             idx +
@@ -648,61 +646,116 @@ const Workout = () => {
                                                                                                         ]
                                                                                                             .id,
                                                                                                     );
-                                                                                                } else {
+                                                                                                    textToSpeech(
+                                                                                                        exercise.name,
+                                                                                                    );
+                                                                                                }}
+                                                                                            />
+                                                                                        ) : (
+                                                                                            <button
+                                                                                                type="button"
+                                                                                                className="flex- my-2 flex w-32 justify-center rounded-md bg-green-300 p-1 font-medium capitalize text-black hover:bg-green-400"
+                                                                                                onClick={(
+                                                                                                    e,
+                                                                                                ) => {
+                                                                                                    e.stopPropagation();
                                                                                                     if (
-                                                                                                        isLastExercise
+                                                                                                        exercise.superset
                                                                                                     ) {
-                                                                                                        scrollToExercise(
-                                                                                                            `${routine.id}-end`,
-                                                                                                            'どうもお疲れさまでした',
+                                                                                                        setPreviousExercise(
+                                                                                                            {
+                                                                                                                exercise,
+                                                                                                                setIdx: idx,
+                                                                                                            },
+                                                                                                        );
+                                                                                                        selectSupersetRest(
+                                                                                                            routine,
+                                                                                                            exercise,
+                                                                                                            idx,
+                                                                                                            isLastExercise,
+                                                                                                        );
+                                                                                                        setCurrentEditSetId(
+                                                                                                            null,
+                                                                                                        );
+                                                                                                    } else if (
+                                                                                                        exercise.setRest &&
+                                                                                                        sets[
+                                                                                                            idx +
+                                                                                                                1
+                                                                                                        ]
+                                                                                                    ) {
+                                                                                                        setIsSetRest(
+                                                                                                            true,
+                                                                                                        );
+                                                                                                    } else if (
+                                                                                                        sets[
+                                                                                                            idx +
+                                                                                                                1
+                                                                                                        ]
+                                                                                                    ) {
+                                                                                                        setCurrentEditSetId(
+                                                                                                            sets[
+                                                                                                                idx +
+                                                                                                                    1
+                                                                                                            ]
+                                                                                                                .id,
                                                                                                         );
                                                                                                     } else {
-                                                                                                        scrollToExercise(
-                                                                                                            `${exercise.id}-${exercise.rest}`,
-                                                                                                            `${
-                                                                                                                exercise.rest /
-                                                                                                                60
-                                                                                                            }分休憩`,
+                                                                                                        if (
+                                                                                                            isLastExercise
+                                                                                                        ) {
+                                                                                                            scrollToExercise(
+                                                                                                                `${routine.id}-end`,
+                                                                                                                'どうもお疲れさまでした',
+                                                                                                            );
+                                                                                                        } else {
+                                                                                                            scrollToExercise(
+                                                                                                                `${exercise.id}-${exercise.rest}`,
+                                                                                                                `${
+                                                                                                                    exercise.rest /
+                                                                                                                    60
+                                                                                                                }分休憩`,
+                                                                                                            );
+                                                                                                        }
+                                                                                                        setCurrentEditSetId(
+                                                                                                            null,
                                                                                                         );
                                                                                                     }
-                                                                                                    setCurrentEditSetId(
-                                                                                                        null,
-                                                                                                    );
-                                                                                                }
-                                                                                            }}
-                                                                                        >
-                                                                                            next
-                                                                                        </button>
+                                                                                                }}
+                                                                                            >
+                                                                                                next
+                                                                                            </button>
+                                                                                        )}
                                                                                     </td>
                                                                                 </>
                                                                             ) : (
                                                                                 <>
-                                                                                    <td>
-                                                                                        <span className="flex items-center justify-center gap-1">
-                                                                                            <div className="h-5 w-2" />
+                                                                                    <td className="py-2">
+                                                                                        <span className="flex items-center justify-center gap-2">
+                                                                                            <div className="h-10 w-2" />
                                                                                             {idx +
                                                                                                 1}
-                                                                                            <div className="h-5 w-2" />
+                                                                                            <div className="h-10 w-2" />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td>
-                                                                                        <span className="flex items-center justify-center gap-1">
-                                                                                            <div className="h-5 w-5" />
-                                                                                            <DumbbellIcon className="h-5 w-5" />
+                                                                                    <td className="py-2">
+                                                                                        <span className="flex items-center justify-center gap-2">
+                                                                                            <div className="h-10 w-10" />
+                                                                                            <DumbbellIcon className="h-10 w-10" />
                                                                                             {`${set.weight} lbs`}
-                                                                                            <div className="h-5 w-5" />
+                                                                                            <div className="h-10 w-10" />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td>
-                                                                                        <span className="flex items-center justify-center gap-1">
-                                                                                            <div className="h-5 w-5" />
+                                                                                    <td className="py-2">
+                                                                                        <span className="flex items-center justify-center gap-2">
+                                                                                            <div className="h-10 w-10" />
                                                                                             {
                                                                                                 set.reps
                                                                                             }
-                                                                                            <div className="h-5 w-5" />
+                                                                                            <div className="h-10 w-10" />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td></td>
+                                                                                    <td className="py-2"></td>
                                                                                 </>
                                                                             )}
                                                                         </tr>
@@ -760,9 +813,9 @@ const Workout = () => {
                                                                         minutes,
                                                                         seconds,
                                                                     }) => (
-                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold capitalize">
+                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold capitalize text-gray-50">
                                                                             rest
-                                                                            <HourglassIcon className="h-24 w-24" />
+                                                                            <HourglassIcon className="h-20 w-20" />
                                                                             {zeroPad(
                                                                                 minutes,
                                                                             )}
@@ -796,11 +849,11 @@ const Workout = () => {
                                                             ) : (
                                                                 <span className="flex items-center justify-center gap-1 capitalize">
                                                                     rest
-                                                                    <HourglassIcon className="h-5 w-5" />
+                                                                    <HourglassIcon className="h-7 w-7" />
                                                                     {secondsToTime(
                                                                         exercise.supersetRest,
                                                                     )}
-                                                                    <ArrowsUpDownIcon className="h-5 w-5" />
+                                                                    <ArrowsUpDownIcon className="h-10 w-10" />
                                                                 </span>
                                                             )}
                                                         </div>
@@ -853,9 +906,9 @@ const Workout = () => {
                                                                         minutes,
                                                                         seconds,
                                                                     }) => (
-                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold capitalize">
+                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold capitalize text-gray-50">
                                                                             rest
-                                                                            <HourglassIcon className="h-24 w-24" />
+                                                                            <HourglassIcon className="h-20 w-20" />
                                                                             {zeroPad(
                                                                                 minutes,
                                                                             )}
@@ -920,11 +973,11 @@ const Workout = () => {
                                                             ) : (
                                                                 <span className="flex items-center justify-center gap-1 capitalize">
                                                                     rest
-                                                                    <HourglassIcon className="h-5 w-5" />
+                                                                    <HourglassIcon className="h-7 w-7" />
                                                                     {secondsToTime(
                                                                         exercise.rest,
                                                                     )}
-                                                                    <ArrowDownIcon className="h-5 w-5" />
+                                                                    <ArrowDownIcon className="h-10 w-10" />
                                                                 </span>
                                                             )}
                                                         </div>
@@ -943,7 +996,7 @@ const Workout = () => {
                                                                 'mb-4 flex w-full justify-center px-4 py-2 uppercase',
                                                                 currentExerciseId ===
                                                                     `${routine.id}-end`
-                                                                    ? 'text-8xl font-extrabold'
+                                                                    ? 'text-8xl font-extrabold text-gray-50'
                                                                     : '',
                                                             )}
                                                             ref={(node) => {
@@ -974,6 +1027,21 @@ const Workout = () => {
                     }}
                 </Disclosure>
             ))}
+            <PlusCircleIcon
+                className="sticky bottom-8 h-20 w-20 rounded-full bg-black text-gray-50"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    setIsAddRoutineOpen(true);
+                }}
+            >
+                add routine
+            </PlusCircleIcon>
+            <AddRoutine
+                isOpen={isAddRoutineOpen}
+                setIsOpen={setIsAddRoutineOpen}
+                workout={workout}
+                setWorkout={setWorkout}
+            />
         </>
     );
 };
