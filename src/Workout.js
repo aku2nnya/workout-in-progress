@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Countdown, { zeroPad } from 'react-countdown';
 import Speech from 'speak-tts';
 import { Disclosure } from '@headlessui/react';
@@ -34,11 +34,11 @@ const Workout = () => {
     const [isAddRoutineOpen, setIsAddRoutineOpen] = useState(false);
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
     const [deleteRoutineName, setDeleteRoutineName] = useState(null);
-    // const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
     const [currentExerciseId, setCurrentExerciseId] = useState(null);
     const [currentEditSetId, setCurrentEditSetId] = useState(null);
     const [previousExercise, setPreviousExercise] = useState(null);
     const [isSetRest, setIsSetRest] = useState(false);
+    const [previousElementAnimate, setPreviousElementAnimate] = useState(null);
     const exercisesRef = useRef(null);
     const speech = new Speech();
 
@@ -47,22 +47,6 @@ const Workout = () => {
         rate: 1.02,
         pitch: 0.85,
     });
-
-    // const togglePanels = (newPanel) => {
-    //     if (activeDisclosurePanel) {
-    //         if (
-    //             activeDisclosurePanel.key !== newPanel.key &&
-    //             activeDisclosurePanel.open
-    //         ) {
-    //             activeDisclosurePanel.close();
-    //         }
-    //     }
-
-    //     setActiveDisclosurePanel({
-    //         ...newPanel,
-    //         open: !newPanel.open,
-    //     });
-    // };
 
     const scrollToExercise = (exerciseId, speech) => {
         const map = getMap();
@@ -201,6 +185,37 @@ const Workout = () => {
         return speech.speak({ text: String(text) });
     };
 
+    const isExerciseNameLongerThanWidth = (id) => {
+        const element = document?.getElementById(`exercise-${id}-name`);
+        const elementWidth = element?.getBoundingClientRect()?.width;
+        const width = window.innerWidth - 80;
+        const widthOffset = String(width - 8 - elementWidth);
+        const elementAnimate = element?.animate(
+            [
+                { transform: 'translateX(0%)' },
+                { transform: `translateX(${widthOffset}px)` },
+                { transform: 'translateX(0%)' },
+            ],
+            { duration: 7000, iterations: Infinity },
+        );
+
+        elementAnimate?.pause();
+
+        if (elementWidth > width) {
+            elementAnimate?.play();
+            setPreviousElementAnimate(elementAnimate);
+        }
+        if (previousElementAnimate !== elementAnimate) {
+            previousElementAnimate?.cancel();
+        }
+    };
+
+    useEffect(() => {
+        if (currentExerciseId) {
+            isExerciseNameLongerThanWidth(currentExerciseId);
+        }
+    }, [currentExerciseId]);
+
     return (
         <>
             {workout.map((routine, idx) => (
@@ -211,23 +226,18 @@ const Workout = () => {
                         return (
                             <>
                                 <Disclosure.Button
-                                    className="sticky top-0 mb-8 flex w-full items-center justify-between overflow-hidden rounded-md border-4 border-gray-50 bg-black p-4 text-left font-medium capitalize text-gray-50"
+                                    className="sticky top-0 z-10 mb-8 flex w-full items-center justify-between overflow-hidden rounded-lg border-4 border-gray-50 bg-black p-4 text-left font-medium capitalize text-gray-50"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!open) {
                                             close();
                                         }
-
-                                        // togglePanels({
-                                        //     ...panel,
-                                        //     key: idx,
-                                        // });
                                     }}
                                 >
                                     <span className="flex items-center gap-3">
                                         {routine.name}
                                         <TrashIcon
-                                            className="h-10 w-10 text-gray-50 hover:text-gray-500"
+                                            className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setDeleteRoutineName(
@@ -273,7 +283,7 @@ const Workout = () => {
                                                         <div className="flex justify-center pb-4">
                                                             <button
                                                                 type="button"
-                                                                className="flex w-40 justify-center rounded-md bg-green-300 p-4 font-medium capitalize text-black hover:bg-green-400"
+                                                                className="flex w-80 justify-center rounded-lg bg-green-300 p-4 font-medium capitalize text-black hover:bg-green-400"
                                                                 onClick={(
                                                                     e,
                                                                 ) => {
@@ -303,7 +313,7 @@ const Workout = () => {
                                                     ) : null}
                                                     <div
                                                         className={classNames(
-                                                            'flex items-center justify-center px-2',
+                                                            'flex max-w-full items-center justify-center gap-4 px-2 hover:cursor-pointer',
                                                             currentExerciseId ===
                                                                 exercise.id &&
                                                                 'text-8xl font-extrabold text-gray-50',
@@ -345,18 +355,24 @@ const Workout = () => {
                                                             }
                                                         }}
                                                     >
-                                                        <span className="capitalize">
-                                                            {exercise.name}
-                                                        </span>
+                                                        <div className="max-w-full overflow-x-clip overflow-y-visible">
+                                                            <span
+                                                                className={classNames(
+                                                                    'relative left-0 inline-block whitespace-nowrap capitalize',
+                                                                )}
+                                                                id={`exercise-${exercise.id}-name`}
+                                                            >
+                                                                {exercise.name}
+                                                            </span>
+                                                        </div>
                                                         {exercise.timer &&
                                                         currentExerciseId ===
                                                             exercise.id ? (
                                                             <Countdown
                                                                 date={
                                                                     Date.now() +
-                                                                    // exercise.timer *
-                                                                    //     1000
-                                                                    10 * 1000
+                                                                    exercise.timer *
+                                                                        1000
                                                                 }
                                                                 renderer={({
                                                                     minutes,
@@ -446,34 +462,9 @@ const Workout = () => {
                                                                 )}
                                                             </span>
                                                         ) : null}
-                                                        {exercise.superset ? (
-                                                            <span
-                                                                className={classNames(
-                                                                    'inline-flex items-center whitespace-nowrap rounded-md px-2 py-1 text-xl font-medium ring-1 ring-inset ring-red-600/10',
-                                                                    exercise.superset ===
-                                                                        1
-                                                                        ? 'bg-red-50 text-red-700'
-                                                                        : exercise.superset ===
-                                                                            2
-                                                                          ? 'bg-blue-50 text-blue-700'
-                                                                          : exercise.superset ===
-                                                                              3
-                                                                            ? 'bg-green-50 text-green-700'
-                                                                            : exercise.superset ===
-                                                                                4
-                                                                              ? 'bg-orange-50 text-orange-700'
-                                                                              : exercise.superset ===
-                                                                                  5
-                                                                                ? 'bg-gray-50 text-gray-600'
-                                                                                : '',
-                                                                )}
-                                                            >
-                                                                {`Superset ${exercise.superset}`}
-                                                            </span>
-                                                        ) : null}
                                                     </div>
                                                     {exercise.sets ? (
-                                                        <table className="w-full overflow-hidden rounded-md text-center text-gray-400">
+                                                        <table className="w-full overflow-hidden rounded-lg text-center text-gray-400">
                                                             <thead className="h-8 bg-gray-700 capitalize text-gray-400">
                                                                 <tr>
                                                                     <th className="py-2">
@@ -499,7 +490,7 @@ const Workout = () => {
                                                                             key={
                                                                                 idx
                                                                             }
-                                                                            className="h-10 border-b border-gray-700 bg-gray-800"
+                                                                            className="h-10 border-b border-gray-700 bg-gray-800 hover:cursor-pointer"
                                                                             onClick={(
                                                                                 e,
                                                                             ) => {
@@ -527,7 +518,7 @@ const Workout = () => {
                                                                                     <td className="py-2">
                                                                                         <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-gray-50">
                                                                                             <MinusCircleIcon
-                                                                                                className="h-10 w-10 text-red-300"
+                                                                                                className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -546,7 +537,7 @@ const Workout = () => {
                                                                                                 }
                                                                                             </span>
                                                                                             <PlusCircleIcon
-                                                                                                className="h-10 w-10 text-blue-300"
+                                                                                                className="h-10 w-10 text-blue-300 hover:cursor-pointer hover:text-blue-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -564,7 +555,7 @@ const Workout = () => {
                                                                                     <td className="py-2">
                                                                                         <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-gray-50">
                                                                                             <MinusCircleIcon
-                                                                                                className="h-10 w-10 text-red-300 hover:text-red-400"
+                                                                                                className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -581,7 +572,7 @@ const Workout = () => {
                                                                                                 set.reps
                                                                                             }
                                                                                             <PlusCircleIcon
-                                                                                                className="h-10 w-10 text-blue-300 hover:text-blue-400"
+                                                                                                className="h-10 w-10 text-blue-300 hover:cursor-pointer hover:text-blue-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -602,9 +593,7 @@ const Workout = () => {
                                                                                                 autoStart
                                                                                                 date={
                                                                                                     Date.now() +
-                                                                                                    // exercise.setRest *
-                                                                                                    //     1000
-                                                                                                    10 *
+                                                                                                    exercise.setRest *
                                                                                                         1000
                                                                                                 }
                                                                                                 renderer={({
@@ -654,7 +643,7 @@ const Workout = () => {
                                                                                         ) : (
                                                                                             <button
                                                                                                 type="button"
-                                                                                                className="flex- my-2 flex w-32 justify-center rounded-md bg-green-300 p-1 font-medium capitalize text-black hover:bg-green-400"
+                                                                                                className="flex- my-2 flex w-32 justify-center rounded-lg bg-green-300 p-1 font-medium capitalize text-black hover:bg-green-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -770,6 +759,7 @@ const Workout = () => {
                                                             idx + 1
                                                         ]?.superset ? (
                                                         <div
+                                                            className="flex items-center justify-center gap-4 hover:cursor-pointer"
                                                             ref={(node) => {
                                                                 const map =
                                                                     getMap();
@@ -798,15 +788,36 @@ const Workout = () => {
                                                                 );
                                                             }}
                                                         >
+                                                            <span
+                                                                className={classNames(
+                                                                    'inline-flex items-center whitespace-nowrap rounded-lg px-2 py-1 text-xl font-medium ring-1 ring-inset ring-red-600/10',
+                                                                    exercise.superset ===
+                                                                        1
+                                                                        ? 'bg-red-100 text-red-700'
+                                                                        : exercise.superset ===
+                                                                            2
+                                                                          ? 'bg-blue-100 text-blue-700'
+                                                                          : exercise.superset ===
+                                                                              3
+                                                                            ? 'bg-green-100 text-green-700'
+                                                                            : exercise.superset ===
+                                                                                4
+                                                                              ? 'bg-orange-100 text-orange-700'
+                                                                              : exercise.superset ===
+                                                                                  5
+                                                                                ? 'bg-gray-100 text-gray-700'
+                                                                                : '',
+                                                                )}
+                                                            >
+                                                                {`Superset ${exercise.superset}`}
+                                                            </span>
                                                             {currentExerciseId ===
                                                             `${routine.id}-superset-${exercise.superset}` ? (
                                                                 <Countdown
                                                                     autoStart
                                                                     date={
                                                                         Date.now() +
-                                                                        // exercise.supersetRest *
-                                                                        //     1000
-                                                                        10 *
+                                                                        exercise.supersetRest *
                                                                             1000
                                                                     }
                                                                     renderer={({
@@ -862,7 +873,7 @@ const Workout = () => {
                                                               .length &&
                                                       exercise.rest ? (
                                                         <div
-                                                            className="flex items-center justify-center gap-1 py-2"
+                                                            className="flex items-center justify-center gap-1 py-2 hover:cursor-pointer"
                                                             ref={(node) => {
                                                                 const map =
                                                                     getMap();
@@ -897,9 +908,7 @@ const Workout = () => {
                                                                     autoStart
                                                                     date={
                                                                         Date.now() +
-                                                                        // exercise.rest *
-                                                                        //     1000
-                                                                        10 *
+                                                                        exercise.rest *
                                                                             1000
                                                                     }
                                                                     renderer={({
@@ -993,7 +1002,7 @@ const Workout = () => {
                                                     {isLastExercise ? (
                                                         <div
                                                             className={classNames(
-                                                                'mb-4 flex w-full justify-center px-4 py-2 uppercase',
+                                                                'mb-8 flex w-full justify-center px-4 py-2 uppercase',
                                                                 currentExerciseId ===
                                                                     `${routine.id}-end`
                                                                     ? 'text-8xl font-extrabold text-gray-50'
@@ -1028,7 +1037,7 @@ const Workout = () => {
                 </Disclosure>
             ))}
             <PlusCircleIcon
-                className="sticky bottom-8 h-20 w-20 rounded-full bg-black text-gray-50"
+                className="sticky bottom-8 h-20 w-20 rounded-full bg-black text-gray-50 hover:cursor-pointer hover:bg-gray-700"
                 onClick={(e) => {
                     e.stopPropagation();
                     setIsAddRoutineOpen(true);

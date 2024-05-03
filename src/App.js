@@ -21,10 +21,10 @@ const App = () => {
                                         'w-full py-8 font-medium capitalize leading-5 focus:outline-none',
                                         selected
                                             ? 'bg-black text-gray-50'
-                                            : 'text-black hover:text-gray-500',
-                                        tab === 'workout' && 'rounded-tr-md',
-                                        tab === 'routines' && 'rounded-t-md',
-                                        tab === 'exercises' && 'rounded-tl-md',
+                                            : 'text-black hover:cursor-pointer hover:text-gray-700',
+                                        tab === 'workout' && 'rounded-tr-lg',
+                                        tab === 'routines' && 'rounded-t-lg',
+                                        tab === 'exercises' && 'rounded-tl-lg',
                                     )
                                 }
                             >

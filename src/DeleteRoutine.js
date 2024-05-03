@@ -41,7 +41,7 @@ const DeleteRoutine = ({
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-5 overflow-hidden rounded-2xl bg-white p-4 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-5 overflow-hidden rounded-2xl bg-white p-4 text-left align-middle text-3xl text-black shadow-xl transition-all">
                                 <Dialog.Description className="text-center">
                                     Are you sure you would like to delete the
                                     routine?
@@ -50,7 +50,7 @@ const DeleteRoutine = ({
                                 <div className="flex justify-end">
                                     <button
                                         ref={deleteButtonRef}
-                                        className="flex justify-center rounded-lg bg-purple-100 px-5 py-2 text-left text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                        className="flex justify-center rounded-lg bg-red-300 px-5 py-2 text-left font-medium capitalize text-black hover:bg-red-400"
                                         onClick={() => {
                                             setWorkout(
                                                 workout.filter(

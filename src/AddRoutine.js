@@ -48,13 +48,13 @@ const AddRoutine = ({ isOpen, setIsOpen, workout, setWorkout }) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-2 overflow-hidden rounded-2xl bg-white p-4 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-4 overflow-hidden rounded-2xl bg-gray-50 p-4 text-left align-middle text-3xl shadow-xl transition-all">
                                 {remainingRoutines.length ? (
                                     remainingRoutines.map((routine, idx) => {
                                         return (
                                             <button
                                                 key={idx}
-                                                className="flex w-full justify-center rounded-lg bg-purple-100 px-4 py-2 text-left text-lg font-medium capitalize text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                                                className="flex w-full justify-center rounded-lg bg-black px-4 py-2 text-left font-medium capitalize text-gray-50 hover:bg-gray-700"
                                                 onClick={() => {
                                                     setWorkout(
                                                         [...workout, routine],
