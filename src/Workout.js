@@ -16,20 +16,14 @@ import AddRoutine from './AddRoutine';
 import DeleteRoutine from './DeleteRoutine';
 import {
     classNames,
-    useLocalStorage,
     findNestedObjArr,
     secondsToTime,
+    useLocalStorage,
 } from './helpers';
 import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
 
-const Workout = () => {
-    const dayOfWeek = new Date()
-        .toLocaleString('en', {
-            weekday: 'long',
-            timeZone: 'America/Los_Angeles',
-        })
-        .toLowerCase();
+const Workout = ({ dayOfWeek }) => {
     const [workout, setWorkout] = useLocalStorage(`${dayOfWeek}Workout`, []);
     const [isAddRoutineOpen, setIsAddRoutineOpen] = useState(false);
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
@@ -215,6 +209,17 @@ const Workout = () => {
             isExerciseNameLongerThanWidth(currentExerciseId);
         }
     }, [currentExerciseId]);
+
+    useEffect(() => {
+        const dayOfWeekWorkout = localStorage.getItem(`${dayOfWeek}Workout`);
+
+        if (dayOfWeekWorkout) {
+            setWorkout(JSON.parse(dayOfWeekWorkout));
+        } else {
+            localStorage.setItem(`${dayOfWeek}Workout`, JSON.stringify([]));
+            setWorkout([]);
+        }
+    }, [dayOfWeek]);
 
     return (
         <>
@@ -616,6 +621,17 @@ const Workout = () => {
                                                                                                     timeObj,
                                                                                                 ) => {
                                                                                                     if (
+                                                                                                        timeObj.seconds ===
+                                                                                                        59
+                                                                                                    ) {
+                                                                                                        textToSpeech(
+                                                                                                            `${
+                                                                                                                exercise.setRest /
+                                                                                                                60
+                                                                                                            }分休憩`,
+                                                                                                        );
+                                                                                                    }
+                                                                                                    if (
                                                                                                         timeObj.seconds <=
                                                                                                         5
                                                                                                     ) {
@@ -635,8 +651,9 @@ const Workout = () => {
                                                                                                         ]
                                                                                                             .id,
                                                                                                     );
-                                                                                                    textToSpeech(
-                                                                                                        exercise.name,
+                                                                                                    scrollToExercise(
+                                                                                                        exercise.id,
+                                                                                                        exercise.jpSpeech,
                                                                                                     );
                                                                                                 }}
                                                                                             />

@@ -302,8 +302,8 @@
         },
         {
             "id": "2d9bfe13-34ed-4481-9351-8380ef0cfebd",
-            "name": "warm-up: weight training day",
-            "jpSpeech": "warm-up: weight training day",
+            "name": "morning weight training",
+            "jpSpeech": "morning weight training",
             "exercises": [
                 {
                     "id": "432f5dba-568d-4233-9849-673854577225",
@@ -353,8 +353,8 @@
         },
         {
             "id": "914b96df-d7d4-4e22-b5c7-2b06e0fce6a1",
-            "name": "warm-up: cardio day",
-            "jpSpeech": "warm-up: cardio day",
+            "name": "morning cardio",
+            "jpSpeech": "morning cardio",
             "exercises": [
                 {
                     "id": "d8b77c71-4fd3-4dd6-b5ff-e50474da113d",
