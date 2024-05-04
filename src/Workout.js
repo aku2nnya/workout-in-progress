@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, Fragment } from 'react';
 import Countdown, { zeroPad } from 'react-countdown';
 import Speech from 'speak-tts';
 import { Disclosure } from '@headlessui/react';
@@ -481,37 +481,28 @@ const Workout = ({ dayOfWeek }) => {
                                                                     <th className="py-2">
                                                                         reps
                                                                     </th>
-                                                                    <th className="py-2"></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody className="bg-gray-800">
                                                                 {exercise.sets.map(
                                                                     (
                                                                         set,
                                                                         idx,
                                                                         sets,
-                                                                    ) => (
-                                                                        <tr
-                                                                            key={
-                                                                                idx
-                                                                            }
-                                                                            className="h-10 border-b border-gray-700 bg-gray-800 hover:cursor-pointer"
-                                                                            onClick={(
-                                                                                e,
-                                                                            ) => {
-                                                                                e.stopPropagation();
-                                                                                setCurrentEditSetId(
-                                                                                    set.id,
-                                                                                );
-                                                                                scrollToExercise(
-                                                                                    exercise.id,
-                                                                                    exercise.jpSpeech,
-                                                                                );
-                                                                            }}
-                                                                        >
-                                                                            {currentEditSetId ===
-                                                                            set.id ? (
-                                                                                <>
+                                                                    ) =>
+                                                                        currentEditSetId ===
+                                                                        set.id ? (
+                                                                            <Fragment
+                                                                                key={
+                                                                                    idx
+                                                                                }
+                                                                            >
+                                                                                <tr
+                                                                                    key={
+                                                                                        idx
+                                                                                    }
+                                                                                    className="h-10 hover:cursor-pointer"
+                                                                                >
                                                                                     <td className="py-2">
                                                                                         <span className="flex items-center justify-center gap-1 text-8xl font-extrabold text-gray-50">
                                                                                             <div className="h-10 w-2" />
@@ -523,7 +514,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                     <td className="py-2">
                                                                                         <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-gray-50">
                                                                                             <MinusCircleIcon
-                                                                                                className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
+                                                                                                className="h-20 w-20 text-red-300 hover:cursor-pointer hover:text-red-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -542,7 +533,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                 }
                                                                                             </span>
                                                                                             <PlusCircleIcon
-                                                                                                className="h-10 w-10 text-blue-300 hover:cursor-pointer hover:text-blue-400"
+                                                                                                className="h-20 w-20 text-blue-300 hover:cursor-pointer hover:text-blue-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -560,7 +551,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                     <td className="py-2">
                                                                                         <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-gray-50">
                                                                                             <MinusCircleIcon
-                                                                                                className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
+                                                                                                className="h-20 w-20 text-red-300 hover:cursor-pointer hover:text-red-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -577,7 +568,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                 set.reps
                                                                                             }
                                                                                             <PlusCircleIcon
-                                                                                                className="h-10 w-10 text-blue-300 hover:cursor-pointer hover:text-blue-400"
+                                                                                                className="h-20 w-20 text-blue-300 hover:cursor-pointer hover:text-blue-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -592,113 +583,62 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td className="flex h-[112.5px] items-center justify-center">
-                                                                                        {isSetRest ? (
-                                                                                            <Countdown
-                                                                                                autoStart
-                                                                                                date={
-                                                                                                    Date.now() +
-                                                                                                    exercise.setRest *
-                                                                                                        1000
-                                                                                                }
-                                                                                                renderer={({
-                                                                                                    minutes,
-                                                                                                    seconds,
-                                                                                                }) => (
-                                                                                                    <span className="flex items-center justify-center gap-1 capitalize text-gray-50">
-                                                                                                        <HourglassIcon className="h-7 w-7" />
-                                                                                                        {zeroPad(
-                                                                                                            minutes,
-                                                                                                        )}
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td colSpan="3">
+                                                                                        <span className="flex w-full items-center justify-center border-b border-gray-700 py-4">
+                                                                                            {isSetRest ? (
+                                                                                                <Countdown
+                                                                                                    autoStart
+                                                                                                    date={
+                                                                                                        Date.now() +
+                                                                                                        exercise.setRest *
+                                                                                                            1000
+                                                                                                    }
+                                                                                                    renderer={({
+                                                                                                        minutes,
+                                                                                                        seconds,
+                                                                                                    }) => (
+                                                                                                        <span className="flex items-center justify-center gap-1 text-7xl capitalize text-gray-50">
+                                                                                                            rest
+                                                                                                            <HourglassIcon className="h-16 w-16" />
+                                                                                                            {zeroPad(
+                                                                                                                minutes,
+                                                                                                            )}
 
-                                                                                                        :
-                                                                                                        {zeroPad(
-                                                                                                            seconds,
-                                                                                                        )}
-                                                                                                    </span>
-                                                                                                )}
-                                                                                                onTick={(
-                                                                                                    timeObj,
-                                                                                                ) => {
-                                                                                                    if (
-                                                                                                        timeObj.seconds ===
-                                                                                                        59
-                                                                                                    ) {
-                                                                                                        textToSpeech(
-                                                                                                            `${
-                                                                                                                exercise.setRest /
-                                                                                                                60
-                                                                                                            }分休憩`,
-                                                                                                        );
-                                                                                                    }
-                                                                                                    if (
-                                                                                                        timeObj.seconds <=
-                                                                                                        5
-                                                                                                    ) {
-                                                                                                        textToSpeech(
-                                                                                                            timeObj.seconds,
-                                                                                                        );
-                                                                                                    }
-                                                                                                }}
-                                                                                                onComplete={() => {
-                                                                                                    setIsSetRest(
-                                                                                                        false,
-                                                                                                    );
-                                                                                                    setCurrentEditSetId(
-                                                                                                        sets[
-                                                                                                            idx +
-                                                                                                                1
-                                                                                                        ]
-                                                                                                            .id,
-                                                                                                    );
-                                                                                                    scrollToExercise(
-                                                                                                        exercise.id,
-                                                                                                        exercise.jpSpeech,
-                                                                                                    );
-                                                                                                }}
-                                                                                            />
-                                                                                        ) : (
-                                                                                            <button
-                                                                                                type="button"
-                                                                                                className="flex- my-2 flex w-32 justify-center rounded-lg bg-green-300 p-1 font-medium capitalize text-black hover:bg-green-400"
-                                                                                                onClick={(
-                                                                                                    e,
-                                                                                                ) => {
-                                                                                                    e.stopPropagation();
-                                                                                                    if (
-                                                                                                        exercise.superset
-                                                                                                    ) {
-                                                                                                        setPreviousExercise(
-                                                                                                            {
-                                                                                                                exercise,
-                                                                                                                setIdx: idx,
-                                                                                                            },
-                                                                                                        );
-                                                                                                        selectSupersetRest(
-                                                                                                            routine,
-                                                                                                            exercise,
-                                                                                                            idx,
-                                                                                                            isLastExercise,
-                                                                                                        );
-                                                                                                        setCurrentEditSetId(
-                                                                                                            null,
-                                                                                                        );
-                                                                                                    } else if (
-                                                                                                        exercise.setRest &&
-                                                                                                        sets[
-                                                                                                            idx +
-                                                                                                                1
-                                                                                                        ]
-                                                                                                    ) {
+                                                                                                            :
+                                                                                                            {zeroPad(
+                                                                                                                seconds,
+                                                                                                            )}
+                                                                                                        </span>
+                                                                                                    )}
+                                                                                                    onTick={(
+                                                                                                        timeObj,
+                                                                                                    ) => {
+                                                                                                        if (
+                                                                                                            timeObj.seconds ===
+                                                                                                            59
+                                                                                                        ) {
+                                                                                                            textToSpeech(
+                                                                                                                `${
+                                                                                                                    exercise.setRest /
+                                                                                                                    60
+                                                                                                                }分休憩`,
+                                                                                                            );
+                                                                                                        }
+                                                                                                        if (
+                                                                                                            timeObj.seconds <=
+                                                                                                            5
+                                                                                                        ) {
+                                                                                                            textToSpeech(
+                                                                                                                timeObj.seconds,
+                                                                                                            );
+                                                                                                        }
+                                                                                                    }}
+                                                                                                    onComplete={() => {
                                                                                                         setIsSetRest(
-                                                                                                            true,
+                                                                                                            false,
                                                                                                         );
-                                                                                                    } else if (
-                                                                                                        sets[
-                                                                                                            idx +
-                                                                                                                1
-                                                                                                        ]
-                                                                                                    ) {
                                                                                                         setCurrentEditSetId(
                                                                                                             sets[
                                                                                                                 idx +
@@ -706,66 +646,136 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                             ]
                                                                                                                 .id,
                                                                                                         );
-                                                                                                    } else {
+                                                                                                        scrollToExercise(
+                                                                                                            exercise.id,
+                                                                                                            exercise.jpSpeech,
+                                                                                                        );
+                                                                                                    }}
+                                                                                                />
+                                                                                            ) : (
+                                                                                                <button
+                                                                                                    type="button"
+                                                                                                    className="flex w-80 justify-center rounded-lg bg-green-300 p-4 font-medium capitalize text-black hover:bg-green-400"
+                                                                                                    onClick={(
+                                                                                                        e,
+                                                                                                    ) => {
+                                                                                                        e.stopPropagation();
                                                                                                         if (
-                                                                                                            isLastExercise
+                                                                                                            exercise.superset
                                                                                                         ) {
-                                                                                                            scrollToExercise(
-                                                                                                                `${routine.id}-end`,
-                                                                                                                'どうもお疲れさまでした',
+                                                                                                            setPreviousExercise(
+                                                                                                                {
+                                                                                                                    exercise,
+                                                                                                                    setIdx: idx,
+                                                                                                                },
+                                                                                                            );
+                                                                                                            selectSupersetRest(
+                                                                                                                routine,
+                                                                                                                exercise,
+                                                                                                                idx,
+                                                                                                                isLastExercise,
+                                                                                                            );
+                                                                                                            setCurrentEditSetId(
+                                                                                                                null,
+                                                                                                            );
+                                                                                                        } else if (
+                                                                                                            exercise.setRest &&
+                                                                                                            sets[
+                                                                                                                idx +
+                                                                                                                    1
+                                                                                                            ]
+                                                                                                        ) {
+                                                                                                            setIsSetRest(
+                                                                                                                true,
+                                                                                                            );
+                                                                                                        } else if (
+                                                                                                            sets[
+                                                                                                                idx +
+                                                                                                                    1
+                                                                                                            ]
+                                                                                                        ) {
+                                                                                                            setCurrentEditSetId(
+                                                                                                                sets[
+                                                                                                                    idx +
+                                                                                                                        1
+                                                                                                                ]
+                                                                                                                    .id,
                                                                                                             );
                                                                                                         } else {
-                                                                                                            scrollToExercise(
-                                                                                                                `${exercise.id}-${exercise.rest}`,
-                                                                                                                `${
-                                                                                                                    exercise.rest /
-                                                                                                                    60
-                                                                                                                }分休憩`,
+                                                                                                            if (
+                                                                                                                isLastExercise
+                                                                                                            ) {
+                                                                                                                scrollToExercise(
+                                                                                                                    `${routine.id}-end`,
+                                                                                                                    'どうもお疲れさまでした',
+                                                                                                                );
+                                                                                                            } else {
+                                                                                                                scrollToExercise(
+                                                                                                                    `${exercise.id}-${exercise.rest}`,
+                                                                                                                    `${
+                                                                                                                        exercise.rest /
+                                                                                                                        60
+                                                                                                                    }分休憩`,
+                                                                                                                );
+                                                                                                            }
+                                                                                                            setCurrentEditSetId(
+                                                                                                                null,
                                                                                                             );
                                                                                                         }
-                                                                                                        setCurrentEditSetId(
-                                                                                                            null,
-                                                                                                        );
-                                                                                                    }
-                                                                                                }}
-                                                                                            >
-                                                                                                next
-                                                                                            </button>
-                                                                                        )}
-                                                                                    </td>
-                                                                                </>
-                                                                            ) : (
-                                                                                <>
-                                                                                    <td className="py-2">
-                                                                                        <span className="flex items-center justify-center gap-2">
-                                                                                            <div className="h-10 w-2" />
-                                                                                            {idx +
-                                                                                                1}
-                                                                                            <div className="h-10 w-2" />
+                                                                                                    }}
+                                                                                                >
+                                                                                                    next
+                                                                                                </button>
+                                                                                            )}
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td className="py-2">
-                                                                                        <span className="flex items-center justify-center gap-2">
-                                                                                            <div className="h-10 w-10" />
-                                                                                            <DumbbellIcon className="h-10 w-10" />
-                                                                                            {`${set.weight} lbs`}
-                                                                                            <div className="h-10 w-10" />
-                                                                                        </span>
-                                                                                    </td>
-                                                                                    <td className="py-2">
-                                                                                        <span className="flex items-center justify-center gap-2">
-                                                                                            <div className="h-10 w-10" />
-                                                                                            {
-                                                                                                set.reps
-                                                                                            }
-                                                                                            <div className="h-10 w-10" />
-                                                                                        </span>
-                                                                                    </td>
-                                                                                    <td className="py-2"></td>
-                                                                                </>
-                                                                            )}
-                                                                        </tr>
-                                                                    ),
+                                                                                </tr>
+                                                                            </Fragment>
+                                                                        ) : (
+                                                                            <tr
+                                                                                key={
+                                                                                    idx
+                                                                                }
+                                                                                onClick={(
+                                                                                    e,
+                                                                                ) => {
+                                                                                    e.stopPropagation();
+                                                                                    setCurrentEditSetId(
+                                                                                        set.id,
+                                                                                    );
+                                                                                    scrollToExercise(
+                                                                                        exercise.id,
+                                                                                        exercise.jpSpeech,
+                                                                                    );
+                                                                                }}
+                                                                            >
+                                                                                <td className="py-2">
+                                                                                    <span className="flex items-center justify-center gap-2">
+                                                                                        <div className="h-10 w-2" />
+                                                                                        {idx +
+                                                                                            1}
+                                                                                        <div className="h-10 w-2" />
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td className="py-2">
+                                                                                    <span className="flex items-center justify-center gap-2">
+                                                                                        <div className="h-10 w-10" />
+                                                                                        <DumbbellIcon className="h-10 w-10" />
+                                                                                        {`${set.weight} lbs`}
+                                                                                        <div className="h-10 w-10" />
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td className="py-2">
+                                                                                    <span className="flex items-center justify-center gap-2">
+                                                                                        <div className="h-10 w-10" />
+                                                                                        {
+                                                                                            set.reps
+                                                                                        }
+                                                                                        <div className="h-10 w-10" />
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                        ),
                                                                 )}
                                                             </tbody>
                                                         </table>
