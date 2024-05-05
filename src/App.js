@@ -63,6 +63,17 @@ const App = () => {
         document.getElementsByTagName('main')[0].scrollTop = 0;
     };
 
+    const upperContentHeight = () => {
+        const headerHeight = document
+            ?.getElementById('header')
+            ?.getBoundingClientRect()?.height;
+        const dayTimeHeight = document
+            ?.getElementById('dayTime')
+            ?.getBoundingClientRect()?.height;
+
+        return String(headerHeight + dayTimeHeight);
+    };
+
     useEffect(() => {
         setInterval(() => {
             setTime(getTime());
@@ -72,7 +83,7 @@ const App = () => {
     return (
         <div className="w-full bg-black text-4xl">
             <Tab.Group defaultIndex={0}>
-                <header className="sticky top-0 h-fit bg-gray-50">
+                <header className="sticky top-0 h-fit bg-gray-50" id="header">
                     <Tab.List className="mx-auto flex space-x-2">
                         {tabs.map((tab) => (
                             <Tab
@@ -96,29 +107,38 @@ const App = () => {
                         ))}
                     </Tab.List>
                 </header>
-                <div className="flex w-full items-center justify-between whitespace-nowrap p-8 pb-16 font-medium capitalize text-gray-50">
-                    <ChevronLeftIcon
-                        className="h-10 cursor-pointer px-16"
+                <div
+                    className="flex w-full items-center justify-between whitespace-nowrap p-8 pb-16 font-medium capitalize text-gray-50"
+                    id="dayTime"
+                >
+                    <span
+                        className="flex w-full cursor-pointer justify-center"
                         onClick={(e) => {
                             e.stopPropagation();
                             previousDayOfWeek(dayOfWeek);
                         }}
-                    />
-                    <span className="flex gap-4">
+                    >
+                        <ChevronLeftIcon className="h-10 w-10" />
+                    </span>
+                    <span className="flex justify-center gap-4">
                         <span>{dayOfWeek}</span>
                         {(dayOfWeek === today || dayOfWeek === 'vacation') && (
                             <span>{time}</span>
                         )}
                     </span>
-                    <ChevronRightIcon
-                        className="h-10 cursor-pointer px-16"
+                    <span
+                        className="flex w-full cursor-pointer justify-center"
                         onClick={(e) => {
                             e.stopPropagation();
                             nextDayOfWeek(dayOfWeek);
                         }}
-                    />
+                    >
+                        <ChevronRightIcon className="h-10 w-10" />
+                    </span>
                 </div>
-                <main className="h-[calc(100vh-252px)] overflow-y-auto scrollbar-hide">
+                <main
+                    className={`h-[calc(100vh-${upperContentHeight()}px)] overflow-y-auto scrollbar-hide`}
+                >
                     <Tab.Panels>
                         {tabs.map((tab, idx) => (
                             <Tab.Panel
