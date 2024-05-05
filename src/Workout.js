@@ -363,7 +363,7 @@ const Workout = ({ dayOfWeek }) => {
                                                         <div className="max-w-full overflow-x-clip overflow-y-visible">
                                                             <span
                                                                 className={classNames(
-                                                                    'relative left-0 inline-block whitespace-nowrap capitalize',
+                                                                    'left-0 inline-block whitespace-nowrap capitalize',
                                                                 )}
                                                                 id={`exercise-${exercise.id}-name`}
                                                             >
@@ -1064,7 +1064,7 @@ const Workout = ({ dayOfWeek }) => {
                 </Disclosure>
             ))}
             <PlusCircleIcon
-                className="sticky bottom-8 h-20 w-20 rounded-full bg-black text-gray-50 hover:cursor-pointer hover:bg-gray-700"
+                className="sticky bottom-0 h-20 w-20 rounded-full bg-black text-gray-50 hover:cursor-pointer hover:bg-gray-700"
                 onClick={(e) => {
                     e.stopPropagation();
                     setIsAddRoutineOpen(true);

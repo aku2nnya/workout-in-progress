@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Tab } from '@headlessui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 
 import DumbbellIcon from './icons/Dumbbell';
 import Workout from './Workout';
-// import Routines from './Routines';
-// import Exercises from './Exercises';
 import { classNames } from './helpers';
 
 const App = () => {
@@ -36,8 +33,6 @@ const App = () => {
         'sunday',
         'vacation',
     ];
-    // const tabs = ['workout', 'routines', 'exercises'];
-    const tabs = ['workout'];
 
     const nextDayOfWeek = (dayOfWeek) => {
         const todayIndex = daysOfWeekArr.findIndex((day) => day === dayOfWeek);
@@ -63,17 +58,6 @@ const App = () => {
         document.getElementsByTagName('main')[0].scrollTop = 0;
     };
 
-    const upperContentHeight = () => {
-        const headerHeight = document
-            ?.getElementById('header')
-            ?.getBoundingClientRect()?.height;
-        const dayTimeHeight = document
-            ?.getElementById('dayTime')
-            ?.getBoundingClientRect()?.height;
-
-        return String(headerHeight + dayTimeHeight);
-    };
-
     useEffect(() => {
         setInterval(() => {
             setTime(getTime());
@@ -82,35 +66,13 @@ const App = () => {
 
     return (
         <div className="w-full bg-black text-4xl">
-            <Tab.Group defaultIndex={0}>
-                <header className="sticky top-0 h-fit bg-gray-50" id="header">
-                    <Tab.List className="mx-auto flex space-x-2">
-                        {tabs.map((tab) => (
-                            <Tab
-                                key={tab}
-                                className={({ selected }) =>
-                                    classNames(
-                                        'flex w-full items-center justify-center gap-8 bg-black p-8 pt-16 font-medium uppercase leading-5 text-gray-50 focus:outline-none',
-                                        // selected
-                                        //     ? 'bg-black text-gray-50'
-                                        //     : 'text-black hover:cursor-pointer hover:text-gray-700',
-                                        // tab === 'workout' && 'rounded-tr-lg',
-                                        // tab === 'routines' && 'rounded-t-lg',
-                                        // tab === 'exercises' && 'rounded-tl-lg',
-                                    )
-                                }
-                            >
-                                <DumbbellIcon className="h-20 w-20" />
-                                <span>{tab}</span>
-                                <DumbbellIcon className="h-20 w-20" />
-                            </Tab>
-                        ))}
-                    </Tab.List>
-                </header>
-                <div
-                    className="flex w-full items-center justify-between whitespace-nowrap p-8 pb-16 font-medium capitalize text-gray-50"
-                    id="dayTime"
-                >
+            <header className="sticky top-0 h-fit w-full bg-black" id="header">
+                <div className="mx-auto flex w-full items-center justify-center gap-8 p-8 pt-16 font-medium uppercase leading-5 text-gray-50 focus:outline-none">
+                    <DumbbellIcon className="h-20 w-20" />
+                    <span>workout</span>
+                    <DumbbellIcon className="h-20 w-20" />
+                </div>
+                <div className="flex w-full items-center justify-between whitespace-nowrap p-8 pb-16 font-medium capitalize text-gray-50">
                     <span
                         className="flex w-full cursor-pointer justify-center"
                         onClick={(e) => {
@@ -136,25 +98,14 @@ const App = () => {
                         <ChevronRightIcon className="h-10 w-10" />
                     </span>
                 </div>
-                <main
-                    className={`h-[calc(100vh-${upperContentHeight()}px)] overflow-y-auto scrollbar-hide`}
-                >
-                    <Tab.Panels>
-                        {tabs.map((tab, idx) => (
-                            <Tab.Panel
-                                key={idx}
-                                className="mx-auto w-full px-8 pb-8"
-                            >
-                                {tab === 'workout' && (
-                                    <Workout dayOfWeek={dayOfWeek} />
-                                )}
-                                {/* {tab === 'routines' && <Routines />}
-                                {tab === 'exercises' && <Exercises />} */}
-                            </Tab.Panel>
-                        ))}
-                    </Tab.Panels>
-                </main>
-            </Tab.Group>
+            </header>
+            <main
+                className={classNames(
+                    `mx-auto h-[calc(100vh-312px)] w-full overflow-y-auto px-8 pb-8 scrollbar-hide`,
+                )}
+            >
+                <Workout dayOfWeek={dayOfWeek} />
+            </main>
         </div>
     );
 };
