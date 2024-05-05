@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tab } from '@headlessui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 
+import DumbbellIcon from './icons/Dumbbell';
 import Workout from './Workout';
 // import Routines from './Routines';
 // import Exercises from './Exercises';
@@ -15,16 +16,15 @@ const App = () => {
         })
         .toLowerCase();
     const [dayOfWeek, setDayOfWeek] = useState(today);
-    const clock = new Date().toLocaleString('en', {
-        hour12: true,
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZone: 'America/Los_Angeles',
-    });
-    const [time, setTime] = useState(clock);
-    setInterval(() => {
-        setTime(clock);
-    }, 1000);
+
+    const getTime = () =>
+        new Date().toLocaleString('en', {
+            hour12: true,
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'America/Los_Angeles',
+        });
+    const [time, setTime] = useState(getTime());
 
     const daysOfWeekArr = [
         'monday',
@@ -63,6 +63,12 @@ const App = () => {
         document.getElementsByTagName('main')[0].scrollTop = 0;
     };
 
+    useEffect(() => {
+        setInterval(() => {
+            setTime(getTime());
+        }, 1000);
+    }, []);
+
     return (
         <div className="w-full bg-black text-4xl">
             <Tab.Group defaultIndex={0}>
@@ -73,17 +79,19 @@ const App = () => {
                                 key={tab}
                                 className={({ selected }) =>
                                     classNames(
-                                        'w-full p-8 pt-16 font-medium uppercase leading-5 focus:outline-none',
-                                        selected
-                                            ? 'bg-black text-gray-50'
-                                            : 'text-black hover:cursor-pointer hover:text-gray-700',
+                                        'flex w-full items-center justify-center gap-8 bg-black p-8 pt-16 font-medium uppercase leading-5 text-gray-50 focus:outline-none',
+                                        // selected
+                                        //     ? 'bg-black text-gray-50'
+                                        //     : 'text-black hover:cursor-pointer hover:text-gray-700',
                                         // tab === 'workout' && 'rounded-tr-lg',
                                         // tab === 'routines' && 'rounded-t-lg',
                                         // tab === 'exercises' && 'rounded-tl-lg',
                                     )
                                 }
                             >
-                                {tab}
+                                <DumbbellIcon className="h-20 w-20" />
+                                <span>{tab}</span>
+                                <DumbbellIcon className="h-20 w-20" />
                             </Tab>
                         ))}
                     </Tab.List>
