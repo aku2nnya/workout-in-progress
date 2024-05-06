@@ -35,6 +35,7 @@ const Workout = ({ dayOfWeek }) => {
     const [previousElementAnimate, setPreviousElementAnimate] = useState(null);
     const exercisesRef = useRef(null);
     const speech = new Speech();
+    const startDate = useRef(Date.now());
 
     speech.init({
         lang: 'ja-JP',
@@ -375,7 +376,7 @@ const Workout = ({ dayOfWeek }) => {
                                                             exercise.id ? (
                                                             <Countdown
                                                                 date={
-                                                                    Date.now() +
+                                                                    startDate.current +
                                                                     exercise.timer *
                                                                         1000
                                                                 }
@@ -591,7 +592,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                 <Countdown
                                                                                                     autoStart
                                                                                                     date={
-                                                                                                        Date.now() +
+                                                                                                        startDate.current +
                                                                                                         exercise.setRest *
                                                                                                             1000
                                                                                                     }
@@ -843,7 +844,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                 <Countdown
                                                                     autoStart
                                                                     date={
-                                                                        Date.now() +
+                                                                        startDate.current +
                                                                         exercise.supersetRest *
                                                                             1000
                                                                     }
@@ -934,7 +935,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                 <Countdown
                                                                     autoStart
                                                                     date={
-                                                                        Date.now() +
+                                                                        startDate.current +
                                                                         exercise.rest *
                                                                             1000
                                                                     }
