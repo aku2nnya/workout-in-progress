@@ -231,7 +231,7 @@ const Workout = ({ dayOfWeek }) => {
                         return (
                             <>
                                 <Disclosure.Button
-                                    className="sticky top-0 z-10 mb-8 flex w-full items-center justify-between overflow-hidden rounded-lg border-4 border-gray-50 bg-black p-4 text-left font-medium capitalize text-gray-50"
+                                    className="sticky top-0 z-10 mb-8 flex w-full items-center justify-between overflow-hidden rounded-lg border-4 border-gray-50 bg-gray-950 p-4 text-left font-medium capitalize text-gray-50"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!open) {
@@ -288,7 +288,7 @@ const Workout = ({ dayOfWeek }) => {
                                                         <div className="flex justify-center pb-4">
                                                             <button
                                                                 type="button"
-                                                                className="flex w-80 justify-center rounded-lg bg-green-300 p-4 font-medium capitalize text-black hover:bg-green-400"
+                                                                className="flex w-80 justify-center rounded-lg bg-green-300 p-4 font-medium capitalize text-gray-950 hover:bg-green-400"
                                                                 onClick={(
                                                                     e,
                                                                 ) => {
@@ -655,7 +655,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             ) : (
                                                                                                 <button
                                                                                                     type="button"
-                                                                                                    className="flex w-80 justify-center rounded-lg bg-green-300 p-4 font-medium capitalize text-black hover:bg-green-400"
+                                                                                                    className="flex w-80 justify-center rounded-lg bg-green-300 p-4 font-medium capitalize text-gray-950 hover:bg-green-400"
                                                                                                     onClick={(
                                                                                                         e,
                                                                                                     ) => {
@@ -1064,7 +1064,7 @@ const Workout = ({ dayOfWeek }) => {
                 </Disclosure>
             ))}
             <PlusCircleIcon
-                className="sticky bottom-0 h-20 w-20 rounded-full bg-black text-gray-50 hover:cursor-pointer hover:bg-gray-700"
+                className="sticky bottom-0 h-20 w-20 rounded-full bg-gray-950 text-gray-50 hover:cursor-pointer hover:bg-gray-700"
                 onClick={(e) => {
                     e.stopPropagation();
                     setIsAddRoutineOpen(true);

@@ -65,8 +65,11 @@ const App = () => {
     // }, []);
 
     return (
-        <div className="w-full bg-black text-4xl">
-            <header className="sticky top-0 h-fit w-full bg-black" id="header">
+        <div className="w-full bg-gray-950 text-4xl">
+            <header
+                className="sticky top-0 h-fit w-full bg-gray-950"
+                id="header"
+            >
                 <div className="mx-auto flex w-full items-center justify-center gap-8 p-8 pt-16 font-medium uppercase leading-5 text-gray-50 focus:outline-none">
                     <DumbbellIcon className="h-20 w-20" />
                     <span>workout</span>
