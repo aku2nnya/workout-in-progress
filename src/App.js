@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 
 import DumbbellIcon from './icons/Dumbbell';
@@ -14,14 +14,14 @@ const App = () => {
         .toLowerCase();
     const [dayOfWeek, setDayOfWeek] = useState(today);
 
-    const getTime = () =>
-        new Date().toLocaleString('en', {
-            hour12: true,
-            hour: '2-digit',
-            minute: '2-digit',
-            timeZone: 'America/Los_Angeles',
-        });
-    const [time, setTime] = useState(getTime());
+    // const getTime = () =>
+    //     new Date().toLocaleString('en', {
+    //         hour12: true,
+    //         hour: '2-digit',
+    //         minute: '2-digit',
+    //         timeZone: 'America/Los_Angeles',
+    //     });
+    // const [time, setTime] = useState(getTime());
 
     const daysOfWeekArr = [
         'monday',
@@ -58,11 +58,11 @@ const App = () => {
         document.getElementsByTagName('main')[0].scrollTop = 0;
     };
 
-    useEffect(() => {
-        setInterval(() => {
-            setTime(getTime());
-        }, 1000);
-    }, []);
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         setTime(getTime());
+    //     }, 1000);
+    // }, []);
 
     return (
         <div className="w-full bg-black text-4xl">
@@ -84,9 +84,9 @@ const App = () => {
                     </span>
                     <span className="flex justify-center gap-4">
                         <span>{dayOfWeek}</span>
-                        {(dayOfWeek === today || dayOfWeek === 'vacation') && (
+                        {/* {(dayOfWeek === today || dayOfWeek === 'vacation') && (
                             <span>{time}</span>
-                        )}
+                        )} */}
                     </span>
                     <span
                         className="flex w-full cursor-pointer justify-center"
