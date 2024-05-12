@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/workout-in-progress/static/css/main.974c3ce0.css",
+    "main.js": "/workout-in-progress/static/js/main.1f8fa7d8.js",
+    "static/js/787.2655e62b.chunk.js": "/workout-in-progress/static/js/787.2655e62b.chunk.js",
+    "service-worker.js": "/workout-in-progress/service-worker.js",
+    "index.html": "/workout-in-progress/index.html",
+    "main.974c3ce0.css.map": "/workout-in-progress/static/css/main.974c3ce0.css.map",
+    "main.1f8fa7d8.js.map": "/workout-in-progress/static/js/main.1f8fa7d8.js.map",
+    "787.2655e62b.chunk.js.map": "/workout-in-progress/static/js/787.2655e62b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.974c3ce0.css",
+    "static/js/main.1f8fa7d8.js"
+  ]
+}
