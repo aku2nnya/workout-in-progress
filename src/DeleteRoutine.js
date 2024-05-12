@@ -31,7 +31,7 @@ const DeleteRoutine = ({
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center">
+                    <div className="flex min-h-full items-center justify-center p-6 text-center">
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -41,7 +41,7 @@ const DeleteRoutine = ({
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-5 overflow-hidden rounded-2xl bg-white p-4 text-left align-middle text-3xl text-black shadow-xl transition-all">
+                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-5 overflow-hidden rounded-2xl bg-gray-50 p-4 text-left align-middle text-2xl text-gray-950 shadow-xl transition-all">
                                 <Dialog.Description className="text-center">
                                     Are you sure you would like to delete the
                                     routine?
@@ -50,7 +50,7 @@ const DeleteRoutine = ({
                                 <div className="flex justify-end">
                                     <button
                                         ref={deleteButtonRef}
-                                        className="flex justify-center rounded-lg bg-red-300 px-5 py-2 text-left font-medium capitalize text-black hover:bg-red-400"
+                                        className="flex justify-center rounded-lg bg-red-300 px-5 py-2 text-left font-medium capitalize text-gray-950 hover:bg-red-400"
                                         onClick={() => {
                                             setWorkout(
                                                 workout.filter(

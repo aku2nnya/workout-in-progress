@@ -38,7 +38,7 @@ const AddRoutine = ({ isOpen, setIsOpen, workout, setWorkout }) => {
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center">
+                    <div className="flex min-h-full items-center justify-center p-6 text-center">
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -48,13 +48,13 @@ const AddRoutine = ({ isOpen, setIsOpen, workout, setWorkout }) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-4 overflow-hidden rounded-2xl bg-gray-50 p-4 text-left align-middle text-3xl shadow-xl transition-all">
+                            <Dialog.Panel className="flex w-full max-w-md transform flex-col gap-4 overflow-hidden rounded-2xl bg-gray-50 p-4 text-left align-middle text-2xl shadow-xl transition-all">
                                 {remainingRoutines.length ? (
                                     remainingRoutines.map((routine, idx) => {
                                         return (
                                             <button
                                                 key={idx}
-                                                className="flex w-full justify-center rounded-lg bg-black px-4 py-2 text-left font-medium capitalize text-gray-50 hover:bg-gray-700"
+                                                className="flex w-full justify-center rounded-lg bg-gray-950 px-4 py-2 text-left font-medium capitalize text-gray-50 hover:bg-gray-700"
                                                 onClick={() => {
                                                     setWorkout(
                                                         [...workout, routine],

@@ -231,7 +231,7 @@ const Workout = ({ dayOfWeek }) => {
                         return (
                             <>
                                 <Disclosure.Button
-                                    className="sticky top-0 z-10 mb-8 flex w-full items-center justify-between overflow-hidden rounded-lg border-4 border-gray-50 bg-gray-950 p-4 text-left font-medium capitalize text-gray-50"
+                                    className="sticky top-0 z-10 mb-8 flex w-full items-center justify-between overflow-hidden rounded-lg border-2 border-gray-50 bg-gray-950 p-3 text-left font-medium capitalize text-gray-50"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!open) {
@@ -242,7 +242,7 @@ const Workout = ({ dayOfWeek }) => {
                                     <span className="flex items-center gap-3">
                                         {routine.name}
                                         <TrashIcon
-                                            className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
+                                            className="h-6 w-6 text-red-300 hover:cursor-pointer hover:text-red-400"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setDeleteRoutineName(
@@ -256,7 +256,7 @@ const Workout = ({ dayOfWeek }) => {
                                     </span>
                                     <ChevronUpIcon
                                         className={classNames(
-                                            'h-10 w-10 text-gray-50',
+                                            'h-6 w-6 text-gray-50',
                                             open ? 'rotate-180 transform' : '',
                                         )}
                                     />
@@ -282,13 +282,13 @@ const Workout = ({ dayOfWeek }) => {
                                             return (
                                                 <Disclosure.Panel
                                                     key={idx}
-                                                    className="flex flex-col justify-center gap-4 text-gray-500"
+                                                    className="flex flex-col justify-center gap-2 text-gray-500"
                                                 >
                                                     {idx === 0 && open ? (
                                                         <div className="flex justify-center pb-4">
                                                             <button
                                                                 type="button"
-                                                                className="flex w-80 justify-center rounded-lg bg-green-300 p-4 font-medium capitalize text-gray-950 hover:bg-green-400"
+                                                                className="flex w-40 justify-center rounded-lg bg-green-300 p-2 font-medium capitalize text-gray-950 hover:bg-green-400"
                                                                 onClick={(
                                                                     e,
                                                                 ) => {
@@ -318,10 +318,10 @@ const Workout = ({ dayOfWeek }) => {
                                                     ) : null}
                                                     <div
                                                         className={classNames(
-                                                            'flex max-w-full items-center justify-center gap-4 px-2 hover:cursor-pointer',
+                                                            'flex max-w-full items-center justify-center gap-2 px-2 hover:cursor-pointer',
                                                             currentExerciseId ===
                                                                 exercise.id &&
-                                                                'text-8xl font-extrabold text-gray-50',
+                                                                'gap-4 text-5xl font-extrabold text-gray-50',
                                                             exercise.sets &&
                                                                 'justify-between',
                                                             !exercise.sets &&
@@ -399,7 +399,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                             }
                                                                         }}
                                                                     >
-                                                                        <ClockIcon className="h-24 w-24" />
+                                                                        <ClockIcon className="h-10 w-10" />
                                                                         {zeroPad(
                                                                             minutes,
                                                                         )}
@@ -413,8 +413,10 @@ const Workout = ({ dayOfWeek }) => {
                                                                     timeObj,
                                                                 ) => {
                                                                     if (
+                                                                        timeObj.minutes ===
+                                                                            0 &&
                                                                         timeObj.seconds <=
-                                                                        5
+                                                                            5
                                                                     ) {
                                                                         return textToSpeech(
                                                                             timeObj.seconds,
@@ -461,7 +463,7 @@ const Workout = ({ dayOfWeek }) => {
                                                             />
                                                         ) : exercise.timer ? (
                                                             <span className="flex items-center gap-1">
-                                                                <ClockIcon className="h-10 w-10" />
+                                                                <ClockIcon className="h-6 w-6" />
                                                                 {secondsToTime(
                                                                     exercise.timer,
                                                                 )}
@@ -472,13 +474,13 @@ const Workout = ({ dayOfWeek }) => {
                                                         <table className="w-full overflow-hidden rounded-lg text-center text-gray-400">
                                                             <thead className="h-8 bg-gray-700 capitalize text-gray-400">
                                                                 <tr>
-                                                                    <th className="py-2">
+                                                                    <th className="p-1 pl-2">
                                                                         set
                                                                     </th>
-                                                                    <th className="py-2">
+                                                                    <th className="p-1">
                                                                         weight
                                                                     </th>
-                                                                    <th className="py-2">
+                                                                    <th className="p-1 pr-2">
                                                                         reps
                                                                     </th>
                                                                 </tr>
@@ -503,18 +505,16 @@ const Workout = ({ dayOfWeek }) => {
                                                                                     }
                                                                                     className="h-10 hover:cursor-pointer"
                                                                                 >
-                                                                                    <td className="py-2">
-                                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold text-gray-50">
-                                                                                            <div className="h-10 w-2" />
+                                                                                    <td className="py-2 pl-2">
+                                                                                        <span className="flex items-center justify-center text-3xl font-extrabold text-gray-50">
                                                                                             {idx +
                                                                                                 1}
-                                                                                            <div className="h-10 w-2" />
                                                                                         </span>
                                                                                     </td>
                                                                                     <td className="py-2">
-                                                                                        <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-gray-50">
+                                                                                        <span className="flex items-center justify-center gap-1 text-5xl font-extrabold text-gray-50">
                                                                                             <MinusCircleIcon
-                                                                                                className="h-20 w-20 text-red-300 hover:cursor-pointer hover:text-red-400"
+                                                                                                className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -533,7 +533,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                 }
                                                                                             </span>
                                                                                             <PlusCircleIcon
-                                                                                                className="h-20 w-20 text-blue-300 hover:cursor-pointer hover:text-blue-400"
+                                                                                                className="h-10 w-10 text-blue-300 hover:cursor-pointer hover:text-blue-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -548,10 +548,10 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td className="py-2">
-                                                                                        <span className="flex items-center justify-center gap-4 text-8xl font-extrabold text-gray-50">
+                                                                                    <td className="py-2 pr-2">
+                                                                                        <span className="flex items-center justify-center gap-1 text-5xl font-extrabold text-gray-50">
                                                                                             <MinusCircleIcon
-                                                                                                className="h-20 w-20 text-red-300 hover:cursor-pointer hover:text-red-400"
+                                                                                                className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -568,7 +568,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                 set.reps
                                                                                             }
                                                                                             <PlusCircleIcon
-                                                                                                className="h-20 w-20 text-blue-300 hover:cursor-pointer hover:text-blue-400"
+                                                                                                className="h-10 w-10 text-blue-300 hover:cursor-pointer hover:text-blue-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -586,7 +586,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td colSpan="3">
-                                                                                        <span className="flex w-full items-center justify-center border-b border-gray-700 py-4">
+                                                                                        <span className="flex w-full items-center justify-center border-b border-gray-700 p-3">
                                                                                             {isSetRest ? (
                                                                                                 <Countdown
                                                                                                     autoStart
@@ -599,9 +599,9 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                         minutes,
                                                                                                         seconds,
                                                                                                     }) => (
-                                                                                                        <span className="flex items-center justify-center gap-1 text-7xl capitalize text-gray-50">
+                                                                                                        <span className="flex items-center justify-center gap-1 text-5xl font-extrabold capitalize text-gray-50">
                                                                                                             rest
-                                                                                                            <HourglassIcon className="h-16 w-16" />
+                                                                                                            <HourglassIcon className="h-10 w-10" />
                                                                                                             {zeroPad(
                                                                                                                 minutes,
                                                                                                             )}
@@ -627,8 +627,10 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                             );
                                                                                                         }
                                                                                                         if (
+                                                                                                            timeObj.minutes ===
+                                                                                                                0 &&
                                                                                                             timeObj.seconds <=
-                                                                                                            5
+                                                                                                                5
                                                                                                         ) {
                                                                                                             textToSpeech(
                                                                                                                 timeObj.seconds,
@@ -655,7 +657,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             ) : (
                                                                                                 <button
                                                                                                     type="button"
-                                                                                                    className="flex w-80 justify-center rounded-lg bg-green-300 p-4 font-medium capitalize text-gray-950 hover:bg-green-400"
+                                                                                                    className="flex w-40 justify-center rounded-lg bg-green-300 p-2 font-medium capitalize text-gray-950 hover:bg-green-400"
                                                                                                     onClick={(
                                                                                                         e,
                                                                                                     ) => {
@@ -751,27 +753,21 @@ const Workout = ({ dayOfWeek }) => {
                                                                             >
                                                                                 <td className="py-2">
                                                                                     <span className="flex items-center justify-center gap-2">
-                                                                                        <div className="h-10 w-2" />
                                                                                         {idx +
                                                                                             1}
-                                                                                        <div className="h-10 w-2" />
                                                                                     </span>
                                                                                 </td>
                                                                                 <td className="py-2">
                                                                                     <span className="flex items-center justify-center gap-2">
-                                                                                        <div className="h-10 w-10" />
-                                                                                        <DumbbellIcon className="h-10 w-10" />
+                                                                                        <DumbbellIcon className="h-6 w-6" />
                                                                                         {`${set.weight} lbs`}
-                                                                                        <div className="h-10 w-10" />
                                                                                     </span>
                                                                                 </td>
                                                                                 <td className="py-2">
                                                                                     <span className="flex items-center justify-center gap-2">
-                                                                                        <div className="h-10 w-10" />
                                                                                         {
                                                                                             set.reps
                                                                                         }
-                                                                                        <div className="h-10 w-10" />
                                                                                     </span>
                                                                                 </td>
                                                                             </tr>
@@ -786,7 +782,7 @@ const Workout = ({ dayOfWeek }) => {
                                                             idx + 1
                                                         ]?.superset ? (
                                                         <div
-                                                            className="flex items-center justify-center gap-4 hover:cursor-pointer"
+                                                            className="flex w-full flex-wrap items-center justify-center gap-2 hover:cursor-pointer"
                                                             ref={(node) => {
                                                                 const map =
                                                                     getMap();
@@ -851,9 +847,9 @@ const Workout = ({ dayOfWeek }) => {
                                                                         minutes,
                                                                         seconds,
                                                                     }) => (
-                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold capitalize text-gray-50">
+                                                                        <span className="flex items-center justify-center gap-1 text-5xl font-extrabold capitalize text-gray-50">
                                                                             rest
-                                                                            <HourglassIcon className="h-20 w-20" />
+                                                                            <HourglassIcon className="h-10 w-10" />
                                                                             {zeroPad(
                                                                                 minutes,
                                                                             )}
@@ -861,15 +857,17 @@ const Workout = ({ dayOfWeek }) => {
                                                                             {zeroPad(
                                                                                 seconds,
                                                                             )}
-                                                                            <ArrowsUpDownIcon className="h-24 w-24" />
+                                                                            <ArrowsUpDownIcon className="h-10 w-10" />
                                                                         </span>
                                                                     )}
                                                                     onTick={(
                                                                         timeObj,
                                                                     ) => {
                                                                         if (
+                                                                            timeObj.minutes ===
+                                                                                0 &&
                                                                             timeObj.seconds <=
-                                                                            5
+                                                                                5
                                                                         ) {
                                                                             return textToSpeech(
                                                                                 timeObj.seconds,
@@ -887,11 +885,11 @@ const Workout = ({ dayOfWeek }) => {
                                                             ) : (
                                                                 <span className="flex items-center justify-center gap-1 capitalize">
                                                                     rest
-                                                                    <HourglassIcon className="h-7 w-7" />
+                                                                    <HourglassIcon className="h-6 w-6" />
                                                                     {secondsToTime(
                                                                         exercise.supersetRest,
                                                                     )}
-                                                                    <ArrowsUpDownIcon className="h-10 w-10" />
+                                                                    <ArrowsUpDownIcon className="h-6 w-6" />
                                                                 </span>
                                                             )}
                                                         </div>
@@ -942,9 +940,9 @@ const Workout = ({ dayOfWeek }) => {
                                                                         minutes,
                                                                         seconds,
                                                                     }) => (
-                                                                        <span className="flex items-center justify-center gap-1 text-8xl font-extrabold capitalize text-gray-50">
+                                                                        <span className="flex items-center justify-center gap-1 text-5xl font-extrabold capitalize text-gray-50">
                                                                             rest
-                                                                            <HourglassIcon className="h-20 w-20" />
+                                                                            <HourglassIcon className="h-10 w-10" />
                                                                             {zeroPad(
                                                                                 minutes,
                                                                             )}
@@ -952,15 +950,17 @@ const Workout = ({ dayOfWeek }) => {
                                                                             {zeroPad(
                                                                                 seconds,
                                                                             )}
-                                                                            <ArrowDownIcon className="h-24 w-24" />
+                                                                            <ArrowDownIcon className="h-10 w-10" />
                                                                         </span>
                                                                     )}
                                                                     onTick={(
                                                                         timeObj,
                                                                     ) => {
                                                                         if (
+                                                                            timeObj.minutes ===
+                                                                                0 &&
                                                                             timeObj.seconds <=
-                                                                            5
+                                                                                5
                                                                         ) {
                                                                             return textToSpeech(
                                                                                 timeObj.seconds,
@@ -1009,11 +1009,11 @@ const Workout = ({ dayOfWeek }) => {
                                                             ) : (
                                                                 <span className="flex items-center justify-center gap-1 capitalize">
                                                                     rest
-                                                                    <HourglassIcon className="h-7 w-7" />
+                                                                    <HourglassIcon className="h-6 w-6" />
                                                                     {secondsToTime(
                                                                         exercise.rest,
                                                                     )}
-                                                                    <ArrowDownIcon className="h-10 w-10" />
+                                                                    <ArrowDownIcon className="h-6 w-6" />
                                                                 </span>
                                                             )}
                                                         </div>
@@ -1029,10 +1029,10 @@ const Workout = ({ dayOfWeek }) => {
                                                     {isLastExercise ? (
                                                         <div
                                                             className={classNames(
-                                                                'mb-8 flex w-full justify-center px-4 py-2 uppercase',
+                                                                'mb-8 flex w-full justify-center px-4 py-2 capitalize',
                                                                 currentExerciseId ===
                                                                     `${routine.id}-end`
-                                                                    ? 'text-8xl font-extrabold text-gray-50'
+                                                                    ? 'text-5xl font-extrabold text-gray-50'
                                                                     : '',
                                                             )}
                                                             ref={(node) => {
@@ -1064,7 +1064,7 @@ const Workout = ({ dayOfWeek }) => {
                 </Disclosure>
             ))}
             <PlusCircleIcon
-                className="sticky bottom-0 h-20 w-20 rounded-full bg-gray-950 text-gray-50 hover:cursor-pointer hover:bg-gray-700"
+                className="sticky bottom-0 h-14 w-14 rounded-full bg-gray-950 text-gray-50 hover:cursor-pointer hover:bg-gray-700"
                 onClick={(e) => {
                     e.stopPropagation();
                     setIsAddRoutineOpen(true);
