@@ -7,8 +7,8 @@ import {
     ArrowsUpDownIcon,
     ChevronUpIcon,
     ClockIcon,
-    MinusCircleIcon,
-    PlusCircleIcon,
+    MinusIcon,
+    PlusIcon,
     TrashIcon,
 } from '@heroicons/react/20/solid';
 
@@ -23,7 +23,7 @@ import {
 import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
 
-const Workout = ({ dayOfWeek }) => {
+const Workout = ({ dayOfWeek, headerHeightOffset }) => {
     const [workout, setWorkout] = useLocalStorage(`${dayOfWeek}Workout`, []);
     const [isAddRoutineOpen, setIsAddRoutineOpen] = useState(false);
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
@@ -46,10 +46,9 @@ const Workout = ({ dayOfWeek }) => {
         const map = getMap();
         const node = map.get(exerciseId);
 
-        node.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-        });
+        node.scrollIntoView();
+        window.scrollBy({ top: headerHeightOffset, behavior: 'smooth' });
+
         setCurrentExerciseId(exerciseId);
 
         if (speech) {
@@ -231,7 +230,7 @@ const Workout = ({ dayOfWeek }) => {
                         return (
                             <>
                                 <Disclosure.Button
-                                    className="sticky top-0 z-10 mb-8 flex w-full items-center justify-between overflow-hidden rounded-lg border-2 border-gray-50 bg-gray-950 p-3 text-left font-medium capitalize text-gray-50"
+                                    className="mb-8 flex w-full items-center justify-between overflow-hidden rounded-lg border-2 border-gray-50 bg-gray-950 p-3 text-left font-medium capitalize text-gray-50"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!open) {
@@ -242,7 +241,7 @@ const Workout = ({ dayOfWeek }) => {
                                     <span className="flex items-center gap-3">
                                         {routine.name}
                                         <TrashIcon
-                                            className="h-6 w-6 text-red-300 hover:cursor-pointer hover:text-red-400"
+                                            className="h-6 w-6 bg-gray-950 text-red-300 hover:cursor-pointer hover:text-red-400"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setDeleteRoutineName(
@@ -288,7 +287,7 @@ const Workout = ({ dayOfWeek }) => {
                                                         <div className="flex justify-center pb-4">
                                                             <button
                                                                 type="button"
-                                                                className="flex w-40 justify-center rounded-lg bg-green-300 p-2 font-medium capitalize text-gray-950 hover:bg-green-400"
+                                                                className="flex w-52 justify-center rounded-lg bg-green-300 p-2 font-medium capitalize text-gray-950 hover:bg-green-400"
                                                                 onClick={(
                                                                     e,
                                                                 ) => {
@@ -505,16 +504,22 @@ const Workout = ({ dayOfWeek }) => {
                                                                                     }
                                                                                     className="h-10 hover:cursor-pointer"
                                                                                 >
-                                                                                    <td className="py-2 pl-2">
-                                                                                        <span className="flex items-center justify-center text-3xl font-extrabold text-gray-50">
+                                                                                    <td
+                                                                                        rowSpan="2"
+                                                                                        className="py-4"
+                                                                                    >
+                                                                                        <span className="flex items-center justify-center text-4xl font-extrabold text-gray-50">
                                                                                             {idx +
                                                                                                 1}
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td className="py-2">
-                                                                                        <span className="flex items-center justify-center gap-1 text-5xl font-extrabold text-gray-50">
-                                                                                            <MinusCircleIcon
-                                                                                                className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
+                                                                                    <td
+                                                                                        colSpan="2"
+                                                                                        className="p-4"
+                                                                                    >
+                                                                                        <span className="flex items-center justify-between gap-1 text-5xl font-extrabold text-gray-50">
+                                                                                            <MinusIcon
+                                                                                                className="h-10 w-20 rounded-lg bg-red-300 text-gray-950 hover:cursor-pointer hover:bg-red-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -532,8 +537,8 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                     set.weight
                                                                                                 }
                                                                                             </span>
-                                                                                            <PlusCircleIcon
-                                                                                                className="h-10 w-10 text-blue-300 hover:cursor-pointer hover:text-blue-400"
+                                                                                            <PlusIcon
+                                                                                                className="h-10 w-20 rounded-lg bg-blue-300 text-gray-950 hover:cursor-pointer hover:bg-blue-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -548,10 +553,15 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             />
                                                                                         </span>
                                                                                     </td>
-                                                                                    <td className="py-2 pr-2">
-                                                                                        <span className="flex items-center justify-center gap-1 text-5xl font-extrabold text-gray-50">
-                                                                                            <MinusCircleIcon
-                                                                                                className="h-10 w-10 text-red-300 hover:cursor-pointer hover:text-red-400"
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td
+                                                                                        colSpan="2"
+                                                                                        className="p-4"
+                                                                                    >
+                                                                                        <span className="flex items-center justify-between gap-1 text-5xl font-extrabold text-gray-50">
+                                                                                            <MinusIcon
+                                                                                                className="h-10 w-20 rounded-lg bg-red-300 text-gray-950 hover:cursor-pointer hover:bg-red-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -567,8 +577,8 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             {
                                                                                                 set.reps
                                                                                             }
-                                                                                            <PlusCircleIcon
-                                                                                                className="h-10 w-10 text-blue-300 hover:cursor-pointer hover:text-blue-400"
+                                                                                            <PlusIcon
+                                                                                                className="h-10 w-20 rounded-lg bg-blue-300 text-gray-950 hover:cursor-pointer hover:bg-blue-400"
                                                                                                 onClick={(
                                                                                                     e,
                                                                                                 ) => {
@@ -586,7 +596,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td colSpan="3">
-                                                                                        <span className="flex w-full items-center justify-center border-b border-gray-700 p-3">
+                                                                                        <span className="flex w-full items-center justify-center border-b border-gray-700 p-4">
                                                                                             {isSetRest ? (
                                                                                                 <Countdown
                                                                                                     autoStart
@@ -657,7 +667,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             ) : (
                                                                                                 <button
                                                                                                     type="button"
-                                                                                                    className="flex w-40 justify-center rounded-lg bg-green-300 p-2 font-medium capitalize text-gray-950 hover:bg-green-400"
+                                                                                                    className="flex w-52 justify-center rounded-lg bg-green-300 p-2 font-medium capitalize text-gray-950 hover:bg-green-400"
                                                                                                     onClick={(
                                                                                                         e,
                                                                                                     ) => {
@@ -1063,15 +1073,15 @@ const Workout = ({ dayOfWeek }) => {
                     }}
                 </Disclosure>
             ))}
-            <PlusCircleIcon
-                className="sticky bottom-0 h-14 w-14 rounded-full bg-gray-950 text-gray-50 hover:cursor-pointer hover:bg-gray-700"
+            <PlusIcon
+                className="sticky bottom-0 h-14 w-14 rounded-full border-4 border-gray-950 bg-gray-50 text-gray-950 hover:cursor-pointer hover:text-gray-700"
                 onClick={(e) => {
                     e.stopPropagation();
                     setIsAddRoutineOpen(true);
                 }}
             >
                 add routine
-            </PlusCircleIcon>
+            </PlusIcon>
             <AddRoutine
                 isOpen={isAddRoutineOpen}
                 setIsOpen={setIsAddRoutineOpen}

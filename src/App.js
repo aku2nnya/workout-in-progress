@@ -33,6 +33,7 @@ const App = () => {
         'sunday',
         'vacation',
     ];
+    const headerHeightOffset = -160;
 
     const nextDayOfWeek = (dayOfWeek) => {
         const todayIndex = daysOfWeekArr.findIndex((day) => day === dayOfWeek);
@@ -67,7 +68,7 @@ const App = () => {
     return (
         <div className="w-full bg-gray-950 text-2xl">
             <header
-                className="sticky top-0 flex h-fit w-full flex-col gap-8 bg-gray-950 p-6"
+                className="sticky top-0 flex h-fit w-full flex-col gap-6 bg-gray-950 p-6"
                 id="header"
             >
                 <div className="mx-auto flex w-full items-center justify-center gap-6 font-semibold capitalize leading-5 text-gray-50 focus:outline-none">
@@ -75,7 +76,7 @@ const App = () => {
                     <span className="text-center">workout in progress</span>
                     <DumbbellIcon className="h-12 w-12 rotate-45" />
                 </div>
-                <div className="flex w-full items-center justify-between whitespace-nowrap font-medium capitalize text-gray-50">
+                <div className="flex w-full items-center justify-between gap-2 whitespace-nowrap font-medium capitalize text-gray-50">
                     <span
                         className="flex w-full cursor-pointer justify-center"
                         onClick={(e) => {
@@ -85,15 +86,14 @@ const App = () => {
                     >
                         <ChevronLeftIcon className="h-10 w-10" />
                     </span>
-                    <span className="flex justify-center gap-4">
-                        <span
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setDayOfWeek(today);
-                            }}
-                        >
-                            {dayOfWeek}
-                        </span>
+                    <span
+                        className="flex justify-center gap-4"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setDayOfWeek(today);
+                        }}
+                    >
+                        <span>{dayOfWeek}</span>
                         {/* {(dayOfWeek === today || dayOfWeek === 'vacation') && (
                             <span>{time}</span>
                         )} */}
@@ -111,10 +111,13 @@ const App = () => {
             </header>
             <main
                 className={classNames(
-                    `mx-auto h-[calc(100vh-168px)] w-full overflow-y-auto px-6 pb-6 scrollbar-hide`,
+                    `mx-auto h-[calc(100vh${headerHeightOffset}px)] w-full overflow-y-auto px-6 pb-6 scrollbar-hide`,
                 )}
             >
-                <Workout dayOfWeek={dayOfWeek} />
+                <Workout
+                    dayOfWeek={dayOfWeek}
+                    headerHeightOffset={headerHeightOffset}
+                />
             </main>
         </div>
     );
