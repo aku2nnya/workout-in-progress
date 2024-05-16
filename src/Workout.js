@@ -23,7 +23,7 @@ import {
 import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
 
-const Workout = ({ dayOfWeek, headerHeightOffset }) => {
+const Workout = ({ dayOfWeek }) => {
     const [workout, setWorkout] = useLocalStorage(`${dayOfWeek}Workout`, []);
     const [isAddRoutineOpen, setIsAddRoutineOpen] = useState(false);
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
@@ -46,8 +46,7 @@ const Workout = ({ dayOfWeek, headerHeightOffset }) => {
         const map = getMap();
         const node = map.get(exerciseId);
 
-        node.scrollIntoView();
-        window.scrollBy({ top: headerHeightOffset, behavior: 'smooth' });
+        node.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
         setCurrentExerciseId(exerciseId);
 
@@ -506,7 +505,7 @@ const Workout = ({ dayOfWeek, headerHeightOffset }) => {
                                                                                 >
                                                                                     <td
                                                                                         rowSpan="2"
-                                                                                        className="py-4"
+                                                                                        className="py-5"
                                                                                     >
                                                                                         <span className="flex items-center justify-center text-4xl font-extrabold text-gray-50">
                                                                                             {idx +
@@ -515,7 +514,7 @@ const Workout = ({ dayOfWeek, headerHeightOffset }) => {
                                                                                     </td>
                                                                                     <td
                                                                                         colSpan="2"
-                                                                                        className="p-4"
+                                                                                        className="p-5"
                                                                                     >
                                                                                         <span className="flex items-center justify-between gap-1 text-5xl font-extrabold text-gray-50">
                                                                                             <MinusIcon
@@ -557,7 +556,7 @@ const Workout = ({ dayOfWeek, headerHeightOffset }) => {
                                                                                 <tr>
                                                                                     <td
                                                                                         colSpan="2"
-                                                                                        className="p-4"
+                                                                                        className="p-5"
                                                                                     >
                                                                                         <span className="flex items-center justify-between gap-1 text-5xl font-extrabold text-gray-50">
                                                                                             <MinusIcon
@@ -596,7 +595,7 @@ const Workout = ({ dayOfWeek, headerHeightOffset }) => {
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td colSpan="3">
-                                                                                        <span className="flex w-full items-center justify-center border-b border-gray-700 p-4">
+                                                                                        <span className="flex w-full items-center justify-center border-b border-gray-700 p-5">
                                                                                             {isSetRest ? (
                                                                                                 <Countdown
                                                                                                     autoStart
@@ -821,29 +820,6 @@ const Workout = ({ dayOfWeek, headerHeightOffset }) => {
                                                                 );
                                                             }}
                                                         >
-                                                            <span
-                                                                className={classNames(
-                                                                    'inline-flex items-center whitespace-nowrap rounded-lg px-2 py-1 text-xl font-medium ring-1 ring-inset ring-red-600/10',
-                                                                    exercise.superset ===
-                                                                        1
-                                                                        ? 'bg-red-100 text-red-700'
-                                                                        : exercise.superset ===
-                                                                            2
-                                                                          ? 'bg-blue-100 text-blue-700'
-                                                                          : exercise.superset ===
-                                                                              3
-                                                                            ? 'bg-green-100 text-green-700'
-                                                                            : exercise.superset ===
-                                                                                4
-                                                                              ? 'bg-orange-100 text-orange-700'
-                                                                              : exercise.superset ===
-                                                                                  5
-                                                                                ? 'bg-gray-100 text-gray-700'
-                                                                                : '',
-                                                                )}
-                                                            >
-                                                                {`Superset ${exercise.superset}`}
-                                                            </span>
                                                             {currentExerciseId ===
                                                             `${routine.id}-superset-${exercise.superset}` ? (
                                                                 <Countdown
@@ -893,14 +869,39 @@ const Workout = ({ dayOfWeek, headerHeightOffset }) => {
                                                                     }
                                                                 />
                                                             ) : (
-                                                                <span className="flex items-center justify-center gap-1 capitalize">
-                                                                    rest
-                                                                    <HourglassIcon className="h-6 w-6" />
-                                                                    {secondsToTime(
-                                                                        exercise.supersetRest,
-                                                                    )}
-                                                                    <ArrowsUpDownIcon className="h-6 w-6" />
-                                                                </span>
+                                                                <>
+                                                                    <span
+                                                                        className={classNames(
+                                                                            'inline-flex items-center whitespace-nowrap rounded-lg px-2 py-1 text-xl font-medium ring-1 ring-inset ring-red-600/10',
+                                                                            exercise.superset ===
+                                                                                1
+                                                                                ? 'bg-red-100 text-red-700'
+                                                                                : exercise.superset ===
+                                                                                    2
+                                                                                  ? 'bg-blue-100 text-blue-700'
+                                                                                  : exercise.superset ===
+                                                                                      3
+                                                                                    ? 'bg-green-100 text-green-700'
+                                                                                    : exercise.superset ===
+                                                                                        4
+                                                                                      ? 'bg-orange-100 text-orange-700'
+                                                                                      : exercise.superset ===
+                                                                                          5
+                                                                                        ? 'bg-gray-100 text-gray-700'
+                                                                                        : '',
+                                                                        )}
+                                                                    >
+                                                                        {`Superset ${exercise.superset}`}
+                                                                    </span>
+                                                                    <span className="flex items-center justify-center gap-1 capitalize">
+                                                                        rest
+                                                                        <HourglassIcon className="h-6 w-6" />
+                                                                        {secondsToTime(
+                                                                            exercise.supersetRest,
+                                                                        )}
+                                                                        <ArrowsUpDownIcon className="h-6 w-6" />
+                                                                    </span>
+                                                                </>
                                                             )}
                                                         </div>
                                                     ) : idx + 1 <

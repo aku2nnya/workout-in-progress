@@ -33,7 +33,6 @@ const App = () => {
         'sunday',
         'vacation',
     ];
-    const headerHeightOffset = -160;
 
     const nextDayOfWeek = (dayOfWeek) => {
         const todayIndex = daysOfWeekArr.findIndex((day) => day === dayOfWeek);
@@ -68,7 +67,7 @@ const App = () => {
     return (
         <div className="w-full bg-gray-950 text-2xl">
             <header
-                className="sticky top-0 flex h-fit w-full flex-col gap-6 bg-gray-950 p-6"
+                className="sticky top-0 z-10 flex h-fit w-full flex-col gap-6 bg-gray-950 p-6"
                 id="header"
             >
                 <div className="mx-auto flex w-full items-center justify-center gap-6 font-semibold capitalize leading-5 text-gray-50 focus:outline-none">
@@ -111,13 +110,10 @@ const App = () => {
             </header>
             <main
                 className={classNames(
-                    `mx-auto h-[calc(100vh${headerHeightOffset}px)] w-full overflow-y-auto px-6 pb-6 scrollbar-hide`,
+                    `mx-auto h-[calc(100vh-160px)] w-full overflow-y-auto px-6 pb-6 scrollbar-hide`,
                 )}
             >
-                <Workout
-                    dayOfWeek={dayOfWeek}
-                    headerHeightOffset={headerHeightOffset}
-                />
+                <Workout dayOfWeek={dayOfWeek} />
             </main>
         </div>
     );
