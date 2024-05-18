@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, Fragment } from 'react';
+import { useState, useRef, useEffect, Fragment, useMemo } from 'react';
 import Countdown, { zeroPad } from 'react-countdown';
 import Speech from 'speak-tts';
 import { Disclosure } from '@headlessui/react';
@@ -46,7 +46,7 @@ const Workout = ({ dayOfWeek }) => {
         const map = getMap();
         const node = map.get(exerciseId);
 
-        node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        node.scrollIntoView({ block: 'start' });
 
         setCurrentExerciseId(exerciseId);
 

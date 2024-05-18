@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 
 import DumbbellIcon from './icons/Dumbbell';
 import Workout from './Workout';
 import { classNames } from './helpers';
+
+// To avoid Countdown reset on re-render
+const MemoWorkout = memo(({ dayOfWeek }) => <Workout dayOfWeek={dayOfWeek} />);
 
 const App = () => {
     const today = new Date()
@@ -14,14 +17,14 @@ const App = () => {
         .toLowerCase();
     const [dayOfWeek, setDayOfWeek] = useState(today);
 
-    // const getTime = () =>
-    //     new Date().toLocaleString('en', {
-    //         hour12: true,
-    //         hour: '2-digit',
-    //         minute: '2-digit',
-    //         timeZone: 'America/Los_Angeles',
-    //     });
-    // const [time, setTime] = useState(getTime());
+    const getTime = () =>
+        new Date().toLocaleString('en', {
+            hour12: true,
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'America/Los_Angeles',
+        });
+    const [time, setTime] = useState(getTime());
 
     const daysOfWeekArr = [
         'monday',
@@ -58,11 +61,11 @@ const App = () => {
         document.getElementsByTagName('main')[0].scrollTop = 0;
     };
 
-    // useEffect(() => {
-    //     setInterval(() => {
-    //         setTime(getTime());
-    //     }, 1000);
-    // }, []);
+    useEffect(() => {
+        setInterval(() => {
+            setTime(getTime());
+        }, 1000);
+    }, []);
 
     return (
         <div className="w-full bg-gray-950 text-2xl">
@@ -93,9 +96,9 @@ const App = () => {
                         }}
                     >
                         <span>{dayOfWeek}</span>
-                        {/* {(dayOfWeek === today || dayOfWeek === 'vacation') && (
+                        {(dayOfWeek === today || dayOfWeek === 'vacation') && (
                             <span>{time}</span>
-                        )} */}
+                        )}
                     </span>
                     <span
                         className="flex w-full cursor-pointer justify-center"
@@ -113,7 +116,7 @@ const App = () => {
                     `mx-auto h-[calc(100vh-160px)] w-full overflow-y-auto px-6 pb-6 scrollbar-hide`,
                 )}
             >
-                <Workout dayOfWeek={dayOfWeek} />
+                <MemoWorkout dayOfWeek={dayOfWeek} />
             </main>
         </div>
     );
