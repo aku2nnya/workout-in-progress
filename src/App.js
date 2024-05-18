@@ -5,7 +5,7 @@ import DumbbellIcon from './icons/Dumbbell';
 import Workout from './Workout';
 import { classNames } from './helpers';
 
-// To avoid Countdown reset on re-render
+// To avoid Countdown reset on time re-render
 const MemoWorkout = memo(({ dayOfWeek }) => <Workout dayOfWeek={dayOfWeek} />);
 
 const App = () => {

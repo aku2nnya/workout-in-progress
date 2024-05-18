@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, Fragment, useMemo } from 'react';
+import { useState, useRef, useEffect, Fragment } from 'react';
 import Countdown, { zeroPad } from 'react-countdown';
 import Speech from 'speak-tts';
 import { Disclosure } from '@headlessui/react';
