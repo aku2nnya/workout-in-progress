@@ -9,7 +9,7 @@ import {
     ClockIcon,
     MinusIcon,
     PlusIcon,
-    TrashIcon,
+    TrashIcon
 } from '@heroicons/react/20/solid';
 
 import AddRoutine from './AddRoutine';
@@ -18,7 +18,7 @@ import {
     classNames,
     findNestedObjArr,
     secondsToTime,
-    useLocalStorage,
+    useLocalStorage
 } from './helpers';
 import DumbbellIcon from './icons/Dumbbell';
 import HourglassIcon from './icons/Hourglass';
@@ -39,7 +39,7 @@ const Workout = ({ dayOfWeek }) => {
     speech.init({
         lang: 'ja-JP',
         rate: 1.02,
-        pitch: 0.85,
+        pitch: 0.85
     });
 
     const scrollToExercise = (exerciseId, speech) => {
@@ -76,7 +76,7 @@ const Workout = ({ dayOfWeek }) => {
         const supersetExercises = findNestedObjArr(
             routine,
             'superset',
-            exercise.superset,
+            exercise.superset
         );
         const isLastSet = exercise.sets.length - 1 === setIdx;
         const isLastSuperset =
@@ -89,12 +89,12 @@ const Workout = ({ dayOfWeek }) => {
         } else if (isLastSuperset && isLastSet) {
             scrollToExercise(
                 `${exercise.id}-${exercise.rest}`,
-                `${exercise.rest / 60}分休憩`,
+                `${exercise.rest / 60}分休憩`
             );
         } else {
             scrollToExercise(
                 `${routine.id}-superset-${exercise.superset}`,
-                `${exercise.supersetRest / 60}分休憩`,
+                `${exercise.supersetRest / 60}分休憩`
             );
         }
     };
@@ -103,66 +103,75 @@ const Workout = ({ dayOfWeek }) => {
         const supersetExercises = findNestedObjArr(
             routine,
             'superset',
-            exercise?.superset,
+            exercise?.superset
         );
         const previousExerciseIdx = supersetExercises.findIndex(
             (supersetExercise) =>
-                supersetExercise?.id === previousExercise?.exercise?.id,
+                supersetExercise?.id === previousExercise?.exercise?.id
         );
 
         if (previousExerciseIdx < supersetExercises?.length - 1) {
             scrollToExercise(
                 supersetExercises[previousExerciseIdx + 1]?.id,
-                supersetExercises[previousExerciseIdx + 1]?.jpSpeech,
+                supersetExercises[previousExerciseIdx + 1]?.jpSpeech
             );
             selectEditSetId(
                 routine,
                 supersetExercises[previousExerciseIdx + 1]?.id,
-                previousExercise?.setIdx,
+                previousExercise?.setIdx
             );
         } else {
             scrollToExercise(
                 supersetExercises[0]?.id,
-                supersetExercises[0]?.jpSpeech,
+                supersetExercises[0]?.jpSpeech
             );
             selectEditSetId(
                 routine,
                 supersetExercises[0]?.id,
-                previousExercise?.setIdx + 1,
+                previousExercise?.setIdx + 1
             );
         }
     };
 
-    const updateWorkoutSet = (workoutData, setInfo, parameter, addSubtract) => {
+    const updateWorkoutSet = (
+        workoutData,
+        setInfo,
+        parameter,
+        method,
+        input
+    ) => {
         const newWorkoutData = [...workoutData];
 
         newWorkoutData.forEach((rtn) => {
             rtn.exercises?.forEach((exrcs) => {
                 exrcs.sets?.forEach((st) => {
                     if (st.id === setInfo.id) {
-                        if (
-                            parameter === 'weight' &&
-                            addSubtract === 'subtract'
-                        ) {
+                        if (parameter === 'weight' && method === 'subtract') {
                             const newWeight = setInfo.weight - 5;
                             setInfo.weight = newWeight;
-                        } else if (
-                            parameter === 'weight' &&
-                            addSubtract === 'add'
-                        ) {
+                        } else if (parameter === 'weight' && method === 'add') {
                             const newWeight = setInfo.weight + 5;
                             setInfo.weight = newWeight;
                         } else if (
+                            parameter === 'weight' &&
+                            method === 'manual'
+                        ) {
+                            const newWeight = input;
+                            setInfo.weight = newWeight;
+                        } else if (
                             parameter === 'reps' &&
-                            addSubtract === 'subtract'
+                            method === 'subtract'
                         ) {
                             const newReps = setInfo.reps - 1;
                             setInfo.reps = newReps;
+                        } else if (parameter === 'reps' && method === 'add') {
+                            const newReps = setInfo.reps + 1;
+                            setInfo.reps = newReps;
                         } else if (
                             parameter === 'reps' &&
-                            addSubtract === 'add'
+                            method === 'manual'
                         ) {
-                            const newReps = setInfo.reps + 1;
+                            const newReps = input;
                             setInfo.reps = newReps;
                         }
                     }
@@ -186,9 +195,9 @@ const Workout = ({ dayOfWeek }) => {
             [
                 { transform: 'translateX(0%)' },
                 { transform: `translateX(${widthOffset}px)` },
-                { transform: 'translateX(0%)' },
+                { transform: 'translateX(0%)' }
             ],
-            { duration: 7000, iterations: Infinity },
+            { duration: 7000, iterations: Infinity }
         );
 
         elementAnimate?.pause();
@@ -245,9 +254,7 @@ const Workout = ({ dayOfWeek }) => {
                                                 e.stopPropagation();
                                                 setDeleteRoutineName(
                                                     routine.name,
-                                                    setIsDeleteRoutineOpen(
-                                                        true,
-                                                    ),
+                                                    setIsDeleteRoutineOpen(true)
                                                 );
                                             }}
                                         />
@@ -255,7 +262,7 @@ const Workout = ({ dayOfWeek }) => {
                                     <ChevronUpIcon
                                         className={classNames(
                                             'h-6 w-6 text-gray-50',
-                                            open ? 'rotate-180 transform' : '',
+                                            open ? 'rotate-180 transform' : ''
                                         )}
                                     />
                                 </Disclosure.Button>
@@ -272,8 +279,7 @@ const Workout = ({ dayOfWeek }) => {
                                             const isLastExercise =
                                                 routine.exercises.findIndex(
                                                     (exrcs) =>
-                                                        exrcs.id ===
-                                                        exercise.id,
+                                                        exrcs.id === exercise.id
                                                 ) +
                                                     1 ===
                                                 routine.exercises.length;
@@ -288,12 +294,12 @@ const Workout = ({ dayOfWeek }) => {
                                                                 type="button"
                                                                 className="flex w-52 justify-center rounded-lg bg-green-300 p-2 font-medium capitalize text-gray-950 hover:bg-green-400"
                                                                 onClick={(
-                                                                    e,
+                                                                    e
                                                                 ) => {
                                                                     e.stopPropagation();
                                                                     scrollToExercise(
                                                                         exercise.id,
-                                                                        exercise.jpSpeech,
+                                                                        exercise.jpSpeech
                                                                     );
                                                                     if (
                                                                         exercise.sets
@@ -301,11 +307,11 @@ const Workout = ({ dayOfWeek }) => {
                                                                         selectEditSetId(
                                                                             routine,
                                                                             exercise.id,
-                                                                            0,
+                                                                            0
                                                                         );
                                                                     } else {
                                                                         setCurrentEditSetId(
-                                                                            null,
+                                                                            null
                                                                         );
                                                                     }
                                                                 }}
@@ -323,7 +329,7 @@ const Workout = ({ dayOfWeek }) => {
                                                             exercise.sets &&
                                                                 'justify-between',
                                                             !exercise.sets &&
-                                                                'flex-col text-center',
+                                                                'flex-col text-center'
                                                         )}
                                                         ref={(node) => {
                                                             const map =
@@ -331,11 +337,11 @@ const Workout = ({ dayOfWeek }) => {
                                                             if (node) {
                                                                 map.set(
                                                                     exercise.id,
-                                                                    node,
+                                                                    node
                                                                 );
                                                             } else {
                                                                 map.delete(
-                                                                    exercise.id,
+                                                                    exercise.id
                                                                 );
                                                             }
                                                         }}
@@ -343,17 +349,17 @@ const Workout = ({ dayOfWeek }) => {
                                                             e.stopPropagation();
                                                             scrollToExercise(
                                                                 exercise.id,
-                                                                exercise.jpSpeech,
+                                                                exercise.jpSpeech
                                                             );
                                                             if (exercise.sets) {
                                                                 selectEditSetId(
                                                                     routine,
                                                                     exercise.id,
-                                                                    0,
+                                                                    0
                                                                 );
                                                             } else {
                                                                 setCurrentEditSetId(
-                                                                    null,
+                                                                    null
                                                                 );
                                                             }
                                                         }}
@@ -361,7 +367,7 @@ const Workout = ({ dayOfWeek }) => {
                                                         <div className="max-w-full overflow-x-clip overflow-y-visible">
                                                             <span
                                                                 className={classNames(
-                                                                    'left-0 inline-block whitespace-nowrap capitalize',
+                                                                    'left-0 inline-block whitespace-nowrap capitalize'
                                                                 )}
                                                                 id={`exercise-${exercise.id}-name`}
                                                             >
@@ -380,12 +386,12 @@ const Workout = ({ dayOfWeek }) => {
                                                                 renderer={({
                                                                     minutes,
                                                                     seconds,
-                                                                    api,
+                                                                    api
                                                                 }) => (
                                                                     <span
                                                                         className="flex items-center gap-1"
                                                                         onClick={(
-                                                                            e,
+                                                                            e
                                                                         ) => {
                                                                             e.stopPropagation();
                                                                             if (
@@ -399,16 +405,16 @@ const Workout = ({ dayOfWeek }) => {
                                                                     >
                                                                         <ClockIcon className="h-10 w-10" />
                                                                         {zeroPad(
-                                                                            minutes,
+                                                                            minutes
                                                                         )}
                                                                         :
                                                                         {zeroPad(
-                                                                            seconds,
+                                                                            seconds
                                                                         )}
                                                                     </span>
                                                                 )}
                                                                 onTick={(
-                                                                    timeObj,
+                                                                    timeObj
                                                                 ) => {
                                                                     if (
                                                                         timeObj.minutes ===
@@ -417,12 +423,39 @@ const Workout = ({ dayOfWeek }) => {
                                                                             5
                                                                     ) {
                                                                         return textToSpeech(
-                                                                            timeObj.seconds,
+                                                                            timeObj.seconds
                                                                         );
                                                                     }
                                                                 }}
                                                                 onComplete={() => {
                                                                     if (
+                                                                        exercises[
+                                                                            idx +
+                                                                                1
+                                                                        ]?.sets
+                                                                    ) {
+                                                                        scrollToExercise(
+                                                                            exercises[
+                                                                                idx +
+                                                                                    1
+                                                                            ]
+                                                                                .id,
+                                                                            exercises[
+                                                                                idx +
+                                                                                    1
+                                                                            ]
+                                                                                .jpSpeech
+                                                                        );
+                                                                        selectEditSetId(
+                                                                            routine,
+                                                                            exercises[
+                                                                                idx +
+                                                                                    1
+                                                                            ]
+                                                                                .id,
+                                                                            0
+                                                                        );
+                                                                    } else if (
                                                                         exercises[
                                                                             idx +
                                                                                 1
@@ -438,23 +471,12 @@ const Workout = ({ dayOfWeek }) => {
                                                                                 idx +
                                                                                     1
                                                                             ]
-                                                                                .jpSpeech,
+                                                                                .jpSpeech
                                                                         );
-                                                                    }
-                                                                    if (
-                                                                        exercises[
-                                                                            idx +
-                                                                                1
-                                                                        ].sets
-                                                                    ) {
-                                                                        selectEditSetId(
-                                                                            routine,
-                                                                            exercises[
-                                                                                idx +
-                                                                                    1
-                                                                            ]
-                                                                                .id,
-                                                                            0,
+                                                                    } else {
+                                                                        scrollToExercise(
+                                                                            `${routine.id}-end`,
+                                                                            'どうもお疲れさまでした'
                                                                         );
                                                                     }
                                                                 }}
@@ -463,7 +485,7 @@ const Workout = ({ dayOfWeek }) => {
                                                             <span className="flex items-center gap-1">
                                                                 <ClockIcon className="h-6 w-6" />
                                                                 {secondsToTime(
-                                                                    exercise.timer,
+                                                                    exercise.timer
                                                                 )}
                                                             </span>
                                                         ) : null}
@@ -488,7 +510,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                     (
                                                                         set,
                                                                         idx,
-                                                                        sets,
+                                                                        sets
                                                                     ) =>
                                                                         currentEditSetId ===
                                                                         set.id ? (
@@ -520,7 +542,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             <MinusIcon
                                                                                                 className="h-10 w-20 rounded-lg bg-red-300 text-gray-950 hover:cursor-pointer hover:bg-red-400"
                                                                                                 onClick={(
-                                                                                                    e,
+                                                                                                    e
                                                                                                 ) => {
                                                                                                     e.stopPropagation();
                                                                                                     updateWorkoutSet(
@@ -528,18 +550,44 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                         set,
                                                                                                         'weight',
                                                                                                         'subtract',
+                                                                                                        null
                                                                                                     );
                                                                                                 }}
                                                                                             />
-                                                                                            <span className="flex items-center">
-                                                                                                {
+                                                                                            <input
+                                                                                                className="flex w-40 items-center bg-gray-800 text-center arrow-hide"
+                                                                                                type="number"
+                                                                                                value={
                                                                                                     set.weight
                                                                                                 }
-                                                                                            </span>
+                                                                                                onChange={(
+                                                                                                    e
+                                                                                                ) => {
+                                                                                                    e.stopPropagation();
+                                                                                                    updateWorkoutSet(
+                                                                                                        workout,
+                                                                                                        set,
+                                                                                                        'weight',
+                                                                                                        'manual',
+                                                                                                        e
+                                                                                                            .target
+                                                                                                            .value
+                                                                                                            ? e
+                                                                                                                  .target
+                                                                                                                  .value
+                                                                                                            : 0
+                                                                                                    );
+                                                                                                }}
+                                                                                                onWheel={(
+                                                                                                    e
+                                                                                                ) =>
+                                                                                                    e.target.blur()
+                                                                                                }
+                                                                                            />
                                                                                             <PlusIcon
                                                                                                 className="h-10 w-20 rounded-lg bg-blue-300 text-gray-950 hover:cursor-pointer hover:bg-blue-400"
                                                                                                 onClick={(
-                                                                                                    e,
+                                                                                                    e
                                                                                                 ) => {
                                                                                                     e.stopPropagation();
                                                                                                     updateWorkoutSet(
@@ -547,6 +595,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                         set,
                                                                                                         'weight',
                                                                                                         'add',
+                                                                                                        null
                                                                                                     );
                                                                                                 }}
                                                                                             />
@@ -562,7 +611,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                             <MinusIcon
                                                                                                 className="h-10 w-20 rounded-lg bg-red-300 text-gray-950 hover:cursor-pointer hover:bg-red-400"
                                                                                                 onClick={(
-                                                                                                    e,
+                                                                                                    e
                                                                                                 ) => {
                                                                                                     e.stopPropagation();
                                                                                                     updateWorkoutSet(
@@ -570,16 +619,44 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                         set,
                                                                                                         'reps',
                                                                                                         'subtract',
+                                                                                                        null
                                                                                                     );
                                                                                                 }}
                                                                                             />
-                                                                                            {
-                                                                                                set.reps
-                                                                                            }
+                                                                                            <input
+                                                                                                className="flex w-40 items-center bg-gray-800 text-center arrow-hide"
+                                                                                                type="number"
+                                                                                                value={
+                                                                                                    set.reps
+                                                                                                }
+                                                                                                onChange={(
+                                                                                                    e
+                                                                                                ) => {
+                                                                                                    e.stopPropagation();
+                                                                                                    updateWorkoutSet(
+                                                                                                        workout,
+                                                                                                        set,
+                                                                                                        'weight',
+                                                                                                        'manual',
+                                                                                                        e
+                                                                                                            .target
+                                                                                                            .value
+                                                                                                            ? e
+                                                                                                                  .target
+                                                                                                                  .value
+                                                                                                            : 0
+                                                                                                    );
+                                                                                                }}
+                                                                                                onWheel={(
+                                                                                                    e
+                                                                                                ) =>
+                                                                                                    e.target.blur()
+                                                                                                }
+                                                                                            />
                                                                                             <PlusIcon
                                                                                                 className="h-10 w-20 rounded-lg bg-blue-300 text-gray-950 hover:cursor-pointer hover:bg-blue-400"
                                                                                                 onClick={(
-                                                                                                    e,
+                                                                                                    e
                                                                                                 ) => {
                                                                                                     e.stopPropagation();
                                                                                                     updateWorkoutSet(
@@ -587,6 +664,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                         set,
                                                                                                         'reps',
                                                                                                         'add',
+                                                                                                        null
                                                                                                     );
                                                                                                 }}
                                                                                             />
@@ -606,23 +684,23 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                     }
                                                                                                     renderer={({
                                                                                                         minutes,
-                                                                                                        seconds,
+                                                                                                        seconds
                                                                                                     }) => (
                                                                                                         <span className="flex items-center justify-center gap-1 text-5xl font-extrabold capitalize text-gray-50">
                                                                                                             rest
                                                                                                             <HourglassIcon className="h-10 w-10" />
                                                                                                             {zeroPad(
-                                                                                                                minutes,
+                                                                                                                minutes
                                                                                                             )}
 
                                                                                                             :
                                                                                                             {zeroPad(
-                                                                                                                seconds,
+                                                                                                                seconds
                                                                                                             )}
                                                                                                         </span>
                                                                                                     )}
                                                                                                     onTick={(
-                                                                                                        timeObj,
+                                                                                                        timeObj
                                                                                                     ) => {
                                                                                                         if (
                                                                                                             timeObj.seconds ===
@@ -632,7 +710,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                                 `${
                                                                                                                     exercise.setRest /
                                                                                                                     60
-                                                                                                                }分休憩`,
+                                                                                                                }分休憩`
                                                                                                             );
                                                                                                         }
                                                                                                         if (
@@ -642,24 +720,24 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                                 5
                                                                                                         ) {
                                                                                                             textToSpeech(
-                                                                                                                timeObj.seconds,
+                                                                                                                timeObj.seconds
                                                                                                             );
                                                                                                         }
                                                                                                     }}
                                                                                                     onComplete={() => {
                                                                                                         setIsSetRest(
-                                                                                                            false,
+                                                                                                            false
                                                                                                         );
                                                                                                         setCurrentEditSetId(
                                                                                                             sets[
                                                                                                                 idx +
                                                                                                                     1
                                                                                                             ]
-                                                                                                                .id,
+                                                                                                                .id
                                                                                                         );
                                                                                                         scrollToExercise(
                                                                                                             exercise.id,
-                                                                                                            exercise.jpSpeech,
+                                                                                                            exercise.jpSpeech
                                                                                                         );
                                                                                                     }}
                                                                                                 />
@@ -668,7 +746,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                     type="button"
                                                                                                     className="flex w-52 justify-center rounded-lg bg-green-300 p-2 font-medium capitalize text-gray-950 hover:bg-green-400"
                                                                                                     onClick={(
-                                                                                                        e,
+                                                                                                        e
                                                                                                     ) => {
                                                                                                         e.stopPropagation();
                                                                                                         if (
@@ -677,17 +755,17 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                             setPreviousExercise(
                                                                                                                 {
                                                                                                                     exercise,
-                                                                                                                    setIdx: idx,
-                                                                                                                },
+                                                                                                                    setIdx: idx
+                                                                                                                }
                                                                                                             );
                                                                                                             selectSupersetRest(
                                                                                                                 routine,
                                                                                                                 exercise,
                                                                                                                 idx,
-                                                                                                                isLastExercise,
+                                                                                                                isLastExercise
                                                                                                             );
                                                                                                             setCurrentEditSetId(
-                                                                                                                null,
+                                                                                                                null
                                                                                                             );
                                                                                                         } else if (
                                                                                                             exercise.setRest &&
@@ -697,7 +775,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                             ]
                                                                                                         ) {
                                                                                                             setIsSetRest(
-                                                                                                                true,
+                                                                                                                true
                                                                                                             );
                                                                                                         } else if (
                                                                                                             sets[
@@ -710,7 +788,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                                     idx +
                                                                                                                         1
                                                                                                                 ]
-                                                                                                                    .id,
+                                                                                                                    .id
                                                                                                             );
                                                                                                         } else {
                                                                                                             if (
@@ -718,7 +796,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                             ) {
                                                                                                                 scrollToExercise(
                                                                                                                     `${routine.id}-end`,
-                                                                                                                    'どうもお疲れさまでした',
+                                                                                                                    'どうもお疲れさまでした'
                                                                                                                 );
                                                                                                             } else {
                                                                                                                 scrollToExercise(
@@ -726,11 +804,11 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                                     `${
                                                                                                                         exercise.rest /
                                                                                                                         60
-                                                                                                                    }分休憩`,
+                                                                                                                    }分休憩`
                                                                                                                 );
                                                                                                             }
                                                                                                             setCurrentEditSetId(
-                                                                                                                null,
+                                                                                                                null
                                                                                                             );
                                                                                                         }
                                                                                                     }}
@@ -748,15 +826,15 @@ const Workout = ({ dayOfWeek }) => {
                                                                                     idx
                                                                                 }
                                                                                 onClick={(
-                                                                                    e,
+                                                                                    e
                                                                                 ) => {
                                                                                     e.stopPropagation();
                                                                                     setCurrentEditSetId(
-                                                                                        set.id,
+                                                                                        set.id
                                                                                     );
                                                                                     scrollToExercise(
                                                                                         exercise.id,
-                                                                                        exercise.jpSpeech,
+                                                                                        exercise.jpSpeech
                                                                                     );
                                                                                 }}
                                                                             >
@@ -780,7 +858,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                     </span>
                                                                                 </td>
                                                                             </tr>
-                                                                        ),
+                                                                        )
                                                                 )}
                                                             </tbody>
                                                         </table>
@@ -798,11 +876,11 @@ const Workout = ({ dayOfWeek }) => {
                                                                 if (node) {
                                                                     map.set(
                                                                         `${routine.id}-superset-${exercise.superset}`,
-                                                                        node,
+                                                                        node
                                                                     );
                                                                 } else {
                                                                     map.delete(
-                                                                        `${routine.id}-superset-${exercise.superset}`,
+                                                                        `${routine.id}-superset-${exercise.superset}`
                                                                     );
                                                                 }
                                                             }}
@@ -813,10 +891,10 @@ const Workout = ({ dayOfWeek }) => {
                                                                     `${
                                                                         exercise.supersetRest /
                                                                         60
-                                                                    }分休憩`,
+                                                                    }分休憩`
                                                                 );
                                                                 setCurrentEditSetId(
-                                                                    null,
+                                                                    null
                                                                 );
                                                             }}
                                                         >
@@ -831,23 +909,23 @@ const Workout = ({ dayOfWeek }) => {
                                                                     }
                                                                     renderer={({
                                                                         minutes,
-                                                                        seconds,
+                                                                        seconds
                                                                     }) => (
                                                                         <span className="flex items-center justify-center gap-1 text-5xl font-extrabold capitalize text-gray-50">
                                                                             rest
                                                                             <HourglassIcon className="h-10 w-10" />
                                                                             {zeroPad(
-                                                                                minutes,
+                                                                                minutes
                                                                             )}
                                                                             :
                                                                             {zeroPad(
-                                                                                seconds,
+                                                                                seconds
                                                                             )}
                                                                             <ArrowsUpDownIcon className="h-10 w-10" />
                                                                         </span>
                                                                     )}
                                                                     onTick={(
-                                                                        timeObj,
+                                                                        timeObj
                                                                     ) => {
                                                                         if (
                                                                             timeObj.minutes ===
@@ -856,7 +934,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                 5
                                                                         ) {
                                                                             return textToSpeech(
-                                                                                timeObj.seconds,
+                                                                                timeObj.seconds
                                                                             );
                                                                         }
                                                                     }}
@@ -864,7 +942,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                         previousExercise &&
                                                                         selectNextSuperset(
                                                                             routine,
-                                                                            exercise,
+                                                                            exercise
                                                                         )
                                                                     }
                                                                 />
@@ -888,7 +966,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                       : exercise.superset ===
                                                                                           5
                                                                                         ? 'bg-gray-100 text-gray-700'
-                                                                                        : '',
+                                                                                        : ''
                                                                         )}
                                                                     >
                                                                         {`Superset ${exercise.superset}`}
@@ -897,7 +975,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                         rest
                                                                         <HourglassIcon className="h-6 w-6" />
                                                                         {secondsToTime(
-                                                                            exercise.supersetRest,
+                                                                            exercise.supersetRest
                                                                         )}
                                                                         <ArrowsUpDownIcon className="h-6 w-6" />
                                                                     </span>
@@ -916,11 +994,11 @@ const Workout = ({ dayOfWeek }) => {
                                                                 if (node) {
                                                                     map.set(
                                                                         `${exercise.id}-${exercise.rest}`,
-                                                                        node,
+                                                                        node
                                                                     );
                                                                 } else {
                                                                     map.delete(
-                                                                        `${exercise.id}-${exercise.rest}`,
+                                                                        `${exercise.id}-${exercise.rest}`
                                                                     );
                                                                 }
                                                             }}
@@ -931,10 +1009,10 @@ const Workout = ({ dayOfWeek }) => {
                                                                     `${
                                                                         exercise.rest /
                                                                         60
-                                                                    }分休憩`,
+                                                                    }分休憩`
                                                                 );
                                                                 setCurrentEditSetId(
-                                                                    null,
+                                                                    null
                                                                 );
                                                             }}
                                                         >
@@ -949,23 +1027,23 @@ const Workout = ({ dayOfWeek }) => {
                                                                     }
                                                                     renderer={({
                                                                         minutes,
-                                                                        seconds,
+                                                                        seconds
                                                                     }) => (
                                                                         <span className="flex items-center justify-center gap-1 text-5xl font-extrabold capitalize text-gray-50">
                                                                             rest
                                                                             <HourglassIcon className="h-10 w-10" />
                                                                             {zeroPad(
-                                                                                minutes,
+                                                                                minutes
                                                                             )}
                                                                             :
                                                                             {zeroPad(
-                                                                                seconds,
+                                                                                seconds
                                                                             )}
                                                                             <ArrowDownIcon className="h-10 w-10" />
                                                                         </span>
                                                                     )}
                                                                     onTick={(
-                                                                        timeObj,
+                                                                        timeObj
                                                                     ) => {
                                                                         if (
                                                                             timeObj.minutes ===
@@ -974,7 +1052,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                 5
                                                                         ) {
                                                                             return textToSpeech(
-                                                                                timeObj.seconds,
+                                                                                timeObj.seconds
                                                                             );
                                                                         }
                                                                     }}
@@ -995,7 +1073,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                     idx +
                                                                                         1
                                                                                 ]
-                                                                                    .jpSpeech,
+                                                                                    .jpSpeech
                                                                             );
                                                                         }
                                                                         if (
@@ -1012,7 +1090,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                         1
                                                                                 ]
                                                                                     .id,
-                                                                                0,
+                                                                                0
                                                                             );
                                                                         }
                                                                     }}
@@ -1022,7 +1100,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                     rest
                                                                     <HourglassIcon className="h-6 w-6" />
                                                                     {secondsToTime(
-                                                                        exercise.rest,
+                                                                        exercise.rest
                                                                     )}
                                                                     <ArrowDownIcon className="h-6 w-6" />
                                                                 </span>
@@ -1044,7 +1122,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                 currentExerciseId ===
                                                                     `${routine.id}-end`
                                                                     ? 'text-5xl font-extrabold text-gray-50'
-                                                                    : '',
+                                                                    : ''
                                                             )}
                                                             ref={(node) => {
                                                                 const map =
@@ -1052,11 +1130,11 @@ const Workout = ({ dayOfWeek }) => {
                                                                 if (node) {
                                                                     map.set(
                                                                         `${routine.id}-end`,
-                                                                        node,
+                                                                        node
                                                                     );
                                                                 } else {
                                                                     map.delete(
-                                                                        `${routine.id}-end`,
+                                                                        `${routine.id}-end`
                                                                     );
                                                                 }
                                                             }}
@@ -1066,7 +1144,7 @@ const Workout = ({ dayOfWeek }) => {
                                                     ) : null}
                                                 </Disclosure.Panel>
                                             );
-                                        },
+                                        }
                                     )}
                                 </div>
                             </>

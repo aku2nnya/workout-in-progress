@@ -10,17 +10,30 @@ module.exports = {
         plugin(function ({ addUtilities }) {
             addUtilities({
                 '.scrollbar-hide': {
-                    /* IE and Edge */
-                    '-ms-overflow-style': 'none',
+                  /* IE and Edge */
+                  '-ms-overflow-style': 'none',
 
-                    /* Firefox */
-                    'scrollbar-width': 'none',
+                  /* Firefox */
+                  'scrollbar-width': 'none',
 
-                    /* Safari and Chrome */
-                    '&::-webkit-scrollbar': {
-                        display: 'none',
-                    },
+                  /* Safari and Chrome */
+                  '&::-webkit-scrollbar': {
+                      display: 'none',
+                  },
                 },
+                '.arrow-hide': {
+                  /* Chrome, Safari, Edge, Opera */
+                  '&::-webkit-inner-spin-button':{
+                    '-webkit-appearance': 'none',
+                    'margin': 0
+                  },
+                  '&::-webkit-outer-spin-button':{
+                    '-webkit-appearance': 'none',
+                    'margin': 0
+                  },
+                  /* Firefox */
+                    '-moz-appearance': 'textfield'
+                }
             });
         }),
         'prettier-plugin-tailwindcss',

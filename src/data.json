@@ -301,6 +301,332 @@
             ]
         },
         {
+          "id": "8b347369-6713-48c6-a817-817640e197f4",
+          "name": "15 minute beginner yoga",
+          "jpSpeech": "15 minute beginner yoga",
+          "exercises": [
+              {
+                  "id": "360c871e-5da0-425c-b2dd-66c6da8e1772",
+                  "name": "get ready",
+                  "jpSpeech": "開始まで、あと20秒",
+                  "timer": 20,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "a5ce48ca-e94a-4dec-a41e-dbe95e45aa0b",
+                  "name": "dynamic side stretch",
+                  "jpSpeech": "ダイナミックサイドストレッチ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "9212c03c-5550-4c77-b1eb-bac0e44b6e98",
+                  "name": "right neck stretch",
+                  "jpSpeech": "ライトネックストレッチ",
+                  "timer": 20,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "4931e36a-99c3-44d4-baed-03cf8c20fc70",
+                  "name": "left neck stretch",
+                  "jpSpeech": "レフトネックストレッチ",
+                  "timer": 20,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "88396bb9-083f-407c-aabc-5926b9bca29a",
+                  "name": "forward neck stretch",
+                  "jpSpeech": "フォワードネックストレッチ",
+                  "timer": 20,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "b16af727-7af4-4211-b24e-9da089b7e590",
+                  "name": "cat cow",
+                  "jpSpeech": "キャットカウ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "1e31add5-9cef-415c-b295-8463250c2b23",
+                  "name": "right thread the needle",
+                  "jpSpeech": "ライトスレッドザニードル",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "0d891f3a-5c9b-46b8-93f7-12f596fe8834",
+                  "name": "left thread the needle",
+                  "jpSpeech": "レフトスレッドザニードル",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "b946cdbb-de2b-4f07-bfc1-46c171fc0f7f",
+                  "name": "palm down wrist stretch",
+                  "jpSpeech": "パームダウンリストストレッチ",
+                  "timer": 20,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "4b33a8a7-d355-44e1-b3c0-b0c5fe1e8b11",
+                  "name": "palm up wrist stretch",
+                  "jpSpeech": "パームアップリストストレッチ",
+                  "timer": 20,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "b1aa91b7-9636-4225-9759-8381c9dbb94c",
+                  "name": "wrist rotation",
+                  "jpSpeech": "リストローテーション",
+                  "timer": 20,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "34174b18-0a5a-4670-a21f-759b800e337a",
+                  "name": "walk the dog",
+                  "jpSpeech": "ウォークザドッグ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "34aa83ad-b005-4ed9-a426-93630bc9c989",
+                  "name": "right deep lunge",
+                  "jpSpeech": "ライトディープランジ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "533b2fd3-0ac3-4aaf-a600-fd748480bcef",
+                  "name": "right runners stretch",
+                  "jpSpeech": "ライトラナーズストレッチ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "c287906e-6c71-41d1-8b6b-d4cc28cf7c3b",
+                  "name": "right lizard pose",
+                  "jpSpeech": "ライトリザードポーズ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "3065010a-a925-42b1-a61b-5c66b072f241",
+                  "name": "left deep lunge",
+                  "jpSpeech": "レフトディープランジ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "6b026883-baf9-4b5e-b7b7-1f16a28d5a83",
+                  "name": "left runners stretch",
+                  "jpSpeech": "レフトラナーズストレッチ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "7a09a7c9-2a12-467c-9593-1aabecc7cb23",
+                  "name": "left lizard pose",
+                  "jpSpeech": "レフトリザードポーズ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "bc70a3e1-d53b-4619-a279-7a112443a216",
+                  "name": "sphinx pose",
+                  "jpSpeech": "スフィンクスポーズ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "de5b5cce-fc3b-4fd4-ae2b-2807384944cf",
+                  "name": "right shoulder stretch and spine twist",
+                  "jpSpeech": "ライトショルダーストレッチアンドスパインツイスト",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "6e8dd7a4-7237-4bc2-b217-02e84b299d2c",
+                  "name": "left shoulder stretch and spine twist",
+                  "jpSpeech": "レフトショルダーストレッチアンドスパインツイスト",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "d76a53e7-b766-4e5f-8f54-432cc62dcf26",
+                  "name": "extended puppy pose",
+                  "jpSpeech": "エクステンデッドパピーポーズ",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "d8cec66a-7e5d-4196-b222-24fff93ef407",
+                  "name": "butterfly forward fold",
+                  "jpSpeech": "バタフライフォワードフォールド",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "28175ce4-b8aa-4fca-b45e-bf2ba9a818cd",
+                  "name": "right one legged forward bend",
+                  "jpSpeech": "ライトワンレグドフォワードベンド",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "a9206017-048a-4dd5-a10c-96f0ffd4b75c",
+                  "name": "left one legged forward bend",
+                  "jpSpeech": "レフトワンレグドフォワードベンド",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "7d7d0895-03a9-4365-8bab-9d183b23836d",
+                  "name": "straddle forward fold",
+                  "jpSpeech": "ストラドルフォワードフォールド",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "d7debd83-32c2-4623-971b-83d472c5f58c",
+                  "name": "right lying twist",
+                  "jpSpeech": "ライトライングツイスト",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "a7d080a6-1e0a-4ace-acb6-2441f9c464e6",
+                  "name": "left lying twist",
+                  "jpSpeech": "レフトライングツイスト",
+                  "timer": 35,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              },
+              {
+                  "id": "561c39cb-0b9c-403f-b832-1b1b82dab435",
+                  "name": "deep breath",
+                  "jpSpeech": "ディープブレス",
+                  "timer": 45,
+                  "sets": null,
+                  "superset": null,
+                  "rest": 0,
+                  "supersetRest": null,
+                  "setRest": null
+              }
+          ]
+      },
+        {
             "id": "2d9bfe13-34ed-4481-9351-8380ef0cfebd",
             "name": "morning weight training",
             "jpSpeech": "morning weight training",
@@ -365,7 +691,7 @@
                         {
                             "id": "5ab70b2d-1441-4a11-9120-61eed002b7fc",
                             "weight": 0,
-                            "reps": 550
+                            "reps": 600
                         }
                     ],
                     "superset": null,
@@ -641,8 +967,8 @@
                 },
                 {
                     "id": "aadb1882-ff0e-46e7-858b-b9bcadacf1e9",
-                    "name": "push-up",
-                    "jpSpeech": "プッシュアップ",
+                    "name": "declining push-up",
+                    "jpSpeech": "ディクライニングプッシュアップ",
                     "timer": null,
                     "sets": [
                         {
