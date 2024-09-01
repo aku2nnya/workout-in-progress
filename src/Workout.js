@@ -215,7 +215,7 @@ const Workout = ({ dayOfWeek }) => {
         if (currentExerciseId) {
             isExerciseNameLongerThanWidth(currentExerciseId);
         }
-    }, [currentExerciseId]);
+    }, [currentExerciseId]); // eslint-disable-line
 
     useEffect(() => {
         const dayOfWeekWorkout = localStorage.getItem(`${dayOfWeek}Workout`);
@@ -226,7 +226,7 @@ const Workout = ({ dayOfWeek }) => {
             localStorage.setItem(`${dayOfWeek}Workout`, JSON.stringify([]));
             setWorkout([]);
         }
-    }, [dayOfWeek]);
+    }, [dayOfWeek]); // eslint-disable-line
 
     return (
         <>
