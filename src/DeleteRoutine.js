@@ -6,7 +6,7 @@ const DeleteRoutine = ({
     setIsOpen,
     workout,
     setWorkout,
-    routineName,
+    routineId
 }) => {
     let deleteButtonRef = useRef(null);
 
@@ -55,10 +55,9 @@ const DeleteRoutine = ({
                                             setWorkout(
                                                 workout.filter(
                                                     (workout) =>
-                                                        workout.name !==
-                                                        routineName,
+                                                        workout.id !== routineId
                                                 ),
-                                                setIsOpen(false),
+                                                setIsOpen(false)
                                             );
                                         }}
                                     >

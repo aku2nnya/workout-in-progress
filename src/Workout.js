@@ -27,7 +27,7 @@ const Workout = ({ dayOfWeek }) => {
     const [workout, setWorkout] = useLocalStorage(`${dayOfWeek}Workout`, []);
     const [isAddRoutineOpen, setIsAddRoutineOpen] = useState(false);
     const [isDeleteRoutineOpen, setIsDeleteRoutineOpen] = useState(false);
-    const [deleteRoutineName, setDeleteRoutineName] = useState(null);
+    const [deleteRoutineId, setDeleteRoutineId] = useState(null);
     const [currentExerciseId, setCurrentExerciseId] = useState(null);
     const [currentEditSetId, setCurrentEditSetId] = useState(null);
     const [previousExercise, setPreviousExercise] = useState(null);
@@ -85,7 +85,7 @@ const Workout = ({ dayOfWeek }) => {
             supersetExercises.length;
 
         if (isLastExercise && isLastSuperset && isLastSet) {
-            scrollToExercise(`${routine.id}-end`, 'どうもお疲れさまでした');
+            scrollToExercise(`${routine.id}-end`, 'お疲れさまでした');
         } else if (isLastSuperset && isLastSet) {
             scrollToExercise(
                 `${exercise.id}-${exercise.rest}`,
@@ -252,8 +252,8 @@ const Workout = ({ dayOfWeek }) => {
                                             className="h-6 w-6 bg-gray-950 text-red-300 hover:cursor-pointer hover:text-red-400"
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                setDeleteRoutineName(
-                                                    routine.name,
+                                                setDeleteRoutineId(
+                                                    routine.id,
                                                     setIsDeleteRoutineOpen(true)
                                                 );
                                             }}
@@ -271,7 +271,7 @@ const Workout = ({ dayOfWeek }) => {
                                     setIsOpen={setIsDeleteRoutineOpen}
                                     workout={workout}
                                     setWorkout={setWorkout}
-                                    routineName={deleteRoutineName}
+                                    routineId={deleteRoutineId}
                                 />
                                 <div className="flex flex-col justify-center gap-2">
                                     {routine.exercises.map(
@@ -476,7 +476,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                     } else {
                                                                         scrollToExercise(
                                                                             `${routine.id}-end`,
-                                                                            'どうもお疲れさまでした'
+                                                                            'お疲れさまでした'
                                                                         );
                                                                     }
                                                                 }}
@@ -796,7 +796,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                             ) {
                                                                                                                 scrollToExercise(
                                                                                                                     `${routine.id}-end`,
-                                                                                                                    'どうもお疲れさまでした'
+                                                                                                                    'お疲れさまでした'
                                                                                                                 );
                                                                                                             } else {
                                                                                                                 scrollToExercise(
