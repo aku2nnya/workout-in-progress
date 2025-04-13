@@ -147,10 +147,10 @@ const Workout = ({ dayOfWeek }) => {
                 exrcs.sets?.forEach((st) => {
                     if (st.id === setInfo.id) {
                         if (parameter === 'weight' && method === 'subtract') {
-                            const newWeight = setInfo.weight - 5;
+                            const newWeight = setInfo.weight - 1;
                             setInfo.weight = newWeight;
                         } else if (parameter === 'weight' && method === 'add') {
-                            const newWeight = setInfo.weight + 5;
+                            const newWeight = setInfo.weight + 1;
                             setInfo.weight = newWeight;
                         } else if (
                             parameter === 'weight' &&
@@ -554,7 +554,10 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                     );
                                                                                                 }}
                                                                                             />
-                                                                                            <input
+                                                                                            {
+                                                                                                set.weight
+                                                                                            }
+                                                                                            {/* <input
                                                                                                 className="flex w-40 items-center bg-gray-800 text-center arrow-hide"
                                                                                                 type="number"
                                                                                                 value={
@@ -583,7 +586,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                 ) =>
                                                                                                     e.target.blur()
                                                                                                 }
-                                                                                            />
+                                                                                            /> */}
                                                                                             <PlusIcon
                                                                                                 className="h-10 w-20 rounded-lg bg-blue-300 text-gray-950 hover:cursor-pointer hover:bg-blue-400"
                                                                                                 onClick={(
@@ -623,7 +626,10 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                     );
                                                                                                 }}
                                                                                             />
-                                                                                            <input
+                                                                                            {
+                                                                                                set.reps
+                                                                                            }
+                                                                                            {/* <input
                                                                                                 className="flex w-40 items-center bg-gray-800 text-center arrow-hide"
                                                                                                 type="number"
                                                                                                 value={
@@ -652,7 +658,7 @@ const Workout = ({ dayOfWeek }) => {
                                                                                                 ) =>
                                                                                                     e.target.blur()
                                                                                                 }
-                                                                                            />
+                                                                                            /> */}
                                                                                             <PlusIcon
                                                                                                 className="h-10 w-20 rounded-lg bg-blue-300 text-gray-950 hover:cursor-pointer hover:bg-blue-400"
                                                                                                 onClick={(

@@ -302,8 +302,8 @@
         },
         {
             "id": "8b347369-6713-48c6-a817-817640e197f4",
-            "name": "15 minute beginner yoga",
-            "jpSpeech": "15 minute beginner yoga",
+            "name": "17 minute beginner yoga",
+            "jpSpeech": "17 minute beginner yoga",
             "exercises": [
                 {
                     "id": "360c871e-5da0-425c-b2dd-66c6da8e1772",
@@ -471,6 +471,17 @@
                     "setRest": null
                 },
                 {
+                    "id": "01b3e9e7-beee-46d4-8d59-9975a7c79e83",
+                    "name": "right torso twist",
+                    "jpSpeech": "ライトトルソーツイスト",
+                    "timer": 35,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null,
+                    "setRest": null
+                },
+                {
                     "id": "3065010a-a925-42b1-a61b-5c66b072f241",
                     "name": "left deep lunge",
                     "jpSpeech": "レフトディープランジ",
@@ -496,6 +507,17 @@
                     "id": "7a09a7c9-2a12-467c-9593-1aabecc7cb23",
                     "name": "left lizard pose",
                     "jpSpeech": "レフトリザードポーズ",
+                    "timer": 35,
+                    "sets": null,
+                    "superset": null,
+                    "rest": 0,
+                    "supersetRest": null,
+                    "setRest": null
+                },
+                {
+                    "id": "921bf67b-f99b-4274-8484-1d1dfef5aba1",
+                    "name": "left torso twist",
+                    "jpSpeech": "レフトトルソーツイスト",
                     "timer": 35,
                     "sets": null,
                     "superset": null,
@@ -584,7 +606,7 @@
                     "id": "7d7d0895-03a9-4365-8bab-9d183b23836d",
                     "name": "straddle forward fold",
                     "jpSpeech": "ストラドルフォワードフォールド",
-                    "timer": 35,
+                    "timer": 110,
                     "sets": null,
                     "superset": null,
                     "rest": 0,
@@ -640,12 +662,12 @@
                         {
                             "id": "57b94afd-efc7-4dbc-aa62-9c5fd0b81836",
                             "weight": 0,
-                            "reps": 23
+                            "reps": 21
                         },
                         {
                             "id": "fb2c2c72-3bea-4389-8944-8cdd4d8b8fe0",
                             "weight": 0,
-                            "reps": 17
+                            "reps": 16
                         }
                     ],
                     "superset": 1,
@@ -1284,7 +1306,7 @@
                         {
                             "id": "73981387-dbbb-4faa-ac3b-6485930e5332",
                             "weight": 100,
-                            "reps": 11
+                            "reps": 10
                         },
                         {
                             "id": "d1e943fe-64d4-4637-9e38-d6d63a58b13d",
@@ -1311,17 +1333,17 @@
                         {
                             "id": "6c6cc0e7-acad-4a65-ad5e-ca1e25160023",
                             "weight": 100,
-                            "reps": 20
+                            "reps": 23
                         },
                         {
                             "id": "effe1d3c-764e-4bfa-92bb-09fd4dc2c751",
                             "weight": 100,
-                            "reps": 16
+                            "reps": 18
                         },
                         {
                             "id": "a5b36e5d-644c-40c7-8e49-871fbbadcab6",
                             "weight": 100,
-                            "reps": 15
+                            "reps": 16
                         }
                     ],
                     "superset": 1,
@@ -1338,17 +1360,17 @@
                         {
                             "id": "c7de535f-7775-413c-8e09-aafbb3e20b3f",
                             "weight": 70,
-                            "reps": 9
+                            "reps": 10
                         },
                         {
                             "id": "1f14bbbc-6f21-48d8-9e1f-21c7ba101d92",
                             "weight": 70,
-                            "reps": 7
+                            "reps": 8
                         },
                         {
                             "id": "8884353a-427a-4a7c-af83-69fe5f88728b",
                             "weight": 70,
-                            "reps": 6
+                            "reps": 7
                         }
                     ],
                     "superset": 2,
@@ -1365,17 +1387,17 @@
                         {
                             "id": "7427e7b5-584b-4363-87b2-c82a1a9b64eb",
                             "weight": 70,
-                            "reps": 17
+                            "reps": 25
                         },
                         {
                             "id": "00d09744-28ee-47f0-9c4e-77b8a6ba4000",
                             "weight": 70,
-                            "reps": 14
+                            "reps": 18
                         },
                         {
                             "id": "4d9acfe4-4003-4901-86dc-d3eb7764d6a8",
                             "weight": 70,
-                            "reps": 12
+                            "reps": 17
                         }
                     ],
                     "superset": 2,
@@ -1391,17 +1413,17 @@
                     "sets": [
                         {
                             "id": "a5a8598c-3bf0-4493-b35d-1aa7ed30dc1a",
-                            "weight": 35,
+                            "weight": 45,
                             "reps": 15
                         },
                         {
                             "id": "16af4fac-0fff-4e1d-aff4-417e68de4804",
-                            "weight": 35,
-                            "reps": 13
+                            "weight": 45,
+                            "reps": 14
                         },
                         {
                             "id": "a4ae638a-d8cf-45d0-b4da-11fc6461a305",
-                            "weight": 35,
+                            "weight": 45,
                             "reps": 13
                         }
                     ],
@@ -1418,18 +1440,18 @@
                     "sets": [
                         {
                             "id": "99f86a89-fec4-482a-bd8c-042c9c5fec31",
-                            "weight": 35,
-                            "reps": 13
+                            "weight": 45,
+                            "reps": 18
                         },
                         {
                             "id": "408c9267-cbb4-464e-acb4-320897dfcb12",
-                            "weight": 35,
-                            "reps": 13
+                            "weight": 45,
+                            "reps": 17
                         },
                         {
                             "id": "8f77b8b7-fe35-4df1-873b-71067136fb66",
-                            "weight": 35,
-                            "reps": 13
+                            "weight": 45,
+                            "reps": 16
                         }
                     ],
                     "superset": 3,
@@ -1445,12 +1467,12 @@
                     "sets": [
                         {
                             "id": "6087225c-a402-4bd5-855c-e1bc082a5fd1",
-                            "weight": 132,
-                            "reps": 70
+                            "weight": 82,
+                            "reps": 30
                         },
                         {
                             "id": "ed71fae4-d016-4a3c-bfe6-6e76e4265fa9",
-                            "weight": 132,
+                            "weight": 82,
                             "reps": 30
                         }
                     ],
@@ -1734,7 +1756,7 @@
                         {
                             "id": "ce390e13-3cdd-4013-bb6a-7bca553d3a00",
                             "weight": 90,
-                            "reps": 13
+                            "reps": 14
                         },
                         {
                             "id": "14fd16c1-6a0d-4569-8d46-790be164cb5e",
@@ -1756,12 +1778,12 @@
                         {
                             "id": "87f4b5f7-cd07-4c4e-b01a-3d2dc8299369",
                             "weight": 90,
-                            "reps": 24
+                            "reps": 25
                         },
                         {
                             "id": "8f16a995-3202-4aa4-946f-8f8b5a04dea7",
                             "weight": 90,
-                            "reps": 19
+                            "reps": 22
                         }
                     ],
                     "superset": 1,
@@ -1778,12 +1800,12 @@
                         {
                             "id": "e68f3d54-1a4f-44f2-bc89-cc8441059d70",
                             "weight": 60,
-                            "reps": 12
+                            "reps": 15
                         },
                         {
                             "id": "87572061-a93f-4979-a23d-e253b12ee63d",
                             "weight": 60,
-                            "reps": 10
+                            "reps": 11
                         }
                     ],
                     "superset": 2,
@@ -1800,12 +1822,12 @@
                         {
                             "id": "ff7ac8b7-d089-4930-bb40-9374c7bacb5e",
                             "weight": 60,
-                            "reps": 21
+                            "reps": 30
                         },
                         {
                             "id": "e0d5f4e5-c55e-45a6-9844-0160fe2069c3",
                             "weight": 60,
-                            "reps": 17
+                            "reps": 27
                         }
                     ],
                     "superset": 2,
@@ -1821,13 +1843,13 @@
                     "sets": [
                         {
                             "id": "26d36739-0c23-4e24-b95d-fe02fbdd33a1",
-                            "weight": 30,
-                            "reps": 15
+                            "weight": 40,
+                            "reps": 16
                         },
                         {
                             "id": "87f0c7e0-1625-4de0-a935-184d1adb5538",
-                            "weight": 30,
-                            "reps": 14
+                            "weight": 40,
+                            "reps": 15
                         }
                     ],
                     "superset": 3,
@@ -1843,13 +1865,13 @@
                     "sets": [
                         {
                             "id": "ddf06baa-adcd-448b-8a3c-f349f82076d8",
-                            "weight": 30,
-                            "reps": 15
+                            "weight": 40,
+                            "reps": 19
                         },
                         {
                             "id": "d3fa362b-a51c-46a4-876f-97dba35bb03f",
-                            "weight": 30,
-                            "reps": 13
+                            "weight": 40,
+                            "reps": 18
                         }
                     ],
                     "superset": 3,
@@ -1865,12 +1887,12 @@
                     "sets": [
                         {
                             "id": "47c74ef9-0b57-4048-a80b-b02c4733d921",
-                            "weight": 132,
-                            "reps": 70
+                            "weight": 82,
+                            "reps": 30
                         },
                         {
                             "id": "ebe42d53-e41e-491f-b50f-a11b2e98ba1a",
-                            "weight": 132,
+                            "weight": 82,
                             "reps": 30
                         }
                     ],
@@ -2164,7 +2186,7 @@
                         {
                             "id": "08bc6585-4894-442f-a15d-fb45dbad7bb2",
                             "weight": 105,
-                            "reps": 6
+                            "reps": 7
                         }
                     ],
                     "superset": 1,
@@ -2181,12 +2203,12 @@
                         {
                             "id": "a0868be4-95e4-44df-ab19-151d398a4520",
                             "weight": 105,
-                            "reps": 20
+                            "reps": 21
                         },
                         {
                             "id": "2512690b-4198-4173-9307-189fa9692e41",
                             "weight": 105,
-                            "reps": 16
+                            "reps": 17
                         },
                         {
                             "id": "253881e0-658e-4e47-8524-6501d6153dc3",
@@ -2208,12 +2230,12 @@
                         {
                             "id": "8c446ddb-3cff-4810-a826-67f22cc7b2f8",
                             "weight": 80,
-                            "reps": 5
+                            "reps": 6
                         },
                         {
                             "id": "5455d724-d460-4f30-a1ad-22bcb0f9b3e7",
                             "weight": 80,
-                            "reps": 4
+                            "reps": 5
                         },
                         {
                             "id": "acc6d315-7192-4b7c-b26c-67c6469e4e25",
@@ -2235,17 +2257,17 @@
                         {
                             "id": "600175fb-f572-4d90-878e-626d73cc5416",
                             "weight": 80,
-                            "reps": 17
+                            "reps": 23
                         },
                         {
                             "id": "056f4bf6-1044-4d9a-b54a-265f51bd9b51",
                             "weight": 80,
-                            "reps": 13
+                            "reps": 19
                         },
                         {
                             "id": "6b4ce724-77ab-48c9-9020-1f8d46f1eb03",
                             "weight": 80,
-                            "reps": 12
+                            "reps": 17
                         }
                     ],
                     "superset": 2,
@@ -2261,17 +2283,17 @@
                     "sets": [
                         {
                             "id": "c6c06d22-6ea0-4d92-bfaa-3aeb9d7a78d8",
-                            "weight": 40,
+                            "weight": 50,
                             "reps": 13
                         },
                         {
                             "id": "675ff4cc-5b6e-4975-ae83-c6af1da160b4",
-                            "weight": 40,
+                            "weight": 50,
                             "reps": 13
                         },
                         {
                             "id": "e0284111-eda9-46e2-a0a3-5c089b0c8aab",
-                            "weight": 40,
+                            "weight": 50,
                             "reps": 12
                         }
                     ],
@@ -2288,18 +2310,18 @@
                     "sets": [
                         {
                             "id": "7ae1da0f-632d-4936-b7e3-1d98b1771393",
-                            "weight": 40,
-                            "reps": 12
+                            "weight": 50,
+                            "reps": 18
                         },
                         {
                             "id": "e446be86-e9c5-4edb-9cf8-860543bf6873",
-                            "weight": 40,
-                            "reps": 12
+                            "weight": 50,
+                            "reps": 17
                         },
                         {
                             "id": "93f741d9-e661-4ee4-a27e-d743066d67dc",
-                            "weight": 40,
-                            "reps": 12
+                            "weight": 50,
+                            "reps": 14
                         }
                     ],
                     "superset": 3,
@@ -2315,12 +2337,12 @@
                     "sets": [
                         {
                             "id": "a8c5d027-3d49-4cdd-9fdf-658b04891bd5",
-                            "weight": 132,
-                            "reps": 70
+                            "weight": 82,
+                            "reps": 30
                         },
                         {
                             "id": "eb90f2f6-ca95-4b6d-883a-5cfae845437f",
-                            "weight": 132,
+                            "weight": 82,
                             "reps": 30
                         }
                     ],
